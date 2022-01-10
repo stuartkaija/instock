@@ -1,9 +1,8 @@
-import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      InStock
+        <h1>instock</h1>
     </div>
   );
 }
