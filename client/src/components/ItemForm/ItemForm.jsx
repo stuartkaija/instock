@@ -53,7 +53,6 @@ function ItemForm() {
                         <label htmlFor="OutOfStock">Out of stock</label>
                     </div>
                 </div>
-                
                 <label htmlFor="quantity" className="item-form__label">Quantity</label>
                 <input 
                     type="number" 
@@ -70,8 +69,10 @@ function ItemForm() {
                     className="item-form__input" 
                     placeholder="PLACEHOLDER"
                 />
-                <button className="item-form__button-secondary">Cancel</button>
-                <button className="item-form__button">PLACEHOLDER</button>
+                <div className="item-form__CTA-container">
+                    <button className="item-form__button-secondary">Cancel</button>
+                    <button className="item-form__button">PLACEHOLDER</button>
+                </div>
             </section>
         </form>
         

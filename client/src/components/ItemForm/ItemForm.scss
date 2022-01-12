@@ -16,6 +16,7 @@
 
         &--radio {
             margin-bottom: .5rem;
+            flex-basis: 100%;
         }
     }
 
@@ -32,6 +33,13 @@
         }
     }
 
+    &__radio-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
     &__radio-button {
         margin: 0rem;
         margin-right: .25rem;
@@ -43,5 +51,36 @@
     &__radio-wrapper {
         display: flex;
         align-items: center;
+    }
+
+    &__CTA-container {
+        display: flex;
+        align-items: center;
+        background-color: $color-background-primary;
+    }
+
+    &__button {
+        flex-grow: 1;
+        margin-left: 1rem;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+        border-radius: 1.25rem;
+        border: none;
+        color: $color-global-white;
+        background-color: $color-interactive-elements;
+        font-weight: 600;
+        padding: .5rem 1rem;
+    }
+
+    &__button-secondary {
+        flex-grow: 1;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+        border-radius: 1.25rem;
+        border: .0625rem solid $color-outlines-dividers;
+        color: $color-outlines-dividers;
+        background-color: $color-background-primary;
+        font-weight: 600;
+        padding: .5rem 1rem;
     }
 }
