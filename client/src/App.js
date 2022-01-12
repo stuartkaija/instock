@@ -1,10 +1,18 @@
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-        <h1>instock</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        {/* Header should go here I think? */}
+        <Switch>
+          <Route path="/warehouses" />
+          <Route path="/inventory" />
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
 export default App;
