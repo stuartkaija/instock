@@ -18,12 +18,10 @@ import { NavLink } from 'react-router-dom';
          <div className="header">
              <img src={instockImg} alt=''/>
              <div className='header__button-container'>
-                 <NavLink to='/' className='header__button' >Warehouses</NavLink>
-                 <NavLink to='/' className='header__button'>Inventory</NavLink>
+                 <NavLink to='/warehouses' activeClassName='header__button--active' className='header__button' >Warehouses</NavLink>
+                 <NavLink to='/inventory' activeClassName='header__button--active' className='header__button'>Inventory</NavLink>
              </div>
          </div>
      )
  }
  
-//  <button className={`header__button ${splitLocation[1] === "Warehouses" ? "active-button" : ""}`}>Warehouses</button>
-//                  <button className={`header__button ${splitLocation[1] === "Inventory" ? "active-button" : ""}`}>Inventory</button>
