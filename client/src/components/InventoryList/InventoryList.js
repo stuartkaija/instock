@@ -12,7 +12,7 @@ function InventoryList() {
             <div className="inventory-column__item--title">Inventory Item</div>
             <div className="inventory-column__item-container">
               <div className="inventory-column__item--main">Television</div>
-              <img src={chevronRight} />
+              <img src={chevronRight} alt="" />
             </div>
 
             <div className="inventory-column__item--title">Category</div>
@@ -30,8 +30,16 @@ function InventoryList() {
           </div>
           <div className="inventory-buttons">
             {/* // These will likely be switched to NavLinks  */}
-            <img className="inventory-buttons__delete" src={deleteIcon} />
-            <img className="inventory-buttons__edit" src={editIcon} />
+            <img
+              className="inventory-buttons__delete"
+              src={deleteIcon}
+              alt="delete-icon"
+            />
+            <img
+              className="inventory-buttons__edit"
+              src={editIcon}
+              alt="edit-icon"
+            />
           </div>
         </div>
       </section>
