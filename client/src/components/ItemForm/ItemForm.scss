@@ -1,0 +1,14 @@
+
+.item-form {
+    display: flex;
+    flex-direction:column;
+
+    &__section {
+        display: flex;
+        flex-direction:column;
+    }
+
+    &__label {
+        flex-basis: 100%;
+    }
+}
