@@ -23,9 +23,9 @@
   width: 100%;
 
   @include tablet {
-    justify-content: flex-end;
+    justify-content: space-around;
     flex-wrap: none;
-    width: 20%;
+    width: 10%;
   }
 
   &__delete {
@@ -38,8 +38,8 @@
 .inventory-column {
   display: flex;
   flex-direction: column;
-  margin-right: 5rem;
-  width: 30%;
+  margin-right: 20%;
+  width: 20%;
 
   @include tablet {
     flex-direction: row;
