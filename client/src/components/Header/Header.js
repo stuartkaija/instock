@@ -1,4 +1,4 @@
-import instockImg from '/Users/brynfrayne/Desktop/instock/client/src/assets/logos/InStock-Logo_1x.png';
+import instockImg from '../../assets/logos/InStock-Logo_1x.png';
 import React from 'react';
 import "./Header.scss";
 import { useLocation } from "react-router-dom";
