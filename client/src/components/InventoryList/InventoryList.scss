@@ -20,6 +20,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 1rem;
+  width: 100%;
+
+  @include tablet {
+    justify-content: flex-end;
+    flex-wrap: none;
+    width: 20%;
+  }
 
   &__delete {
   }
@@ -33,6 +40,14 @@
   flex-direction: column;
   margin-right: 5rem;
   width: 30%;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+
+    margin-right: 0rem;
+  }
 
   &__item-container {
     display: flex;
@@ -52,6 +67,10 @@
     &--title {
       @include font-bold;
       margin-bottom: 0.25rem;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &--in-stock {
