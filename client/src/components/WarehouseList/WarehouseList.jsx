@@ -14,13 +14,13 @@ function WarehouseList() {
                         type="search" 
                         name="searchBar"
                         id="searchBar"
-                        placeholder="Search"
+                        placeholder="Search..."
                         className="warehouse-list__search-bar" 
                     />
-                    <img src={searchIcon} alt="search icon" className="warehouse-list__search-box-icon" />
+                    <img src={searchIcon} alt="search icon"/>
                 </div>
                 <button className="warehouse-list__button">
-                    +Add New Warehouse
+                    + Add New Warehouse
                 </button>
             </div>
         </main>
