@@ -1,0 +1,12 @@
+.warehouse-list {
+
+    &__container {
+        margin: 0rem 1rem;
+    }
+
+    &__hero-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0rem 1rem;
+    }
+}
