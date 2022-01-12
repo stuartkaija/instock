@@ -1,0 +1,42 @@
+@use "../../styles/partials/variables" as*;
+
+.add-warehouse-form {
+
+}
+.add-warehouse-form__back-icon {
+    width: 1.125rem;
+    
+
+}
+.add-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.warehouse__form {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $color-outlines-dividers;
+    padding-bottom: 1rem;
+
+}
+
+.add-warehouse-form__input {
+    border-radius: 1rem;
+    border: 1px solid $color-outlines-dividers;
+    margin: 0 1rem;
+    margin-bottom: .25rem;
+    padding: .5rem;
+    font-size: .625rem;
+    font-weight: 300;
+    font-family: 'Titillium Web';
+}
+.add-warehouse-form__label {
+    margin: 0 1rem;
+    font-size: .75rem;
+    font-weight: 500;
+}
+.add-warehouse-form__subtitle {
+    margin: 1rem;
+}

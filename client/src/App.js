@@ -9,7 +9,8 @@ class App extends Component {
       <BrowserRouter>
        <Header />
         <Switch>
-          <Route path="/warehouses" />
+          <Route exact path="/warehouses" />
+          <Route path="/warehouses/add"  component={AddWarehouseForm}/>
           <Route path="/inventory" />
         </Switch>
       </BrowserRouter>
