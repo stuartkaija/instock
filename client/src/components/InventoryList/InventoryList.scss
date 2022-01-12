@@ -2,3 +2,67 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
+
+.inventory-list {
+  margin: 0rem 1rem;
+  border-bottom: 1px solid #bdc5d5;
+}
+
+.inventory-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+.inventory-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  &__delete {
+  }
+
+  &__edit {
+  }
+}
+
+.inventory-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5rem;
+
+  &__item-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.4rem;
+  }
+
+  &__item {
+    @include font-regular;
+    margin-bottom: 1rem;
+    &--main {
+      @include font-bold;
+      color: #2e66e5;
+    }
+
+    &--title {
+      @include font-bold;
+      margin-bottom: 0.25rem;
+    }
+
+    &--in-stock {
+      @include font-bold;
+      text-transform: uppercase;
+      text-align: center;
+      align-items: center;
+      color: #158463;
+      border-radius: 20px;
+      background-color: rgba(21, 132, 99, 0.17);
+      width: 5rem;
+      padding: 0.25rem 0.15rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
