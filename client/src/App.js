@@ -1,11 +1,5 @@
-import InventoryList from "./components/InventoryList/InventoryList";
-
 function App() {
-  return (
-    <div className="App">
-      <InventoryList />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
