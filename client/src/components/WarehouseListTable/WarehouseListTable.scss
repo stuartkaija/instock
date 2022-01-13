@@ -3,19 +3,19 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
-.inventory-list {
+.warehouse-list {
   margin: 0rem 1rem;
   border-bottom: 1px solid $color-outlines-dividers;
 }
 
-.inventory-container {
+.warehouse-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   background-color: $color-global-white;
 }
 
-.inventory-buttons {
+.warehouse-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -31,7 +31,7 @@
 
 }
 
-.inventory-column {
+.warehouse-column {
   display: flex;
   flex-direction: column;
   margin-right: 20%;
