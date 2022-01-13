@@ -1,6 +1,8 @@
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { Component } from 'react'
+import { Component } from 'react';
+
+import EditWarehouseComponent from './components/EditWarehouseComponent/EditWarehouseComponent';
 
 class App extends Component {
   render() {
@@ -11,6 +13,7 @@ class App extends Component {
           <Route path="/warehouses" />
           <Route path="/inventory" />
         </Switch>
+        <EditWarehouseComponent />
       </BrowserRouter>
     )
   }
