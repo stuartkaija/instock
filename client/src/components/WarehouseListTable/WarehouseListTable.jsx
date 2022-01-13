@@ -48,4 +48,4 @@ function WarehouseListTable() {
     )
 }
 
-export default WarehouseListTable;
+export default WarehouseListTable
