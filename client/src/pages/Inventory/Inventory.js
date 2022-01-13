@@ -20,7 +20,7 @@ class Inventory extends Component {
         <h1>Inventory List</h1>
         <HeroWithSearch />
         {/* <Tableheader /> */}
-        <InventoryList inventory={this.state.inventory} />
+        <InventoryList inventories={this.state.inventory} />
       </>
     );
   }

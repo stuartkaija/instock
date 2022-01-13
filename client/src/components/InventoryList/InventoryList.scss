@@ -5,7 +5,6 @@
 
 .inventory-list {
   margin: 0rem 1rem;
-  border-bottom: 1px solid $color-outlines-dividers;
 }
 
 .inventory-container {
@@ -13,6 +12,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   background-color: $color-global-white;
+  border-bottom: 1px solid $color-outlines-dividers;
 }
 
 .inventory-buttons {
