@@ -118,6 +118,11 @@
         align-items: center;
     }
 
+    &__quantity-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__CTA-container {
         display: flex;
         align-items: center;

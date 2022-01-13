@@ -1,6 +1,8 @@
 import React from 'react';
 import "./ItemForm.scss";
 
+// will need to add state in order to hide and show "quantity" input field
+
 function ItemForm() {
     return (
         <form className="item-form">
@@ -36,7 +38,7 @@ function ItemForm() {
                             <input 
                                 type="radio" 
                                 id="InStock" 
-                                name="InStock" 
+                                name="radiobutton" 
                                 value="InStock"
                                 className="item-form__radio-button"
                             />
@@ -46,21 +48,23 @@ function ItemForm() {
                             <input 
                                 type="radio" 
                                 id="OutOfStock" 
-                                name="OutOfStock" 
+                                name="radiobutton" 
                                 value="OutOfStock"
                                 className="item-form__radio-button"
                             />
                             <label htmlFor="OutOfStock">Out of stock</label>
                         </div>
                     </div>
-                    <label htmlFor="quantity" className="item-form__label">Quantity</label>
-                    <input 
-                        type="number" 
-                        name="quantity"
-                        id="quantity"
-                        className="item-form__input" 
-                        placeholder="PLACEHOLDER"
-                    />
+                    <div className="item-form__quantity-wrapper">
+                        <label htmlFor="quantity" className="item-form__label">Quantity</label>
+                        <input 
+                            type="number" 
+                            name="quantity"
+                            id="quantity"
+                            className="item-form__input" 
+                            placeholder="PLACEHOLDER"
+                        />
+                    </div>
                     <label htmlFor="warehouse" className="item-form__label">Warehouse</label>
                     <input 
                         type="text" 

@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <BrowserRouter>
        <Header />
+       <EditInvItem />
         <Switch>
           <Route path="/warehouses" />
           <Route path="/inventory" />
