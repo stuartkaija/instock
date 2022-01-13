@@ -1,10 +1,10 @@
 import React from 'react'
-import "./WarehousesListTable.scss";
+import "./WarehouseListTable.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
-function WarehousesListTable() {
+function WarehouseListTable() {
     return (
         <div>
             <section className="inventory-list">
@@ -48,4 +48,4 @@ function WarehousesListTable() {
     )
 }
 
-export default WarehousesListTable
+export default WarehouseListTable;
