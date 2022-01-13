@@ -40,3 +40,22 @@
 .add-warehouse-form__subtitle {
     margin: 1rem;
 }
+.add-warehouse-form__button {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: .375rem;
+    background-color: $color-global-white;
+    border: 1px solid $color-outlines-dividers;
+    font-family: "Titillium Web";
+    
+    &--blue {
+        background-color: $color-interactive-elements;
+        color: $color-global-white;
+    }
+}
+.add-warehouse-form__button-container {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: space-around;
+}

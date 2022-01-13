@@ -32,9 +32,9 @@ export default function AddWarehouseForm() {
                 <label className="add-warehouse-form__label">Email</label>
                 <input className="add-warehouse-form__input" placeholder="Email"></input>
             </div>
-            <div>
-                <button>Cancel</button>
-                <button>+ Add Warehouse</button>
+            <div className="add-warehouse-form__button-container">
+                <button className="add-warehouse-form__button">Cancel</button>
+                <button className="add-warehouse-form__button add-warehouse-form__button--blue">+ Add Warehouse</button>
 
             </div>
         </div>
