@@ -1,0 +1,31 @@
+@use '../../styles/partials/variables' as*;
+
+.warehouse-details {
+    &__hero {
+        display: flex;
+        justify-content: space-between;    
+        align-items: center;
+        border-bottom: .0625rem solid $color-outlines-dividers;
+        padding: 0 1rem;
+    }
+    &__edit-icon {
+        background-color: $color-interactive-elements;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 1rem;
+        padding: .5rem;
+        fill: white;
+    }
+    &__column {
+        padding: 1rem;
+        font-size: .75rem;
+        // font-weight: 300;
+    }
+    &__details-line {
+        margin: .25rem 0;
+    }
+    &__contact-container {
+        display: flex;
+    }
+}
