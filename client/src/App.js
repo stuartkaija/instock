@@ -1,6 +1,9 @@
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import { Component } from 'react'
+import EditInvItem from "./components/EditInvItem/EditInvItem";
+import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 
 class App extends Component {
@@ -9,7 +12,8 @@ class App extends Component {
       <BrowserRouter>
        <Header />
         <Switch>
-          <Route path="/warehouses" component={WarehousesPage} />
+          <Route path="/warehouses" exact component={WarehousesPage}/>
+          <Route path="/warehouses/warehouseId" component={WarehouseDetails} />
           <Route path="/inventory" />
         </Switch>
       </BrowserRouter>
