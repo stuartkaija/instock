@@ -4,15 +4,49 @@
 .item-form {
     display: flex;
     flex-direction:column;
+    
+    @include tablet {
+        padding: 2rem 0rem;
+    }
+
+    &__wrapper {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
 
     &__section {
         display: flex;
         flex-direction:column;
+        
+        @include tablet {
+            flex-grow: 1;
+            padding-right: 2rem;
+        }
+
+        &--secondary {
+            @include tablet {
+                padding-left: 2rem;
+                border-left: .0625rem solid $color-outlines-dividers;
+            }
+        }
+    }
+
+    &__title {
+        @include tablet {
+            font-size: 1.5rem;
+        }
     }
 
     &__label {
-        font-size: .875rem;
+        font-size: .8125rem;
         font-weight: 600;
+
+        @include tablet {
+            font-size: .875rem;
+        }
 
         &--radio {
             margin-bottom: .5rem;
@@ -21,15 +55,41 @@
     }
 
     &__input {
-        font-size: .875rem;
+        font-size: .8125rem;
         border-radius: 1.25rem;
         border: .0625rem solid $color-outlines-dividers;
         padding: .5rem;
         margin-top: .25rem;
         margin-bottom: 1rem;
 
+        @include tablet {
+            font-size: .875rem;
+        }
+
         &:focus {
             outline: .0625rem solid $color-interactive-elements;
+        }
+
+        &::placeholder {
+            @include font-regular;
+            font-size: .8125rem;
+
+            @include tablet {
+                font-size: .875rem;
+            }
+        }
+
+        &--textarea {
+            height: 5rem;
+
+            &::placeholder {
+                font-size: .8125rem;
+                @include font-regular;
+
+                @include tablet {
+                    font-size: .875rem;
+                }
+            }
         }
     }
 
@@ -43,8 +103,13 @@
     &__radio-button {
         margin: 0rem;
         margin-right: .25rem;
-        width: .875rem;
-        height: .875rem;
+        width: .8125rem;
+        height: .8125rem;
+
+        @include tablet {
+            height: .875rem;
+            width: .875rem;
+        }
 
     }
 
@@ -57,6 +122,11 @@
         display: flex;
         align-items: center;
         background-color: $color-background-primary;
+        padding: 1rem 0rem;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
     }
 
     &__button {
@@ -70,6 +140,11 @@
         background-color: $color-interactive-elements;
         font-weight: 600;
         padding: .5rem 1rem;
+
+        @include tablet {
+            flex-grow: 0;
+            font-size: .875rem;
+        }
     }
 
     &__button-secondary {
@@ -82,5 +157,10 @@
         background-color: $color-background-primary;
         font-weight: 600;
         padding: .5rem 1rem;
+
+        @include tablet {
+            flex-grow: 0;
+            font-size: .875rem;
+        }
     }
 }
