@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-list {
+    // table header
+
+    &__filter-bar-container {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding: 0rem 2rem;
+            background-color: $color-background-primary;
+        }
+
+        @include desktop {
+            padding: 0rem 4rem;
+        }
+    }
+
+    &__table-header-container {
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__table-header {
+        margin-right: .25rem;
+        font-size: .75rem;
+        line-height: 1.125rem;
+        text-transform: uppercase;
+        color: $color-text-secondary;
+    }
+}
