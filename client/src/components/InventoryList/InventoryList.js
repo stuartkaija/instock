@@ -7,11 +7,11 @@ function InventoryList({ inventories }) {
   if (inventories === undefined) {
     return <span>Loading...</span>;
   }
-  console.log(inventories);
+
   return (
     <>
       <section className="inventory-list">
-        {inventories.map((inventory) => ( 
+        {inventories.map((inventory) => (
           <div key={inventory.id} className="inventory-container">
             <div className="inventory-column">
               <div className="inventory-column__item--title">
@@ -29,7 +29,13 @@ function InventoryList({ inventories }) {
             </div>
             <div className="inventory-column">
               <div className="inventory-column__item--title">Status</div>
-              <div className="inventory-column__item--in-stock">
+              <div
+                className={
+                  inventory.status.includes("In")
+                    ? "inventory-column__item--in-stock"
+                    : "inventory-column__item--out-of-stock"
+                }
+              >
                 {inventory.status}
               </div>
 
@@ -37,7 +43,7 @@ function InventoryList({ inventories }) {
               <div className="inventory-column__item">{inventory.quantity}</div>
 
               <div className="inventory-column__item--title">Warehouse</div>
-              <div className="inventory-column__item">
+              <div className={"inventory-column__item"}>
                 {inventory.warehouseName}
               </div>
             </div>
@@ -56,7 +62,7 @@ function InventoryList({ inventories }) {
               />
             </div>
           </div>
-          ))}
+        ))}
       </section>
     </>
   );
