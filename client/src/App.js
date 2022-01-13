@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-function App() {
-  return <div className="App"></div>;
-=======
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import { Component } from 'react'
@@ -18,7 +14,6 @@ class App extends Component {
       </BrowserRouter>
     )
   }
->>>>>>> develop
 }
 
 export default App;
