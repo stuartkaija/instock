@@ -59,8 +59,8 @@ export default class EditWarehouseForm extends Component {
                     </div>
                 </form>
                 <div className='warehouse__buttons'>
-                    <button>Cancel</button>
-                    <button form='editWarehouse'>Save</button>
+                    <button className='warehouse__buttons-cancel'>Cancel</button>
+                    <button className='warehouse__buttons-confirm' form='editWarehouse'>Save</button>
                 </div>
             </div>
         )
