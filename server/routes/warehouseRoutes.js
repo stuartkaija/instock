@@ -43,7 +43,9 @@ router.put('/:warehouseId', (req, res) => {
         return
     }
 
-    res.send('Hey You FUCKING DID IT! YOU WON! THE LOTTERY!')
+    // I think we need validation to ensure edited information is good
+
+    res.send('This is a test for the PUT endpoint')
 
     console.log(foundWarehouse);
 });
