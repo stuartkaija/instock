@@ -17,9 +17,6 @@ class SpecificWarehousePage extends Component {
     //     return warehouseId
     // };
 
-
-    
-
       componentDidMount() {
         axios.get("http://localhost:8080/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9").then((response) => {
         this.setState({ 

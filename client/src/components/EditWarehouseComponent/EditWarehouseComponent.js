@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 
-export default class EditWarehouseForm extends Component {
+export default class EditWarehouseComponent extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +24,6 @@ export default class EditWarehouseForm extends Component {
             }
         })
 
-        // console.log(event)
     };
 
     render() {
@@ -32,7 +31,7 @@ export default class EditWarehouseForm extends Component {
             <div className="add-warehouse-form">
                 <div className="add-form__header">
                     
-                    <h2><NavLink to='/warehouses'><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
+                    <h2><NavLink to='/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9'><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
                 </div>
                 <form onSubmit={this.handleSubmit} id='editWarehouse'>
                     <div className="warehouse__form">

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import editIcon from '../../assets/icons/edit-24px--white.svg';
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import "./WarehouseDetails.scss";
+import { NavLink } from 'react-router-dom';
 
 function WarehouseDetails({warehouse}) {
         return (
@@ -9,7 +10,10 @@ function WarehouseDetails({warehouse}) {
                 <div>
                     <div className="warehouse-details__hero">
                         <h1 className="hero__title"><img className="hero__icon" src={backIcon} alt="arrow back icon" /> {warehouse.name}</h1>
-                        <img src={editIcon} alt="" className="warehouse-details__edit-icon"/>
+                        <NavLink to={`/warehouses/` + warehouse.id + `/edit`} warehouse={warehouse} >
+                            <img src={editIcon} alt="" className="warehouse-details__edit-icon"/>
+                        </NavLink>
+                        
                     </div>
                     <div className="warehouse-details__column">
                         <p className="warehouse-details__details-line">WAREHOUSE ADDRESS</p>
