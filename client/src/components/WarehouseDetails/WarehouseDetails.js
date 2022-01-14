@@ -4,7 +4,6 @@ import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import "./WarehouseDetails.scss";
 
 function WarehouseDetails({warehouse}) {
-    console.log(warehouse)
         return (
             <div>
                 <div>
