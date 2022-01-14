@@ -1,11 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react'
+import axios from "axios";
 import "./ItemForm.scss";
 
-// will need to add state in order to hide and show "quantity" input field
 
-function ItemForm() {
-    return (
-        <form className="item-form">
+
+export default class ItemForm extends Component {
+    state = {
+        currentItem: null,
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8080/inventory/${this.props.inventoryId}`)
+            .then((response) => {
+                this.setState({
+                    currentItem: response.data
+                })
+                console.log(response.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+            
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        axios.put(`http://localhost:8080/inventory/${this.props.inventoryId}`, {
+            name: event.target.name.value,
+            description: event.target.description.value,
+            category: event.target.category.value,
+            radioButton: event.target.radioButton.value,
+            quantity: event.target.quantity.value || 0,
+            warehouse: event.target.warehouse.value
+        })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+    handleCancel = () => {
+        window.location.reload();
+    }
+
+    render() {
+
+        if(this.state.currentItem === null) {
+            return <div>Loading...</div>
+        }
+
+        return (
+            <form className="item-form" onSubmit={this.handleSubmit}>
             <div className="item-form__wrapper">
                 <section className="item-form__section">
                     <h3 className="item-form__title">Item Details</h3>
@@ -38,8 +85,8 @@ function ItemForm() {
                             <input 
                                 type="radio" 
                                 id="InStock" 
-                                name="radiobutton" 
-                                value="InStock"
+                                name="radioButton" 
+                                value="In Stock"
                                 className="item-form__radio-button"
                             />
                             <label htmlFor="InStock">In stock</label>
@@ -48,8 +95,8 @@ function ItemForm() {
                             <input 
                                 type="radio" 
                                 id="OutOfStock" 
-                                name="radiobutton" 
-                                value="OutOfStock"
+                                name="radioButton" 
+                                value="Out of Stock"
                                 className="item-form__radio-button"
                             />
                             <label htmlFor="OutOfStock">Out of stock</label>
@@ -76,12 +123,10 @@ function ItemForm() {
                 </section>
             </div>
                 <div className="item-form__CTA-container">
-                    <button className="item-form__button-secondary">Cancel</button>
-                    <button className="item-form__button">PLACEHOLDER</button>
+                    <button onClick={this.handleCancel} name="secondary" className="item-form__button-secondary">Cancel</button>
+                    <button type="submit"className="item-form__button">Save</button>
                 </div>
         </form>
-        
-    )
+        )
+    }
 }
-
-export default ItemForm;

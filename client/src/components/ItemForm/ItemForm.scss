@@ -146,6 +146,10 @@
         font-weight: 600;
         padding: .5rem 1rem;
 
+        &:hover {
+            background-color: ;
+        }
+
         @include tablet {
             flex-grow: 0;
             font-size: .875rem;

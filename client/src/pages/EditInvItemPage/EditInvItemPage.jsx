@@ -1,13 +1,13 @@
 import React from 'react'
 import HeroVanilla from '../../components/HeroVanilla/HeroVanilla';
-import EditInvItem from "../../components/EditInvItem/EditInvItem";
+import ItemForm from "../../components/ItemForm/ItemForm";
 import "./EditInvItemPage.scss";
 
-function EditInvItemPage() {
+function EditInvItemPage(props) {
     return (
         <div>
             <HeroVanilla title={"Edit Inventory Item"}/>
-            <EditInvItem />
+            <ItemForm inventoryId={props.match.params.inventoryId}/>
         </div>
     )
 }
