@@ -2,6 +2,7 @@ import "./InventoryList.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import { NavLink } from 'react-router-dom';
 
 function InventoryList({ inventories }) {
   if (inventories === undefined) {
@@ -18,9 +19,11 @@ function InventoryList({ inventories }) {
                 Inventory Item
               </div>
               <div className="inventory-column__item-container">
+                <NavLink to='inventory/:id' >
                 <div className="inventory-column__item--main">
                   {inventory.itemName}
                 </div>
+                </NavLink>
                 <img src={chevronRight} alt="" />
               </div>
 
