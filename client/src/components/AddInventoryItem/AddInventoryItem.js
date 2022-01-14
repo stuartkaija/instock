@@ -12,7 +12,14 @@ class AddInventoryItem extends Component {
   addInventoryItem = (event) => {
     event.preventDefault();
 
-    let body = {};
+    let body = {
+      itemName: event.target.itemName.value,
+      description: event.target.description.value,
+      category: event.target.category.value,
+      status: event.target.status.value,
+      quantity: event.target.quantity.value,
+      warehouse: event.target.warehouse.value,
+    };
 
     // POST request for new inventory items
     axios.post("http://localhost:8080/inventory", body).then((response) => {
@@ -26,17 +33,21 @@ class AddInventoryItem extends Component {
 
   render() {
     return (
-      <form className="item-form">
+      <form onSubmit={this.addInventoryItem} className="item-form">
         <div className="item-form__wrapper">
           <section className="item-form__section">
             <h3 className="item-form__title">Item Details</h3>
-            <label htmlFor="name" className="item-form__label">
+            <label
+              htmlFor="itemName"
+              htmlFor="name"
+              className="item-form__label"
+            >
               Item Name
             </label>
             <input
               type="text"
               name="name"
-              id="name"
+              id="itemName"
               className="item-form__input"
               placeholder="PLACEHOLDER"
             />
@@ -64,7 +75,7 @@ class AddInventoryItem extends Component {
               <div className="item-form__radio-wrapper">
                 <input
                   type="radio"
-                  id="InStock"
+                  id="status"
                   name="radiobutton"
                   value="InStock"
                   className="item-form__radio-button"
@@ -74,7 +85,7 @@ class AddInventoryItem extends Component {
               <div className="item-form__radio-wrapper">
                 <input
                   type="radio"
-                  id="OutOfStock"
+                  id="status"
                   name="radiobutton"
                   value="OutOfStock"
                   className="item-form__radio-button"
