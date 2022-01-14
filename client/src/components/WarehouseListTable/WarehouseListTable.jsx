@@ -5,7 +5,7 @@ import "./WarehouseListTable.scss";
 function WarehouseListTable({warehouses}) {
     console.log(warehouses)
     return (
-            <section className="warehouse-list">
+            <section className="warehouses-list">
                 {warehouses.map(warehouse => {
                     return <WarehouseListColumn 
                                 key={warehouse.id}

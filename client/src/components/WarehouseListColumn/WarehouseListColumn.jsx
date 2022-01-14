@@ -7,9 +7,9 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 function WarehouseListColumn({ name, address, city, country, contactName, contactPhone, contactEmail}) {
   return (
     <section className="warehouse-list">
-      <div className="warehouse-column__main-container">
-        <div className="warehouse-list__container">
-          <div className="warehouse-column-container">
+
+      <div className="warehouse-container">
+        <div className="warehouse-column">
             <h4 className="warehouse-column__title">
                 Warehouse
             </h4>
@@ -26,9 +26,9 @@ function WarehouseListColumn({ name, address, city, country, contactName, contac
             <address className="warehouse-column__text">
               {address}, {city}, {country}
             </address>
-          </div>
+        </div>
 
-          <div className="warehouse-column--secondary">
+          <div className="warehouse-column">
             <h4 className="warehouse-column__title">contact name</h4>
             <h5 className="warehouse-column__text">{contactName}</h5>
             <h4 className="warehouse-column__title">contact information</h4>
@@ -41,18 +41,19 @@ function WarehouseListColumn({ name, address, city, country, contactName, contac
               </a>
             </div>
           </div>
-      </div>
+
+
           <div className="warehouse-buttons">
             <img
               className="warehouse-buttons__delete"
               src={deleteIcon}
               alt="delete-icon"
-            />
+              />
             <img
               className="warehouse-buttons__edit"
               src={editIcon}
               alt="edit-icon"
-            />
+              />
           </div>
         </div>
     </section>

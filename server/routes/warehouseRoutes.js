@@ -3,8 +3,17 @@ const router = express.Router();
 const fs = require('fs');
 const uniqid = require('uniqid');
 
+// function to read warehouse data
+function getWarehouse () {
+    const warehouseFile = fs.readFileSync("./data/warehouses.js");
+    const warehouseData = JSON.parse(warehouseFile);
+    return warehouseData;
+}
+
 // GET list of all warehouses (Enrique)
-router.get('/', (req, res) => {
+router.get('/warehouses', (req, res) => {
+    // const warehouseData = getWarehouse();
+    // return warehouseData;
     console.log("this is a GET endpoint for /warehouses")
 });
 

@@ -18,6 +18,7 @@ function InventoryList() {
             <div className="inventory-column__item--title">Category</div>
             <div className="inventory-column__item">Electronics</div>
           </div>
+
           <div className="inventory-column">
             <div className="inventory-column__item--title">Status</div>
             <div className="inventory-column__item--in-stock">In Stock</div>
@@ -28,6 +29,7 @@ function InventoryList() {
             <div className="inventory-column__item--title">Warehouse</div>
             <div className="inventory-column__item">Manhattan</div>
           </div>
+          
           <div className="inventory-buttons">
             {/* // These will likely be switched to NavLinks  */}
             <img
