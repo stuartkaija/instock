@@ -9,6 +9,11 @@ function readInventories() {
   return parsedData;
 }
 
+const findSpecificInventory = (id) => {
+  const inventoryData = readInventories();
+  return inventoryData.filter((inventory) => id === inventory.warehouseID)
+};
+
 // GET list of all inventory items (Ian)
 router.get("/", (req, res) => {
   // Respond with the inventory from the data file
@@ -16,8 +21,13 @@ router.get("/", (req, res) => {
   res.send(inventory);
 });
 
-// GET inventories for a specific warehouse (Enrique)
-router.get("", (req, res) => {});
+// GET inventories for a specific warehouse (Stuart)
+router.get("/:warehouseId", (req, res) => {
+  const id = req.params.warehouseId;
+  const foundInventory = findSpecificInventory(id);
+  console.log(foundInventory);
+  res.send(foundInventory);
+});
 
 // GET a single inventory item (Bryn)
 router.get("", (req, res) => {});
