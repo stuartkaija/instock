@@ -8,11 +8,6 @@ function InventoryList({ inventories }) {
     return <span>Loading...</span>;
   }
 
-  return (
-    <>
-      <section className="inventory-list">
-        {inventories.map((inventory) => (
-          <div key={inventory.id} className="inventory-container">
             <div className="inventory-column">
               <div className="inventory-column__item--title">
                 Inventory Item
