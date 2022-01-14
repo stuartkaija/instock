@@ -70,7 +70,7 @@ function InventoryList({ inventories }) {
                   src={editIcon}
                   alt="edit-icon"
                 />
-              </div>git 
+              </div>
             </div>
           );
         })}
