@@ -66,6 +66,7 @@
     &--main {
       @include font-bold;
       color: $color-interactive-elements;
+      text-decoration: none;
     }
 
     &--title {
