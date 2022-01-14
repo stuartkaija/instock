@@ -147,7 +147,7 @@
         padding: .5rem 1rem;
 
         &:hover {
-            background-color: ;
+            background-color: $color-cta-and-background;
         }
 
         @include tablet {
@@ -166,6 +166,12 @@
         background-color: $color-background-primary;
         font-weight: 600;
         padding: .5rem 1rem;
+
+        &:hover {
+            border: .0625rem solid $color-interactive-elements;
+            color: $color-interactive-elements;
+
+        }
 
         @include tablet {
             flex-grow: 0;
