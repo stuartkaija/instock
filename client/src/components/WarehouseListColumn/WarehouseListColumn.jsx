@@ -3,8 +3,9 @@ import "./WarehouseListColumn.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import { NavLink } from "react-router-dom";
 
-function WarehouseListColumn({ name, address, city, country, contactName, contactPhone, contactEmail}) {
+function WarehouseListColumn({ id, name, address, city, country, contactName, contactPhone, contactEmail}) {
   return (
     <section className="warehouse-list">
 
@@ -49,11 +50,14 @@ function WarehouseListColumn({ name, address, city, country, contactName, contac
               src={deleteIcon}
               alt="delete-icon"
               />
-            <img
-              className="warehouse-buttons__edit"
-              src={editIcon}
-              alt="edit-icon"
-              />
+              <NavLink to={`/warehouses/` + id + `/edit`}>
+                <img
+                className="warehouse-buttons__edit"
+                src={editIcon}
+                alt="edit-icon"
+                />
+              </NavLink>
+
           </div>
         </div>
     </section>
