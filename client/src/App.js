@@ -4,9 +4,9 @@ import Header from "./components/Header/Header";
 import AddWarehouseForm from './pages/AddWarehouseForm/AddWarehouseForm';
 import EditInvItem from "./components/EditInvItem/EditInvItem";
 import Footer from "./components/Footer/Footer";
-import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import Inventory from "./pages/Inventory/Inventory";
+import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehousePage";
 
 class App extends Component {
@@ -19,6 +19,7 @@ class App extends Component {
           <Route path="/warehouses/add"  component={AddWarehouseForm}/>
           <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />
           <Route path="/inventory" exact component={Inventory} />
+          <Route path="/inventory/:itemId" component={InventoryItemPage}/>
         </Switch>
         <Footer />
       </BrowserRouter>

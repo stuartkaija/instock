@@ -3,6 +3,10 @@ import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import { NavLink } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+// import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
+>>>>>>> develop
 
 function InventoryList({ inventories }) {
   if (inventories === undefined) {
@@ -12,14 +16,19 @@ function InventoryList({ inventories }) {
   return (
     <>
       <section className="inventory-list">
-        {inventories.map((inventory) => (
+        {inventories.map((inventory) => {
+          return (
           <div key={inventory.id} className="inventory-container">
             <div className="inventory-column">
               <div className="inventory-column__item--title">
                 Inventory Item
               </div>
               <div className="inventory-column__item-container">
+<<<<<<< HEAD
                 <NavLink to='inventory/:id' >
+=======
+                <NavLink to={'/inventory/'+inventory.id} className="inventory-column__item--main">
+>>>>>>> develop
                 <div className="inventory-column__item--main">
                   {inventory.itemName}
                 </div>
@@ -65,7 +74,8 @@ function InventoryList({ inventories }) {
               />
             </div>
           </div>
-        ))}
+          );
+      })}
       </section>
     </>
   );

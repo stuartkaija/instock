@@ -9,6 +9,7 @@ function WarehouseListTable({warehouses}) {
                 {warehouses.map(warehouse => {
                     return <WarehouseListColumn 
                                 key={warehouse.id}
+                                id={warehouse.id}
                                 name={warehouse.name}
                                 address={warehouse.address}
                                 city={warehouse.city}

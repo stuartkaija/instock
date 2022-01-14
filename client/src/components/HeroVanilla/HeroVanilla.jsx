@@ -4,9 +4,9 @@ import "./HeroVanilla.scss";
 
 function HeroVanilla({ title }) {
     return (
-        <div className="hero">
-            <img className="hero__icon" src={icon} alt="arrow back icon" />
-            <h1 className="hero__title">{title}</h1>
+        <div className="hero-vanilla">
+            <img className="hero-vanilla__icon" src={icon} alt="arrow back icon" />
+            <h1 className="hero-vanilla__title">{title}</h1>
         </div>
     )
 }

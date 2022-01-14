@@ -3,8 +3,9 @@ import "./WarehouseListColumn.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import { Link } from "react-router-dom";
 
-function WarehouseListColumn({ name, address, city, country, contactName, contactPhone, contactEmail}) {
+function WarehouseListColumn({ id, name, address, city, country, contactName, contactPhone, contactEmail}) {
   return (
     <section className="warehouse-list">
 
@@ -14,9 +15,9 @@ function WarehouseListColumn({ name, address, city, country, contactName, contac
                 Warehouse
             </h4>
             <div className="warehouse-column__item-container">
-              <h5 className="warehouse-column__text warehouse-column__text--link">
-                  {name}
-              </h5>
+              <Link className="warehouse-column__main-link" to={"/warehouses/" + id} >
+                <h5 className="warehouse-column__text warehouse-column__text--link">{name}</h5>
+              </Link>
               <img src={chevronRight} alt="chevron right" />
             </div>
 
@@ -44,16 +45,20 @@ function WarehouseListColumn({ name, address, city, country, contactName, contac
 
 
           <div className="warehouse-buttons">
-            <img
-              className="warehouse-buttons__delete"
-              src={deleteIcon}
-              alt="delete-icon"
-              />
-            <img
-              className="warehouse-buttons__edit"
-              src={editIcon}
-              alt="edit-icon"
-              />
+            <Link className="warehouse-column__link">
+              <img
+                className="warehouse-buttons__delete"
+                src={deleteIcon}
+                alt="delete-icon"
+                />
+            </Link>
+            <Link className="warehouse-column__link">
+              <img
+                className="warehouse-buttons__edit"
+                src={editIcon}
+                alt="edit-icon"
+                />
+            </Link>
           </div>
         </div>
     </section>
