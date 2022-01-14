@@ -15,7 +15,6 @@ class SpecificWarehousePage extends Component {
         // axios call to get warehouse details
         axios.get('http://localhost:8080/inventory/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9') // this is hardcoded right now, will have to change
             .then((response) => {
-                console.log(response);
                 this.setState({
                     inventory: response.data
                 });
