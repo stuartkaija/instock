@@ -23,8 +23,11 @@ router.get("", (req, res) => {});
 router.get("", (req, res) => {});
 
 // POST/CREATE a new inventory item (Ian)
-router.post("", (req, res) => {});
-
+router.post("/", (req, res) => {
+  const newInventoryItem = {
+    id: uniqid(),
+  };
+});
 
 // PUT/PATCH/EDIT an inventory item (Enrique)
 router.put("", (req, res) => {});
