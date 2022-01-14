@@ -60,7 +60,6 @@ export default class AddWarehouseForm extends Component {
             <div className="add-warehouse-form__button-container">
                 <button className="add-warehouse-form__button">Cancel</button>
                 <button className="add-warehouse-form__button add-warehouse-form__button--blue" form="addWarehouse">+ Add Warehouse</button>
-
             </div>
         </div>
     )

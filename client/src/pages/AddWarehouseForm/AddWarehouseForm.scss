@@ -41,7 +41,7 @@
     margin: 1rem;
 }
 .add-warehouse-form__button {
-    width: 50%;
+    width: 48%;
     border: none;
     border-radius: 1rem;
     padding: .375rem;
@@ -57,5 +57,5 @@
 .add-warehouse-form__button-container {
     margin: 0 1rem;
     display: flex;
-    flex-direction: space-around;
+    justify-content: space-between;
 }
