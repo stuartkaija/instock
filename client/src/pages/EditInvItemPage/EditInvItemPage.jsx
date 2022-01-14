@@ -6,7 +6,7 @@ import "./EditInvItemPage.scss";
 function EditInvItemPage(props) {
     return (
         <div>
-            <HeroVanilla title={"Edit Inventory Item"}/>
+            <HeroVanilla title={"Edit Inventory Item"} inventoryId={props.match.params.inventoryId}/>
             <ItemForm inventoryId={props.match.params.inventoryId}/>
         </div>
     )
