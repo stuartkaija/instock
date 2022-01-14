@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   res.send(inventory);
 });
 
-// GET inventories for a specific warehouse (Enrique)
+// GET inventories for a specific warehouse (Stuart)
 router.get("", (req, res) => {});
 
 // GET a single inventory item (Bryn)
