@@ -14,6 +14,7 @@ function InventoryList({ inventories }) {
     <>
       <section className="inventory-list">
         {inventories.map((inventory) => {
+          console.log(...new Set(inventory.category));
           return (
             <div key={inventory.id} className="inventory-container">
               <div className="inventory-column">

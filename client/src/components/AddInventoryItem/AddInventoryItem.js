@@ -66,6 +66,9 @@ class AddInventoryItem extends Component {
             <select name="category" id="category" className="item-form__input">
               <option value="Electronics">Electronics</option>
               <option value="Gear">Gear</option>
+              <option value="Health">Health</option>
+              <option value="Accessory">Accessory</option>
+              <option value="Apparel">Apparel</option>
             </select>
           </section>
           <section className="item-form__section item-form__section--secondary">

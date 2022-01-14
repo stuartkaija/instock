@@ -22,7 +22,7 @@ function InventoryHeroWithSearch({ inventoryTitle }) {
         />
       </div>
       <NavLink to="/inventory/AddNew">
-        <button className="hero__button">+ Add New Warehouse</button>
+        <button className="hero__button">+ Add New Inventory Item</button>
       </NavLink>
     </div>
   );
