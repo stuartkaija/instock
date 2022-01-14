@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import Inventory from "./pages/Inventory/Inventory";
+import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehousePage";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/warehouses" exact component={WarehousesPage} />
+          <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />
           <Route path="/warehouses/warehouseId" component={WarehouseDetails} />
           <Route path="/inventory" component={Inventory} />
         </Switch>
