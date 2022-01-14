@@ -9,9 +9,9 @@ function readInventories() {
   return parsedData;
 }
 
-function findSpecificInventory() {
+const findSpecificInventory = (id) => {
   const inventoryData = readInventories();
-
+  return inventoryData.find((inventory) => id === inventory.id)
 };
 
 // GET list of all inventory items (Ian)
