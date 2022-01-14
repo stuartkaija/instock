@@ -1,5 +1,5 @@
 import { Component } from "react";
-import InventoryHeroWithSearch from "../../components/InventoryHeroWithSearch/InventoryHeroWithSearch";
+// import InventoryHeroWithSearch from "../../components/InventoryHeroWithSearch/";
 import Tableheader from "../../components/TableHeader/TableHeader";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import axios from "axios";
@@ -17,7 +17,7 @@ class Inventory extends Component {
   render() {
     return (
       <>
-        <InventoryHeroWithSearch inventoryTitle={["Inventory"]} />
+        {/* <InventoryHeroWithSearch inventoryTitle={["Inventory"]} /> */}
         <Tableheader
           inventoryHeaders={[
             "Inventory Item",
