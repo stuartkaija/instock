@@ -1,22 +1,22 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
-const warehouseRoutes = require('./routes/warehouseRoutes');
-const inventoryRoutes = require('./routes/inventoryRoutes');
+const cors = require("cors");
+const warehouseRoutes = require("./routes/warehouseRoutes");
+const inventoryRoutes = require("./routes/inventoryRoutes");
 
 //  CONFIGURATION
-require('dotenv').config();
+require("dotenv").config();
 const port = process.env.PORT || 8080;
 
 //  MIDDLEWARE
 app.use(express.json());
+app.use(express.urlencoded());
 app.use(cors());
 
 //  ROUTES
-app.use('/warehouses', warehouseRoutes);
-app.use('/inventory', inventoryRoutes);
-
+app.use("/warehouses", warehouseRoutes);
+app.use("/inventory", inventoryRoutes);
 
 app.listen(port, () => {
-    console.log(`The server is running on ${port}`)
-})
+  console.log(`The server is running on ${port}`);
+});
