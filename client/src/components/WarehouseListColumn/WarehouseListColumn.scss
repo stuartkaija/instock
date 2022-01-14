@@ -5,100 +5,119 @@
 
 .warehouse-list {
   margin: 0rem 1rem;
-  border-bottom: 1px solid $color-outlines-dividers;
+  border-bottom: .0625rem solid $color-outlines-dividers;
 }
 
-.warehouse-container {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  background-color: $color-global-white;
+.warehouse-list {
+  margin-top: 1rem;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    background-color: $color-global-white;
+
+    @include tablet {
+      flex-direction: row;
+      flex-grow: 1;
+    }
+  }
 }
 
 .warehouse-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  width: 100%;
+  margin: 1rem 0rem;
+  flex-basis: 100%;
 
   @include tablet {
-    justify-content: space-around;
-    flex-wrap: none;
-    width: 10%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 0;
   }
-
-
 }
 
 .warehouse-column {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20%;
-  flex-grow: 1;
+  &__main-container {
+    display: flex;
+    flex-direction: column;
 
-  @include tablet {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 40%;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+  }
 
-    margin-right: 0rem;
+  &-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      flex-grow: 1;
+    }
   }
 
   &__item-container {
     display: flex;
+    margin-bottom: .25rem;
 
-    align-items: center;
-    margin-bottom: 1.4rem;
+    @include tablet {
+      align-items: center;
+    }
   }
 
-  &__item {
-    @include font-regular;
-    font-size: .8125rem;
-    color: $color-text-secondary;
+  &--secondary {
+    margin-left: 1rem;
 
-    margin-bottom: 1rem;
-    &--main {
-      @include font-bold;
+    @include tablet {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  &__contact-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
+
+  &__title {
+    @include font-bold;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    margin-bottom: .25rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include font-regular;
+    color: $color-text-primary;
+    font-size: .8125rem;
+    margin-top: 0rem;
+
+    @include tablet {
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &--link {
+      margin:0;
+      font-weight: 600;
       color: $color-interactive-elements;
     }
-
-    &-title {
-      @include font-bold;
-      font-size: .6875rem;
-      text-transform: uppercase;
-      color: $color-text-secondary;
-      margin-bottom: 0.25rem;
-
-      @include tablet {
-        display: none;
-      }
-    }
-
-    &--in-stock {
-      @include font-bold;
-      text-transform: uppercase;
-      text-align: center;
-      align-items: center;
-      color: $color-in-stock;
-      border-radius: 20px;
-      background-color: rgba(21, 132, 99, 0.17);
-      width: 5rem;
-      padding: 0.25rem 0.15rem;
-      margin-bottom: 1rem;
-    }
-
-    &--out-of-stock {
-      @include font-bold;
-      text-transform: uppercase;
-      text-align: center;
-      align-items: center;
-      color: $color-out-of-stock;
-      border-radius: 20px;
-      background-color: rgba(201, 69, 21, 0.07);
-      width: 5rem;
-      padding: 0.25rem 0.15rem;
-      margin-bottom: 1rem;
-    }
   }
+  
+  
+
 }
