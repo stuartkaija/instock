@@ -12,14 +12,12 @@ class SpecificWarehousePage extends Component {
     }
 
 
-      componentDidMount() {
-        axios.get("http://localhost:8080/warehouses/2922c286-16cd-4d43-ab98-c79f698aeab0").then((response) => {
-        // console.log(response.data)  
-        this.setState({ 
-          warehouse: response.data 
-        });
-        });
-      };
+    componentDidMount() {
+    axios.get("http://localhost:8080/warehouses/2922c286-16cd-4d43-ab98-c79f698aeab0").then((response) => {
+    this.setState({ warehouse: response.data 
+    });
+    });
+    };
     componentDidMount() {
         // axios call to get warehouse details
         axios.get('http://localhost:8080/inventory/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9') // this is hardcoded right now, will have to change
