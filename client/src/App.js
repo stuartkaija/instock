@@ -17,8 +17,8 @@ class App extends Component {
           <Route path="/warehouses" exact component={WarehousesPage} />
           <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />
           <Route path="/warehouses/warehouseId" component={WarehouseDetails} />
+          <Route path="/inventory/:inventoryId/edit" component={EditInvItemPage} />
           <Route path="/inventory" component={Inventory} />
-          <Route path="/test" component={EditInvItemPage} />
         </Switch>
         <Footer />
       </BrowserRouter>

@@ -37,7 +37,16 @@ router.post("", (req, res) => {});
 
 
 // PUT/PATCH/EDIT an inventory item (Enrique)
-router.put("", (req, res) => {});
+router.put("/:inventoryId", (req, res) => {
+  const id = req.params.inventoryId;
+  const foundInventory = readInventories().find((inventory) => id === inventory.id)
+  foundInventory["itemName"] = req.body.name;
+  foundInventory["description"] = req.body.description;
+  foundInventory["category"] = req.body.category;
+  // foundInventory["status"] = 
+  console.log(foundInventory);
+
+});
 
 // DELETE an inventory item (Enrique)
 router.delete("", (req, res) => {});
