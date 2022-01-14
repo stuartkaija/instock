@@ -11,22 +11,27 @@ class SpecificWarehousePage extends Component {
         inventory: []
     }
 
+    //  function to get correct video id from url
+    // getWarehouseId = () => {
+    //     console.log('no I can use const...')
+    // };
 
-    componentDidMount() {
-    axios.get("http://localhost:8080/warehouses/2922c286-16cd-4d43-ab98-c79f698aeab0").then((response) => {
-    this.setState({ warehouse: response.data 
-    });
-    });
-    };
-    componentDidMount() {
-        // axios call to get warehouse details
+
+      componentDidMount() {
+        axios.get("http://localhost:8080/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9").then((response) => {
+        this.setState({ 
+          warehouse: response.data 
+        })
+      })
+        .then( result => {
         axios.get('http://localhost:8080/inventory/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9') // this is hardcoded right now, will have to change
             .then((response) => {
                 this.setState({
                     inventory: response.data
                 });
             });
-    };
+          });
+        };
 
     render() {
       if (this.state.warehouse === null) {

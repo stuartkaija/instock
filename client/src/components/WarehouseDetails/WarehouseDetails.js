@@ -9,7 +9,7 @@ function WarehouseDetails({warehouse}) {
             <div>
                 <div>
                     <div className="warehouse-details__hero">
-                        <h1 className="hero__title"><img className="hero__icon" src={backIcon} alt="arrow back icon" /> </h1>
+                        <h1 className="hero__title"><img className="hero__icon" src={backIcon} alt="arrow back icon" /> {warehouse.name}</h1>
                         <img src={editIcon} alt="" className="warehouse-details__edit-icon"/>
                     </div>
                     <div className="warehouse-details__column">
