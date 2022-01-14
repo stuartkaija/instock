@@ -7,8 +7,14 @@ import "./AddInventoryItem.scss";
 class AddInventoryItem extends Component {
   state = {
     addInventoryItem: [],
+    warehouses: [],
   };
 
+  componentDidMount() {
+    axios.get("http://localhost:8080/inventory").then((response) => {
+      this.setState({ warehouses: response.data });
+    });
+  }
   addInventoryItem = (event) => {
     event.preventDefault();
 
@@ -118,6 +124,16 @@ class AddInventoryItem extends Component {
               className="item-form__input"
               placeholder="PLACEHOLDER"
             />
+
+            <select
+              name="warehouse"
+              id="warehouse"
+              className="item-form__input"
+            >
+              <option value="warehouses">
+                {this.state.warehouses.warehouseName}
+              </option>
+            </select>
           </section>
         </div>
         <div className="item-form__CTA-container">
