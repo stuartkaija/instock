@@ -34,6 +34,7 @@ class SpecificWarehousePage extends Component {
         };
 
     render() {
+      console.log(this.props.match.params);
 
 
       if (this.state.warehouse === null) {
