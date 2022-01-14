@@ -23,7 +23,10 @@ router.get('/', (req, res) => {
 
 // GET a single warehouse (Bryn)
 router.get('/:warehouseId', (req, res) => {
-    console.log("this is a GET endpoint for /warehouses/aSpecificWarehouseId")
+    const id = req.params.warehouseId;
+    const foundWarehouse = findWarehouseById(id);
+    console.log(foundWarehouse);
+    res.send(foundWarehouse);
 });
 
 // POST/CREATE a new warehouse (Bryn)
