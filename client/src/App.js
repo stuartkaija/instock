@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Component } from "react";
 import Header from "./components/Header/Header";
-import EditInvItem from "./components/EditInvItem/EditInvItem";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import Inventory from "./pages/Inventory/Inventory";
 import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehousePage";
+import EditInvItemPage from "./pages/EditInvItemPage/EditInvItemPage";
 
 class App extends Component {
   render() {
@@ -18,6 +18,7 @@ class App extends Component {
           <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />
           <Route path="/warehouses/warehouseId" component={WarehouseDetails} />
           <Route path="/inventory" component={Inventory} />
+          <Route path="/test" component={EditInvItemPage} />
         </Switch>
         <Footer />
       </BrowserRouter>
