@@ -17,7 +17,7 @@ const findWarehouseById = (id) => {
 }
 
 // GET list of all warehouses (Enrique)
-router.get('/warehouses', (req, res) => {
+router.get('/', (req, res) => {
     const warehouses = readWarehouseData();
     res.json(warehouses)
     console.log("this is a GET endpoint for /warehouses")
