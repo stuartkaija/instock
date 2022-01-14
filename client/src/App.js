@@ -4,12 +4,11 @@ import { Component } from 'react'
 import EditInvItem from "./components/EditInvItem/EditInvItem";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
-import warehouseData from '../../server/data/warehouses.json';
 
 class App extends Component {
-  state: [
+  // state: [
 
-  ]
+  // ]
 
   
   render() {
