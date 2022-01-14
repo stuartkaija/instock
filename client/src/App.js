@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Component } from "react";
 import Header from "./components/Header/Header";
-import AddWarehouseForm from './components/AddWarehouseForm/AddWarehouseForm';
+import AddWarehouseForm from './pages/AddWarehouseForm/AddWarehouseForm';
 import EditInvItem from "./components/EditInvItem/EditInvItem";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
@@ -15,8 +15,8 @@ class App extends Component {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/warehouses/add"  component={AddWarehouseForm}/>
           <Route path="/warehouses" exact component={WarehousesPage} />
+          <Route path="/warehouses/add"  component={AddWarehouseForm}/>
           <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />
           <Route path="/inventory" exact component={Inventory} />
         </Switch>
