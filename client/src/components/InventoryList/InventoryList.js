@@ -24,11 +24,7 @@ function InventoryList({ inventories }) {
                 Inventory Item
               </div>
               <div className="inventory-column__item-container">
-<<<<<<< HEAD
-                <NavLink to='inventory/:id' >
-=======
                 <NavLink to={'/inventory/'+inventory.id} className="inventory-column__item--main">
->>>>>>> develop
                 <div className="inventory-column__item--main">
                   {inventory.itemName}
                 </div>
