@@ -21,16 +21,16 @@ export default function InventoryItemPage() {
                 <div className="inventory-item__columns">
                     <div className="inventory-item__status-quantity-container">
                         <div className="inventory-item__status-quantity">
-                            <p className="inventory-item__text--title">CATEGORY</p>
-                            <p className="inventory-item__text">Electronics</p>
+                            <p className="inventory-item__text--title" >STATUS</p>
+                            <p className="inventory-item__text">Status button needed here from inventory</p>
                         </div>
                         <div className="inventory-item__status-quantity">
-                            <p className="inventory-item__text--title">CATEGORY</p>
+                            <p className="inventory-item__text--title">QUANTITY</p>
                             <p className="inventory-item__text">Electronics</p>
                         </div>
                     </div>
                     <div>
-                        <p className="inventory-item__text--title">CATEGORY</p>
+                        <p className="inventory-item__text--title">WAREHOUSE</p>
                         <p className="inventory-item__text">Electronics</p>
                     </div>
                 </div>
