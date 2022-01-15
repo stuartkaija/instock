@@ -10,10 +10,13 @@ import axios from 'axios';
 export default class AddWarehouseForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (!event.target.name.value || !event.target.address.value || !event.target.city.value || !event.target.country.value || !event.target.contactName.value ||!event.target.position.value || !event.target.phone.value || !event.target.email.value ){
            return alert("Please fill in all values."); 
         };
-        // if () 
+        if (event.target.email.value !== validRegex) {
+            return alert("Please enter valid email: example@email.com");
+        } 
            axios.post('http://localhost:8080/warehouses', {
             name: event.target.name.value,
             address: event.target.address.value,
@@ -57,7 +60,7 @@ export default class AddWarehouseForm extends Component {
                     <label className="add-warehouse-form__label">Phone Number</label>
                     <input className="add-warehouse-form__input" required placeholder="Phone Number" name="phone" id="phone" type="phone"></input>
                     <label className="add-warehouse-form__label">Email</label>
-                    <input className="add-warehouse-form__input" required placeholder="Email" name="email" id="email" type="email"></input>
+                    <input className="add-warehouse-form__input"  placeholder="Email" name="email" id="email"   ></input>
                 </div>
             </form>
             <div className="add-warehouse-form__button-container">
