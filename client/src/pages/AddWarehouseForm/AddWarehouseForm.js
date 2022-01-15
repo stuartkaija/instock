@@ -10,11 +10,17 @@ import axios from 'axios';
 export default class AddWarehouseForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
-        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        
+        const validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const validRegexPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g
+        
         if (!event.target.name.value || !event.target.address.value || !event.target.city.value || !event.target.country.value || !event.target.contactName.value ||!event.target.position.value || !event.target.phone.value || !event.target.email.value ){
            return alert("Please fill in all values."); 
         };
-        if (event.target.email.value !== validRegex) {
+        if (!event.target.phone.value.match(validRegexPhone)) {
+            return alert("Please enter valid phone number!")
+        }
+        if (!event.target.email.value.match(validRegexEmail)) {
             return alert("Please enter valid email: example@email.com");
         } 
            axios.post('http://localhost:8080/warehouses', {
@@ -28,7 +34,13 @@ export default class AddWarehouseForm extends Component {
                 phone: event.target.phone.value,
                 email: event.target.email.value
             }
-        })};
+            
+        }).then(response => {
+            alert("Warehouse added 👌")
+        }).then(response => {
+            this.props.history.push('/warehouses');
+        })
+    };
     
     render(){
    
