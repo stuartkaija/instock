@@ -1,0 +1,24 @@
+@use "../../styles/partials/variables" as*;
+
+.inventory-item {
+    &__text {
+        font-size: .625rem;
+        font-weight: 300;
+        color: $color-text-secondary;
+    }
+    &__text--title {
+        font-weight: 500;
+        color: $color-text-secondary;
+        font-size: .625rem;
+    }
+    &__columns {
+        margin: 0 .5rem;
+    }
+    &__status-quantity {
+        width: 50%;
+    }
+    &__status-quantity-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
