@@ -45,14 +45,14 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
 
 
           <div className="warehouse-buttons">
-            <Link className="warehouse-column__link">
+            <Link to={"/"} className="warehouse-column__link">
               <img
                 className="warehouse-buttons__delete"
                 src={deleteIcon}
                 alt="delete-icon"
                 />
             </Link>
-            <Link className="warehouse-column__link">
+            <Link to={"/"} className="warehouse-column__link">
               <img
                 className="warehouse-buttons__edit"
                 src={editIcon}

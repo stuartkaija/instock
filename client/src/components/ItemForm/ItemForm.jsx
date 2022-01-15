@@ -29,8 +29,6 @@ export default class ItemForm extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(event.target.radioButton.value)
         axios.put(`http://localhost:8080/inventory/${this.props.inventoryId}`, {
             name: event.target.name.value,
             description: event.target.description.value,
@@ -108,19 +106,16 @@ export default class ItemForm extends Component {
                                     name="quantity"
                                     id="quantity"
                                     className="item-form__input" 
-                                    placeholder="PLACEHOLDER"
+                                    placeholder={this.state.currentItem.quantity}
                                 />
                             </div>
                         :   " "
                     }
                     <label htmlFor="warehouse" className="item-form__label">Warehouse</label>
-                    <input 
-                        type="text" 
-                        name="warehouse"
-                        id="warehouse"
-                        className="item-form__input" 
-                        placeholder="PLACEHOLDER"
-                    />
+                    <select name="warehouse" id="warehouse" className="item-form__input" >
+                        <option value="Electronics">Electronics</option>
+                        <option value="Gear">Gear</option>
+                    </select>
                 </section>
             </div>
                 <div className="item-form__CTA-container">

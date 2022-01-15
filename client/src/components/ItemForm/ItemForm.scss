@@ -4,15 +4,17 @@
 .item-form {
     display: flex;
     flex-direction:column;
+    margin: 0rem 1rem;
     
     @include tablet {
-        padding: 2rem 0rem;
+        padding-bottom: 2rem;
     }
 
     &__wrapper {
         @include tablet {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 1rem;
         }
 
     }
@@ -27,9 +29,12 @@
         }
 
         &--secondary {
+            margin-top: 1rem;
+            border-top: .0625rem solid $color-outlines-dividers;
             @include tablet {
                 padding-left: 2rem;
                 border-left: .0625rem solid $color-outlines-dividers;
+                border-top: none;
             }
         }
     }
@@ -127,7 +132,8 @@
         display: flex;
         align-items: center;
         background-color: $color-background-primary;
-        padding: 1rem 0rem;
+        padding: 1rem;
+        margin: 0rem -1rem;
 
         @include tablet {
             justify-content: flex-end;

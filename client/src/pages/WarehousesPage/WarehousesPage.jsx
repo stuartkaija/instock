@@ -29,7 +29,7 @@ export default class WarehousesPage extends Component {
 
         return (
             <main>
-                <HeroWithSearch />
+                <HeroWithSearch title={"Warehouses"}/>
                 <TableHeader titles={["warehouse", "address", "contact name", "contact information", "actions"]}/>
                 <WarehouseListTable warehouses={this.state.warehouseList}/>
             </main>

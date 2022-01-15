@@ -66,7 +66,7 @@ router.post("/", (req, res) => {
 router.put("/:inventoryId", (req, res) => {
   const inventoryData = readInventories();
   const id = req.params.inventoryId;
-  const foundInventory = readInventories().find((inventory) => id === inventory.id)
+  const foundInventory = inventoryData.find((inventory) => id === inventory.id)
   foundInventory["itemName"] = req.body.name;
   foundInventory["description"] = req.body.description;
   foundInventory["category"] = req.body.category;
