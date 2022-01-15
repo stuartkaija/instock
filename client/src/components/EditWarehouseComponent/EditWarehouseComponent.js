@@ -11,6 +11,16 @@ export default class EditWarehouseComponent extends Component {
         warehouse: null,
     }
 
+    componentDidMount() {
+        // axios call to get warehouse details
+        axios.get("http://localhost:8080/warehouses/" + this.props.match.params.warehouseId)
+            .then((response) => {
+                this.setState({
+                    warehouse: response.data
+                });
+            });
+    };
+
     handleSubmit = (event) => {
         event.preventDefault();
 
@@ -30,21 +40,9 @@ export default class EditWarehouseComponent extends Component {
             }
         }).then((response) => {
             console.log(response);
+        }).catch((err) => {
+            console.log(err);
         });
-    };
-
-    componentDidMount() {
-        // axios call to get warehouse details
-        axios.get("http://localhost:8080/warehouses/" + this.props.match.params.warehouseId)
-            .then((response) => {
-                this.setState({
-                    warehouse: response.data
-                });
-            });
-    };
-
-    componentDidUpdate() {
-        // update to edited warehouse...maybe? not sure if this will be necessary
     };
 
     render() {

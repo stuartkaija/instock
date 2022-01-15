@@ -39,21 +39,14 @@ router.post('/', (req, res) => {
 // PUT/PATCH/EDIT a warehouse (Stuart)
 router.put('/:warehouseId/', (req, res) => {
     const warehouseData = readWarehouseData();
-    console.log(typeof(warehouseData));
-
-
     const id = req.params.warehouseId;
-    // console.log(id);
-
-    const foundWarehouse = findWarehouseById(id);
-    // console.log(foundWarehouse);
-    // const index = warehouseData.findIndex(foundWarehouse);
-    // console.log(index);
+    const foundWarehouse = warehouseData.find((warehouse) => id === warehouse.id);
 
     if (!foundWarehouse) {
         res.status(404).send("It doesn't look like that warehouse exists...");
         return
     }
+
     //  validation in case any fields are left blank
     if(req.body.name) {foundWarehouse.name = req.body.name};
     if(req.body.address) {foundWarehouse.address = req.body.address};
@@ -64,13 +57,9 @@ router.put('/:warehouseId/', (req, res) => {
     if(req.body.contact.phone) {foundWarehouse.contact.phone = req.body.contact.phone};
     if(req.body.contact.email) {foundWarehouse.contact.email = req.body.contact.email};
 
-    console.log(foundWarehouse);
+    fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
 
-    // fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
-
-
-    res.json(foundWarehouse)
-
+    res.status(200).json(foundWarehouse);
 });
 
 // DELETE a warehouse (Ian)
