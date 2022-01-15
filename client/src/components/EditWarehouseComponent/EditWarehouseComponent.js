@@ -28,7 +28,9 @@ export default class EditWarehouseComponent extends Component {
                 phone: event.target.phone.value,
                 email: event.target.email.value
             }
-        })
+        }).then((response) => {
+            console.log(response);
+        });
     };
 
     componentDidMount() {
@@ -39,7 +41,11 @@ export default class EditWarehouseComponent extends Component {
                     warehouse: response.data
                 });
             });
-    };    
+    };
+
+    componentDidUpdate() {
+        // update to edited warehouse...maybe? not sure if this will be necessary
+    };
 
     render() {
         if (this.state.warehouse === null) {
