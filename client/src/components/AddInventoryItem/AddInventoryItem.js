@@ -38,6 +38,13 @@ class AddInventoryItem extends Component {
   };
 
   render() {
+    const mapped = this.state.warehouses.map(
+      (warehouse, index) => warehouse.warehouseName
+    );
+
+    const filtered = mapped.filter(
+      (warehouseName, index) => mapped.indexOf(warehouseName) === index
+    );
     return (
       <form onSubmit={this.addInventoryItem} className="item-form">
         <div className="item-form__wrapper">
@@ -86,7 +93,7 @@ class AddInventoryItem extends Component {
                   type="radio"
                   id="status"
                   name="radiobutton"
-                  value="InStock"
+                  value="In Stock"
                   className="item-form__radio-button"
                 />
                 <label htmlFor="InStock">In stock</label>
@@ -96,7 +103,7 @@ class AddInventoryItem extends Component {
                   type="radio"
                   id="status"
                   name="radiobutton"
-                  value="OutOfStock"
+                  value="Out Of Stock"
                   className="item-form__radio-button"
                 />
                 <label htmlFor="OutOfStock">Out of stock</label>
@@ -130,9 +137,13 @@ class AddInventoryItem extends Component {
               id="warehouse"
               className="item-form__input"
             >
-              <option value="warehouses">
-                {this.state.warehouses.warehouseName}
-              </option>
+              {filtered.map((warehouse) => {
+                return (
+                  <option key={warehouse.id} warehvalue="warehouses">
+                    {warehouse}
+                  </option>
+                );
+              })}
             </select>
           </section>
         </div>
