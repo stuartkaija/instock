@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   margin-top: 1rem;
   background-color: $color-global-white;
-  border-bottom: 1px solid $color-outlines-dividers;
+  border-top: 1px solid $color-outlines-dividers;
 }
 
 .inventory-buttons {
@@ -66,6 +66,7 @@
     &--main {
       @include font-bold;
       color: $color-interactive-elements;
+      text-decoration: none;
     }
 
     &--title {

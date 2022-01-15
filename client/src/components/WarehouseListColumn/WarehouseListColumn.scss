@@ -1,0 +1,118 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-list {
+  margin: 0rem 1rem;
+  border-bottom: .0625rem solid $color-outlines-dividers;
+
+  @include tablet {
+    margin: 0rem 2rem;
+    padding: 0rem 2rem;
+  }
+}
+
+.warehouse-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: $color-global-white;
+  margin: .5rem 0rem;
+}
+
+.warehouse-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  @include tablet {
+    justify-content: space-around;
+    flex-wrap: none;
+    width: 10%;
+  }
+}
+
+.warehouse-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  width: 45%;
+  margin-bottom: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 34%;
+    margin-right: 0rem;
+    margin-top: 1rem;
+  }
+
+  &__main-link {
+    text-decoration: none;
+  }
+
+  &__link {
+    margin-top: 1rem;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      flex-grow: 1;
+    }
+  }
+
+  &__item-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.4rem;
+  }
+  
+  &__contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include font-bold;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    margin-bottom: .25rem;
+    margin-top: 0rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include font-regular;
+    color: $color-text-primary;
+    font-size: .8125rem;
+    margin-top: 0rem;
+
+    @include tablet {
+      max-width: 7rem;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &--link {
+      margin:0;
+      font-weight: 600;
+      color: $color-interactive-elements;
+    }
+  }
+  
+  
+
+}
