@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.item-form {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 48rem) {
+  .item-form {
+    padding: 2rem 0rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .item-form__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.item-form__section {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__section {
+    flex-grow: 1;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .item-form__section--secondary {
+    padding-left: 2rem;
+    border-left: 0.0625rem solid #BDC5D5;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .item-form__title {
+    font-size: 1.5rem;
+  }
+}
+.item-form__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__label {
+    font-size: 0.875rem;
+  }
+}
+.item-form__label--radio {
+  margin-bottom: 0.5rem;
+  flex-basis: 100%;
+}
+.item-form__input {
+  font-size: 0.8125rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #BDC5D5;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__input {
+    font-size: 0.875rem;
+  }
+}
+.item-form__input:focus {
+  outline: 0.0625rem solid #2E66E5;
+}
+.item-form__input::-moz-placeholder {
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-size: 0.8125rem;
+}
+.item-form__input:-ms-input-placeholder {
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-size: 0.8125rem;
+}
+.item-form__input::placeholder {
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-size: 0.8125rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__input::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .item-form__input:-ms-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .item-form__input::placeholder {
+    font-size: 0.875rem;
+  }
+}
+.item-form__input--textarea {
+  height: 5rem;
+}
+.item-form__input--textarea::-moz-placeholder {
+  font-size: 0.8125rem;
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.item-form__input--textarea:-ms-input-placeholder {
+  font-size: 0.8125rem;
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.item-form__input--textarea::placeholder {
+  font-size: 0.8125rem;
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__input--textarea::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .item-form__input--textarea:-ms-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .item-form__input--textarea::placeholder {
+    font-size: 0.875rem;
+  }
+}
+.item-form__radio-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.item-form__radio-button {
+  margin: 0rem;
+  margin-right: 0.25rem;
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__radio-button {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+}
+.item-form__radio-wrapper {
+  display: flex;
+  align-items: center;
+}
+.item-form__quantity-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.item-form__CTA-container {
+  display: flex;
+  align-items: center;
+  background-color: #F7F8F9;
+  padding: 1rem 0rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__CTA-container {
+    justify-content: flex-end;
+  }
+}
+.item-form__button {
+  flex-grow: 1;
+  margin-left: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  color: #FFFFFF;
+  background-color: #2E66E5;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__button {
+    flex-grow: 0;
+    font-size: 0.875rem;
+  }
+}
+.item-form__button-secondary {
+  flex-grow: 1;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #BDC5D5;
+  color: #BDC5D5;
+  background-color: #F7F8F9;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .item-form__button-secondary {
+    flex-grow: 0;
+    font-size: 0.875rem;
+  }
+}/*# sourceMappingURL=ItemForm.css.map */

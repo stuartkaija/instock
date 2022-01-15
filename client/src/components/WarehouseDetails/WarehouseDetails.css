@@ -1,0 +1,26 @@
+.warehouse-details__hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.0625rem solid #BDC5D5;
+  padding: 0 1rem;
+}
+.warehouse-details__edit-icon {
+  background-color: #2E66E5;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  fill: white;
+}
+.warehouse-details__column {
+  padding: 1rem;
+  font-size: 0.75rem;
+}
+.warehouse-details__details-line {
+  margin: 0.25rem 0;
+}
+.warehouse-details__contact-container {
+  display: flex;
+}/*# sourceMappingURL=WarehouseDetails.css.map */

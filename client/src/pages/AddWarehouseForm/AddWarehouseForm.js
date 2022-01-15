@@ -46,39 +46,39 @@ export default class AddWarehouseForm extends Component {
    
     
     return (
-        <div className="add-warehouse-form">
-            <div className="add-form__header">
+        <>
+            <div className="add-warehouse__header">
                 
-                <h2><NavLink to='/warehouses'><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Add New Warehouse</h2>
+                <h2><NavLink to='/warehouses'><img className="add-warehouse__back-icon" src={backImg} alt="" /></ NavLink> Add New Warehouse</h2>
             </div>
-            <form onSubmit={this.handleSubmit} id='addWarehouse'>
-                <div className="warehouse__form">
-                    <h3 className="add-warehouse-form__subtitle">Warehouse Details</h3>
-                    <label className="add-warehouse-form__label">Warehouse Name</label>
-                    <input className="add-warehouse-form__input" required placeholder="Warehouse Name" name="name" id="name"></input>
-                    <label className="add-warehouse-form__label">Street Address</label>
-                    <input className="add-warehouse-form__input" required placeholder="Street Address" name="address" id="address"></input>
-                    <label className="add-warehouse-form__label">City</label>
-                    <input className="add-warehouse-form__input" required placeholder="City" name="city" id="city"></input>
-                    <label className="add-warehouse-form__label">Country</label>
-                    <input className="add-warehouse-form__input" required placeholder="Country" name="country" id="country"></input>
+            <form onSubmit={this.handleSubmit} id='addWarehouse' className="add-warehouse__form-container">
+                <div className="add-warehouse__form add-warehouse__form--left">
+                    <h3 className="add-warehouse__subtitle">Warehouse Details</h3>
+                    <label className="add-warehouse__label">Warehouse Name</label>
+                    <input className="add-warehouse__input" required placeholder="Warehouse Name" name="name" id="name"></input>
+                    <label className="add-warehouse__label">Street Address</label>
+                    <input className="add-warehouse__input" required placeholder="Street Address" name="address" id="address"></input>
+                    <label className="add-warehouse__label">City</label>
+                    <input className="add-warehouse__input" required placeholder="City" name="city" id="city"></input>
+                    <label className="add-warehouse__label">Country</label>
+                    <input className="add-warehouse__input" required placeholder="Country" name="country" id="country"></input>
                 </div>
-                <div className="warehouse__form">
-                    <h3 className="add-warehouse-form__subtitle">Contact Details</h3>
-                    <label className="add-warehouse-form__label">Contact Name</label>
-                    <input className="add-warehouse-form__input" required placeholder="Contact Name" name="contactName" id="contactName"></input>
-                    <label className="add-warehouse-form__label">Position</label>
-                    <input className="add-warehouse-form__input" required placeholder="Position" name="position" id="position"></input>
-                    <label className="add-warehouse-form__label">Phone Number</label>
-                    <input className="add-warehouse-form__input" required placeholder="Phone Number" name="phone" id="phone" type="phone"></input>
-                    <label className="add-warehouse-form__label">Email</label>
-                    <input className="add-warehouse-form__input"  placeholder="Email" name="email" id="email"   ></input>
+                <div className="add-warehouse__form">
+                    <h3 className="add-warehouse__subtitle">Contact Details</h3>
+                    <label className="add-warehouse__label">Contact Name</label>
+                    <input className="add-warehouse__input" required placeholder="Contact Name" name="contactName" id="contactName"></input>
+                    <label className="add-warehouse__label">Position</label>
+                    <input className="add-warehouse__input" required placeholder="Position" name="position" id="position"></input>
+                    <label className="add-warehouse__label">Phone Number</label>
+                    <input className="add-warehouse__input" required placeholder="Phone Number" name="phone" id="phone" type="phone"></input>
+                    <label className="add-warehouse__label">Email</label>
+                    <input className="add-warehouse__input"  placeholder="Email" name="email" id="email"   ></input>
                 </div>
             </form>
-            <div className="add-warehouse-form__button-container">
-                <button className="add-warehouse-form__button">Cancel</button>
-                <button className="add-warehouse-form__button add-warehouse-form__button--blue" form="addWarehouse">+ Add Warehouse</button>
+            <div className="add-warehouse__button-container">
+                <button className="add-warehouse__button">Cancel</button>
+                <button className="add-warehouse__button add-warehouse__button--blue" form="addWarehouse">+ Add Warehouse</button>
             </div>
-        </div>
+        </>
     )
 }}
