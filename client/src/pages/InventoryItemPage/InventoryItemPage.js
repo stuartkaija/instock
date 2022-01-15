@@ -31,7 +31,7 @@ export default class InventoryItemPage extends Component{
         }
     return (
         <div>
-           <InventoryItemHero  title={this.state.item.itemName}/>
+           <InventoryItemHero  title={this.state.item.itemName} inventoryId={this.props.match.params.itemId}/>
             <div>
                 <div className="inventory-item__columns">
                     <div>

@@ -1,4 +1,5 @@
 const express = require("express");
+const { json } = require("express/lib/response");
 const router = express.Router();
 const fs = require("fs");
 const uniqid = require("uniqid");
@@ -62,7 +63,19 @@ router.post("/", (req, res) => {
 });
 
 // PUT/PATCH/EDIT an inventory item (Enrique)
-router.put("", (req, res) => {});
+router.put("/:inventoryId", (req, res) => {
+  const inventoryData = readInventories();
+  const id = req.params.inventoryId;
+  const foundInventory = inventoryData.find((inventory) => id === inventory.id)
+  foundInventory["itemName"] = req.body.name;
+  foundInventory["description"] = req.body.description;
+  foundInventory["category"] = req.body.category;
+  foundInventory["status"] = req.body.radioButton;
+  foundInventory["quantity"] = req.body.quantity;
+  foundInventory["warehouseName"] = req.body.warehouse;
+  fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryData));
+  res.status(200).json(foundInventory);
+});
 
 // DELETE an inventory item (Enrique)
 router.delete("", (req, res) => {});

@@ -5,8 +5,6 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import { NavLink } from 'react-router-dom';
 // import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
 
-import { NavLink } from "react-router-dom";
-
 function InventoryList({ inventories }) {
   if (inventories === undefined) {
     return <span>Loading...</span>;
