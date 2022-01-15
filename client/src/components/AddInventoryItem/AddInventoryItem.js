@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Component } from "react";
 import "./AddInventoryItem.scss";
+import uniqid from "uniqid";
 
 // will need to add state in order to hide and show "quantity" input field
 
@@ -139,7 +140,7 @@ class AddInventoryItem extends Component {
             >
               {filtered.map((warehouse) => {
                 return (
-                  <option key={warehouse.id} warehvalue="warehouses">
+                  <option key={uniqid()} warehvalue="warehouses">
                     {warehouse}
                   </option>
                 );
