@@ -38,14 +38,13 @@ class SpecificWarehousePage extends Component {
 
     render() {
 
-
       if (this.state.warehouse === null) {
         return <p>Choo chooo, Here We Go!!</p>
       }
         return (
             <div>
                 <WarehouseDetails warehouse={this.state.warehouse}/>
-                <InventoryList inventories={this.state.inventory} />
+                <InventoryList inventories={this.state.inventory} specificWarehouse={this.props.match.params} />
             </div>
         )
     }

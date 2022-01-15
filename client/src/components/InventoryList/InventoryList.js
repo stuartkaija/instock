@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import { NavLink } from 'react-router-dom';
 // import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
 
-function InventoryList({ inventories }) {
+function InventoryList({ inventories, specificWarehouse }) {
   if (inventories === undefined) {
     return <span>Loading...</span>;
   }
@@ -52,11 +52,13 @@ function InventoryList({ inventories }) {
                 <div className="inventory-column__item">
                   {inventory.quantity}
                 </div>
-
-                <div className="inventory-column__item--title">Warehouse</div>
-                <div className={"inventory-column__item"}>
-                  {inventory.warehouseName}
+                <div className={specificWarehouse ? "hidden" : ""}>
+                  <div className="inventory-column__item--title">Warehouse</div>
+                  <div className={"inventory-column__item"}>
+                    {inventory.warehouseName}
+                  </div>
                 </div>
+
               </div>
 
               <div className="inventory-buttons">
