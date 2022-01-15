@@ -12,7 +12,8 @@ export default class AddWarehouseForm extends Component {
         event.preventDefault();
         if (!event.target.name.value || !event.target.address.value || !event.target.city.value || !event.target.country.value || !event.target.contactName.value ||!event.target.position.value || !event.target.phone.value || !event.target.email.value ){
            return alert("Please fill in all values."); 
-    }
+        };
+        // if () 
            axios.post('http://localhost:8080/warehouses', {
             name: event.target.name.value,
             address: event.target.address.value,
@@ -39,24 +40,24 @@ export default class AddWarehouseForm extends Component {
                 <div className="warehouse__form">
                     <h3 className="add-warehouse-form__subtitle">Warehouse Details</h3>
                     <label className="add-warehouse-form__label">Warehouse Name</label>
-                    <input className="add-warehouse-form__input" placeholder="Warehouse Name" name="name" id="name"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Warehouse Name" name="name" id="name"></input>
                     <label className="add-warehouse-form__label">Street Address</label>
-                    <input className="add-warehouse-form__input" placeholder="Street Address" name="address" id="address"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Street Address" name="address" id="address"></input>
                     <label className="add-warehouse-form__label">City</label>
-                    <input className="add-warehouse-form__input" placeholder="City" name="city" id="city"></input>
+                    <input className="add-warehouse-form__input" required placeholder="City" name="city" id="city"></input>
                     <label className="add-warehouse-form__label">Country</label>
-                    <input className="add-warehouse-form__input" placeholder="Country" name="country" id="country"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Country" name="country" id="country"></input>
                 </div>
                 <div className="warehouse__form">
                     <h3 className="add-warehouse-form__subtitle">Contact Details</h3>
                     <label className="add-warehouse-form__label">Contact Name</label>
-                    <input className="add-warehouse-form__input" placeholder="Contact Name" name="contactName" id="contactName"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Contact Name" name="contactName" id="contactName"></input>
                     <label className="add-warehouse-form__label">Position</label>
-                    <input className="add-warehouse-form__input" placeholder="Position" name="position" id="position"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Position" name="position" id="position"></input>
                     <label className="add-warehouse-form__label">Phone Number</label>
-                    <input className="add-warehouse-form__input" placeholder="Phone Number" name="phone" id="phone"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Phone Number" name="phone" id="phone" type="phone"></input>
                     <label className="add-warehouse-form__label">Email</label>
-                    <input className="add-warehouse-form__input" placeholder="Email" name="email" id="email"></input>
+                    <input className="add-warehouse-form__input" required placeholder="Email" name="email" id="email" type="email"></input>
                 </div>
             </form>
             <div className="add-warehouse-form__button-container">
