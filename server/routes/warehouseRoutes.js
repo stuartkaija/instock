@@ -39,13 +39,16 @@ router.post('/', (req, res) => {
 // PUT/PATCH/EDIT a warehouse (Stuart)
 router.put('/:warehouseId/', (req, res) => {
     const warehouseData = readWarehouseData();
-    console.log(warehouseData);
+    console.log(typeof(warehouseData));
+
 
     const id = req.params.warehouseId;
-    console.log(id);
+    // console.log(id);
 
     const foundWarehouse = findWarehouseById(id);
-    console.log(foundWarehouse);
+    // console.log(foundWarehouse);
+    // const index = warehouseData.findIndex(foundWarehouse);
+    // console.log(index);
 
     if (!foundWarehouse) {
         res.status(404).send("It doesn't look like that warehouse exists...");
@@ -61,11 +64,12 @@ router.put('/:warehouseId/', (req, res) => {
     if(req.body.contact.phone) {foundWarehouse.contact.phone = req.body.contact.phone};
     if(req.body.contact.email) {foundWarehouse.contact.email = req.body.contact.email};
 
-    fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
-
     console.log(foundWarehouse);
 
-    res.send(foundWarehouse)
+    // fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
+
+
+    res.json(foundWarehouse)
 
 });
 
