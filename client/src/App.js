@@ -5,6 +5,7 @@ import EditInvItem from "./components/EditInvItem/EditInvItem";
 import Footer from "./components/Footer/Footer";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import Inventory from "./pages/Inventory/Inventory";
+import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehousePage";
 
@@ -15,6 +16,8 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/warehouses" exact component={WarehousesPage} />
+          <Route path="/warehouses/warehouseId" component={WarehouseDetails} />
+          <Route path="/inventory/AddNew" exact component={AddInventoryItem} />
           <Route path="/inventory" exact component={Inventory} />
           <Route path="/inventory/:itemId" component={InventoryItemPage}/>
           <Route path="/warehouses/:warehouseId" component={SpecificWarehousePage} />

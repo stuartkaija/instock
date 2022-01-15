@@ -1,9 +1,9 @@
 import React from "react";
 import icon from "../../assets/icons/sort-24px.svg";
-import "./TableHeader.scss";
+import "./InventoryTableHeader.scss";
 import uniqid from "uniqid";
 
-function TableHeader({ titles, inventoryHeaders }) {
+function InventoryTableHeader({ inventoryHeaders }) {
   const tableTitles = inventoryHeaders;
   return (
     <div className="table-header">
@@ -19,4 +19,4 @@ function TableHeader({ titles, inventoryHeaders }) {
   );
 }
 
-export default TableHeader;
+export default InventoryTableHeader;
