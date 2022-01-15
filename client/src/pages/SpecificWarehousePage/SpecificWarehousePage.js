@@ -11,15 +11,6 @@ class SpecificWarehousePage extends Component {
         inventory: []
     }
 
-    //  function to get correct video id from url   **not sure if this is necessary, waiting for main warehouse page list to be complete
-    // getWarehouseId = () => {
-    //     const warehouseId = this.state.warehouse.id;
-    //     return warehouseId
-    // };
-
-
-    
-
       componentDidMount() {
         axios.get("http://localhost:8080/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9").then((response) => {
         this.setState({ 
