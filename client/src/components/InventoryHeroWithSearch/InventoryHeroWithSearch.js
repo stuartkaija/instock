@@ -1,11 +1,12 @@
 import React from "react";
 import searchIcon from "../../assets/icons/search-24px.svg";
-import "./HeroWithSearch.scss";
+import "./InventoryHeroWithSearch.scss";
+import { NavLink } from "react-router-dom";
 
-function HeroWithSearch({ title }) {
+function InventoryHeroWithSearch({ inventoryTitle }) {
   return (
     <div className="hero">
-      <h1 className="hero__title">{title}</h1>
+      <h1 className="hero__title">{inventoryTitle}</h1>
       <div className="hero__search-box">
         <input
           type="search"
@@ -20,9 +21,11 @@ function HeroWithSearch({ title }) {
           className="hero__search-box-icon"
         />
       </div>
-      <button className="hero__button">+ Add New Warehouse</button>
+      <NavLink to="/inventory/AddNew">
+        <button className="hero__button">+ Add New Inventory Item</button>
+      </NavLink>
     </div>
   );
 }
 
-export default HeroWithSearch;
+export default InventoryHeroWithSearch;
