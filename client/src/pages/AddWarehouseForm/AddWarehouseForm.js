@@ -10,8 +10,10 @@ import axios from 'axios';
 export default class AddWarehouseForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
-
-        axios.post('http://localhost:8080/warehouses', {
+        if (!event.target.name.value || !event.target.address.value || !event.target.city.value || !event.target.country.value || !event.target.contactName.value ||!event.target.position.value || !event.target.phone.value || !event.target.email.value ){
+           return alert("Please fill in all values."); 
+    }
+           axios.post('http://localhost:8080/warehouses', {
             name: event.target.name.value,
             address: event.target.address.value,
             city: event.target.city.value,
