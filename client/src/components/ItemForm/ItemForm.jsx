@@ -7,24 +7,30 @@ import "./ItemForm.scss";
 export default class ItemForm extends Component {
     state = {
         currentItem: null,
+        isInStock: null,
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/inventory/${this.props.inventoryId}`)
+        axios.get(`http://localhost:8080/inventory/${this.props.inventoryId}/item`)
             .then((response) => {
                 this.setState({
-                    currentItem: response.data
+                    currentItem: response.data,
+                    isInStock: response.data.status === "In Stock" ? true : false,
+                    stockValue: response.data.status
                 })
-                console.log(response.data);
             })
             .catch((err) => {
                 console.log(err)
             });
-            
+        axios.get("http://localhost:8080/inventory")
+            .then((response) => {
+
+            })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log(event.target.radioButton.value)
         axios.put(`http://localhost:8080/inventory/${this.props.inventoryId}`, {
             name: event.target.name.value,
             description: event.target.description.value,
@@ -45,6 +51,10 @@ export default class ItemForm extends Component {
         window.location.reload();
     }
 
+    handleRadio = () => {
+        this.state.isInStock ? this.setState({isInStock: false, stockValue: "Out of Stock"}) : this.setState({isInStock: true, stockValue: "In Stock"});
+    }
+
     render() {
 
         if(this.state.currentItem === null) {
@@ -61,15 +71,15 @@ export default class ItemForm extends Component {
                         type="text" 
                         name="name"
                         id="name"
-                        className="item-form__input" 
-                        placeholder="PLACEHOLDER"
+                        className="item-form__input"
+                        placeholder={this.state.currentItem.itemName}
                     />
                     <label htmlFor="description" className="item-form__label">Description</label>
                     <textarea 
                         name="description" 
                         id="description" 
                         className="item-form__input item-form__input--textarea"
-                        placeholder="PLACEHOLDER">
+                        placeholder={this.state.currentItem.description}>
                     </textarea>
                     <label htmlFor="category" className="item-form__label">Category</label>
                     <select name="category" id="category" className="item-form__input" >
@@ -79,39 +89,30 @@ export default class ItemForm extends Component {
                 </section>
                 <section className="item-form__section item-form__section--secondary">
                 <h3 className="item-form__title">Item Availability</h3>
-                    <div className="item-form__radio-section">
-                        <p className="item-form__label item-form__label--radio">Status</p>
-                        <div className="item-form__radio-wrapper">
-                            <input 
-                                type="radio" 
-                                id="InStock" 
-                                name="radioButton" 
-                                value="In Stock"
-                                className="item-form__radio-button"
-                            />
-                            <label htmlFor="InStock">In stock</label>
-                        </div>
-                        <div className="item-form__radio-wrapper">    
-                            <input 
-                                type="radio" 
-                                id="OutOfStock" 
-                                name="radioButton" 
-                                value="Out of Stock"
-                                className="item-form__radio-button"
-                            />
-                            <label htmlFor="OutOfStock">Out of stock</label>
-                        </div>
-                    </div>
-                    <div className="item-form__quantity-wrapper">
-                        <label htmlFor="quantity" className="item-form__label">Quantity</label>
-                        <input 
-                            type="number" 
-                            name="quantity"
-                            id="quantity"
-                            className="item-form__input" 
-                            placeholder="PLACEHOLDER"
-                        />
-                    </div>
+                <div className="item-form__radio-section">
+                                <p className="item-form__label item-form__label--radio">Status</p>
+                                <div className="item-form__radio-wrapper">
+                                    <input onChange={this.handleRadio} defaultChecked={!this.isInStock} type="radio" id="InStock" name="radioButton" value={this.state.stockValue} className="item-form__radio-button"/>
+                                    <label htmlFor="InStock">In stock</label>
+                                </div>
+                                <div className="item-form__radio-wrapper">  
+                                    <input onChange={this.handleRadio} defaultChecked={this.isInStock} type="radio" id="OutOfStock" name="radioButton" value={this.state.stockValue}  className="item-form__radio-button" />
+                                    <label htmlFor="OutOfStock">Out of stock</label>
+                                </div>
+                            </div>
+                    {this.state.isInStock
+                        ?   <div className="item-form__quantity-wrapper">
+                                <label htmlFor="quantity" className="item-form__label">Quantity</label>
+                                <input 
+                                    type="number" 
+                                    name="quantity"
+                                    id="quantity"
+                                    className="item-form__input" 
+                                    placeholder="PLACEHOLDER"
+                                />
+                            </div>
+                        :   " "
+                    }
                     <label htmlFor="warehouse" className="item-form__label">Warehouse</label>
                     <input 
                         type="text" 
