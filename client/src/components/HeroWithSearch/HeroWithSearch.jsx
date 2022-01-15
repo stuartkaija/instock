@@ -1,6 +1,7 @@
 import React from 'react'
 import searchIcon from "../../assets/icons/search-24px.svg";
 import "./HeroWithSearch.scss";
+import { Link } from 'react-router-dom';
 
 function HeroWithSearch() {
     return (
@@ -18,9 +19,11 @@ function HeroWithSearch() {
                     />
                     <img src={searchIcon} alt="search icon" className="hero__search-box-icon" />
                 </div>
+                <Link to='warehouses/add'>
                 <button className="hero__button">
                     + Add New Warehouse
                 </button>
+                </Link>
         </div>
     )
 }
