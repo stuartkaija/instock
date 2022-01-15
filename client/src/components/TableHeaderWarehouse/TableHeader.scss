@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.table-header {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 2rem;
+        margin: 0rem 2rem;
+        background-color: $color-background-primary;
+    }
+
+    @include desktop {
+        padding: 0rem 4rem;
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__title {
+        margin-right: .25rem;
+        font-size: .75rem;
+        line-height: 1.125rem;
+        text-transform: uppercase;
+        color: $color-text-secondary;
+    }
+}

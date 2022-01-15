@@ -1,0 +1,187 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as*;
+
+.item-form {
+    display: flex;
+    flex-direction:column;
+    margin: 0rem 1rem;
+    
+    @include tablet {
+        padding-bottom: 2rem;
+    }
+
+    &__wrapper {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    &__section {
+        display: flex;
+        flex-direction:column;
+        
+        @include tablet {
+            flex-grow: 1;
+            padding-right: 2rem;
+        }
+
+        &--secondary {
+            margin-top: 1rem;
+            border-top: .0625rem solid $color-outlines-dividers;
+            @include tablet {
+                padding-left: 2rem;
+                border-left: .0625rem solid $color-outlines-dividers;
+                border-top: none;
+            }
+        }
+    }
+
+    &__title {
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__label {
+        font-size: .8125rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: .875rem;
+        }
+
+        &--radio {
+            margin-bottom: .5rem;
+            flex-basis: 100%;
+        }
+    }
+
+    &__input {
+        font-size: .8125rem;
+        border-radius: 1.25rem;
+        border: .0625rem solid $color-outlines-dividers;
+        padding: .5rem;
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            font-size: .875rem;
+        }
+
+        &:focus {
+            outline: .0625rem solid $color-interactive-elements;
+        }
+
+        &::placeholder {
+            @include font-regular;
+            font-size: .8125rem;
+
+            @include tablet {
+                font-size: .875rem;
+            }
+        }
+
+        &--textarea {
+            height: 5rem;
+
+            &::placeholder {
+                font-size: .8125rem;
+                @include font-regular;
+
+                @include tablet {
+                    font-size: .875rem;
+                }
+            }
+        }
+    }
+
+    &__radio-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
+    &__radio-button {
+        margin: 0rem;
+        margin-right: .25rem;
+        width: .8125rem;
+        height: .8125rem;
+
+        @include tablet {
+            height: .875rem;
+            width: .875rem;
+        }
+
+    }
+
+    &__radio-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__quantity-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__CTA-container {
+        display: flex;
+        align-items: center;
+        background-color: $color-background-primary;
+        padding: 1rem;
+        margin: 0rem -1rem;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+
+    &__button {
+        flex-grow: 1;
+        margin-left: 1rem;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+        border-radius: 1.25rem;
+        border: none;
+        color: $color-global-white;
+        background-color: $color-interactive-elements;
+        font-weight: 600;
+        padding: .5rem 1rem;
+
+        &:hover {
+            background-color: $color-cta-and-background;
+        }
+
+        @include tablet {
+            flex-grow: 0;
+            font-size: .875rem;
+        }
+    }
+
+    &__button-secondary {
+        flex-grow: 1;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+        border-radius: 1.25rem;
+        border: .0625rem solid $color-outlines-dividers;
+        color: $color-outlines-dividers;
+        background-color: $color-background-primary;
+        font-weight: 600;
+        padding: .5rem 1rem;
+
+        &:hover {
+            border: .0625rem solid $color-interactive-elements;
+            color: $color-interactive-elements;
+
+        }
+
+        @include tablet {
+            flex-grow: 0;
+            font-size: .875rem;
+        }
+    }
+}
