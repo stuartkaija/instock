@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import uniqid from "uniqid";
 import "./ItemForm.scss";
 
 
 
 export default class ItemForm extends Component {
     state = {
+        warehouses: [],
         currentItem: null,
         isInStock: null,
     }
@@ -24,7 +26,7 @@ export default class ItemForm extends Component {
             });
         axios.get("http://localhost:8080/inventory")
             .then((response) => {
-
+                this.setState({ warehouses: response.data });
             })
     }
 
@@ -54,11 +56,15 @@ export default class ItemForm extends Component {
     }
 
     render() {
-
+        
         if(this.state.currentItem === null) {
             return <div>Loading...</div>
         }
 
+        const mapped = this.state.warehouses.map((warehouse) => warehouse.warehouseName);
+
+        const filtered = mapped.filter((warehouseName, index) => mapped.indexOf(warehouseName === index));
+        
         return (
             <form className="item-form" onSubmit={this.handleSubmit}>
             <div className="item-form__wrapper">
@@ -113,8 +119,13 @@ export default class ItemForm extends Component {
                     }
                     <label htmlFor="warehouse" className="item-form__label">Warehouse</label>
                     <select name="warehouse" id="warehouse" className="item-form__input" >
-                        <option value="Electronics">Electronics</option>
-                        <option value="Gear">Gear</option>
+                        {filtered.map((warehouse) => {
+                            return(
+                                <option key={uniqid()} value={warehouse} >
+                                    {warehouse}
+                                </option>
+                            )
+                        })}
                     </select>
                 </section>
             </div>
