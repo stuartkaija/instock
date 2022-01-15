@@ -37,22 +37,36 @@ router.post('/', (req, res) => {
 });
 
 // PUT/PATCH/EDIT a warehouse (Stuart)
-router.put('/:warehouseId', (req, res) => {
+router.put('/:warehouseId/', (req, res) => {
+    const warehouseData = readWarehouseData();
+    console.log(warehouseData);
+
     const id = req.params.warehouseId;
+    console.log(id);
+
     const foundWarehouse = findWarehouseById(id);
-    console.log(req.body);
-    const editedWarehouse = req.body
+    console.log(foundWarehouse);
 
     if (!foundWarehouse) {
         res.status(404).send("It doesn't look like that warehouse exists...");
         return
     }
+    //  validation in case any fields are left blank
+    if(req.body.name) {foundWarehouse.name = req.body.name};
+    if(req.body.address) {foundWarehouse.address = req.body.address};
+    if(req.body.city) {foundWarehouse.city = req.body.city};
+    if(req.body.country) {foundWarehouse.country = req.body.country};
+    if(req.body.contact.name) {foundWarehouse.contact.name = req.body.contact.name};
+    if(req.body.contact.position) {foundWarehouse.contact.position = req.body.contact.position};
+    if(req.body.contact.phone) {foundWarehouse.contact.phone = req.body.contact.phone};
+    if(req.body.contact.email) {foundWarehouse.contact.email = req.body.contact.email};
 
-    // I think we need validation to ensure edited information is good
-
-    res.send('This is a test for the PUT endpoint')
+    fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
 
     console.log(foundWarehouse);
+
+    res.send(foundWarehouse)
+
 });
 
 // DELETE a warehouse (Ian)
