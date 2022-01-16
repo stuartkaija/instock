@@ -44,6 +44,7 @@ class SpecificWarehousePage extends Component {
       return (
           <div>
               <WarehouseDetails warehouse={this.state.warehouse}/>
+              <TableHeader titles={["warehouse", "address", "contact name", "contact information", "actions"]}/>
               <InventoryList inventories={this.state.inventory} />
           </div>
       )
