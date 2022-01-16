@@ -20,7 +20,7 @@
 
 .warehouse-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   background-color: $color-global-white;
   margin: .5rem 0rem;
@@ -42,6 +42,11 @@
     text-align: center;
     width: 12%;
     margin:0rem;
+    margin-left: 7vw;
+  }
+
+  @include desktop {
+    margin-left: 5vw;
   }
 
   &__delete {
@@ -62,7 +67,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 34%;
-    margin-right: 0rem;
+    margin-right: 3.5vw;
     margin-top: 1rem;
   }
 
@@ -93,6 +98,13 @@
   &__contact-container {
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      margin-left: 3vw;
+    }
+    @include desktop {
+      margin-left: 6.5vw;
+    }
   }
 
   &__title {
@@ -116,6 +128,7 @@
 
     @include tablet {
       max-width: 7rem;
+      margin: 0rem;
     }
 
     &-link {
@@ -126,6 +139,18 @@
       margin:0;
       font-weight: 600;
       color: $color-interactive-elements;
+    }
+
+    &--address {
+      @include tablet {
+        max-width: 45%;
+      }
+    }
+
+    &--name {
+      @include tablet {
+        min-width: 6rem;
+      }
     }
   }
   

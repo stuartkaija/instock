@@ -30,14 +30,14 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
             <h4 className="warehouse-column__title">
               Address
             </h4>
-            <address className="warehouse-column__text">
+            <address className="warehouse-column__text warehouse-column__text--address">
               {address}, {city}, {country}
             </address>
         </div>
 
           <div className="warehouse-column">
             <h4 className="warehouse-column__title">contact name</h4>
-            <h5 className="warehouse-column__text">{contactName}</h5>
+            <h5 className="warehouse-column__text warehouse-column__text--name">{contactName}</h5>
             <h4 className="warehouse-column__title">contact information</h4>
             <div className="warehouse-column__contact-container">
               <a href={`tel:${contactPhone}`} className="warehouse-column__text warehouse-column__text-link" >

@@ -5,10 +5,10 @@ import "./HeroVanilla.scss";
 
 function HeroVanilla({ title, inventoryId }) {
     return (
-        <div className="warehouse-details__hero">
-            <h1 className="hero__title">
+        <div className="hero-vanilla">
+            <h1 className="hero-vanilla__title">
                 <Link to={"/inventory/" + inventoryId}>
-                    <img className="hero__icon" src={icon} alt="arrow back icon" />
+                    <img className="hero-vanilla__icon" src={icon} alt="arrow back icon" />
                 </Link> {title}</h1>
         </div>
     )
