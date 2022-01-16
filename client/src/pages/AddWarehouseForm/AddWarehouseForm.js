@@ -21,10 +21,8 @@ export default class AddWarehouseForm extends Component {
             input[i].style.borderColor = "red";
             }
         
-           //    console.log(input.name.classList);
-        //    const values = ['name', 'address', 'city', 'country', 'contactName', 'position', 'phone', 'email'];
+           
         const span = document.getElementsByTagName('span');
-        console.log(span);
         for (let i = 0; i<span.length; i++) {
             console.log(span[i])
             span[i].classList.remove("form-valid");
