@@ -105,7 +105,7 @@ router.delete("/:inventoryId", (req, res) => {
   fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryData));
 
   // send success to client 
-  res.status(202).send("inventory item deleted")
+  res.status(202).send("inventory item deleted");
 });
 
 module.exports = router;
