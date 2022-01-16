@@ -3,7 +3,6 @@ import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import { NavLink } from 'react-router-dom';
-// import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
 
 function InventoryList({ inventories }) {
   if (inventories === undefined) {
