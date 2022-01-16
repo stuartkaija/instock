@@ -36,7 +36,7 @@ class AddInventoryItem extends Component {
     }
     return alert("Please fill in all values."); 
   };
-  
+
     let body = {
       itemName: event.target.itemName.value,
       description: event.target.description.value,
@@ -52,7 +52,7 @@ class AddInventoryItem extends Component {
 
       // ALERT to notify of successful upload
       alert("New Inventory Item Successfully Added");
-      window.location.href = "/";
+      window.location.href = "/inventory";
     });
   };
 
