@@ -2,31 +2,31 @@
 @use "../../styles/partials/mixins" as *;
 
 .table-header {
-    display: none;
+  display: none;
 
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+    margin: 0rem 0rem;
+    background-color: $color-background-primary;
+  }
+
+  @include desktop {
+    padding: 0rem 4rem;
+  }
+
+  &__container {
     @include tablet {
-        display: flex;
-        justify-content: space-between;
-        padding: 0rem 2rem;
-        margin: 0rem 2rem;
-        background-color: $color-background-primary;
+      display: flex;
     }
+  }
 
-    @include desktop {
-        padding: 0rem 4rem;
-    }
-
-    &__container {
-        @include tablet {
-            display: flex;
-        }
-    }
-
-    &__title {
-        margin-right: .25rem;
-        font-size: .75rem;
-        line-height: 1.125rem;
-        text-transform: uppercase;
-        color: $color-text-secondary;
-    }
+  &__title {
+    margin-right: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+  }
 }

@@ -3,6 +3,25 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+.inventory-modal {
+  position: absolute;
+  top: 10rem;
+  left: 5rem;
+  right: 5rem;
+  bottom: 45rem;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+}
+
+.inventory-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(19, 24, 44, 0.5);
+}
 .inventory-list {
   margin: 0rem 1rem;
 }
@@ -13,7 +32,7 @@
   flex-wrap: wrap;
   margin-top: 1rem;
   background-color: $color-global-white;
-  border-top: 1px solid $color-outlines-dividers;
+  border-bottom: 1px solid $color-outlines-dividers;
 }
 
 .inventory-buttons {
@@ -45,7 +64,7 @@
 
   @include tablet {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 40%;
 
     margin-right: 0rem;
