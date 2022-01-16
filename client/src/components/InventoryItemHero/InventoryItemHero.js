@@ -13,6 +13,12 @@ export default function InventoryItemHero({title, inventoryId}) {
                 <NavLink to={`/inventory/${inventoryId}/edit`}>
                     <img src={editIcon} alt="" className="warehouse-details__edit-icon"/>
                 </NavLink>
+                <NavLink to={`/inventory/${inventoryId}/edit`} className="edit-link">
+                    <div className="warehouse-details__edit-icon--tablet">
+                    <img src={editIcon} alt="" />
+                    <span>Edit</span>
+                    </div>
+                </NavLink>
         </div>
     )
 }
