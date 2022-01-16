@@ -7,7 +7,7 @@ function HeroVanilla({ title, inventoryId }) {
     return (
         <div className="warehouse-details__hero">
             <h1 className="hero__title">
-                <Link to='/inventory/ + {inventoryId}'>
+                <Link to={"/inventory/" + inventoryId}>
                     <img className="hero__icon" src={icon} alt="arrow back icon" />
                 </Link> {title}</h1>
         </div>
