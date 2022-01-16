@@ -19,6 +19,7 @@
         fill: white;
     }
     &__container {
+        padding: 1rem 0rem;
         background-color: $color-global-white;
         display: flex;
         flex-direction: column;
@@ -31,11 +32,18 @@
         padding: 1rem;
         font-size: 1rem;
         // font-weight: 300;
+        @include tablet {
+            padding: 0rem 1rem;
+        }
     }
     &__details-line {
         margin: .25rem 0;
     }
     &__contact-container {
         display: flex;
+
+        @include tablet {
+            border-left: 0.1rem solid $color-outlines-dividers;
+        }
     }
 }
