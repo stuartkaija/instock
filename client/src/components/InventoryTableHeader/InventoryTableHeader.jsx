@@ -6,11 +6,11 @@ import uniqid from "uniqid";
 function InventoryTableHeader({ inventoryHeaders }) {
   const tableTitles = inventoryHeaders;
   return (
-    <div className="table-header">
+    <div className="inventory-table-header">
       {tableTitles.map((title) => {
         return (
-          <div className="table-header__container" key={uniqid()}>
-            <h3 className="table-header__title">{title}</h3>
+          <div className="inventory-table-header__container" key={uniqid()}>
+            <h3 className="inventory-table-header__title">{title}</h3>
             <img src={icon} alt="sort icon" />
           </div>
         );
