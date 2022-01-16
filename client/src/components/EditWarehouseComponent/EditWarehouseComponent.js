@@ -56,7 +56,7 @@ export default class EditWarehouseComponent extends Component {
         })
 
         .then(alert('Warehouse Edited Successfully!'))
-        .then(this.props.history.push("/warehouses/" + this.props.match.params.warehouseId))
+        .then(this.props.history.push("/warehouses/" + warehouseId))
         .catch((err) => {
             console.log(err)
         })

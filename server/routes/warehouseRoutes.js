@@ -82,6 +82,11 @@ router.put('/:warehouseId/', (req, res) => {
 
     fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
 
+    // updating inventory data with newly edited warehouse info
+    const inventoryData = fs.readFileSync("./data/inventories.json");
+    const inventoryDataParsed = JSON.parse(inventoryData);
+    
+
     res.status(200).json(foundWarehouse);
 });
 
