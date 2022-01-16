@@ -30,7 +30,7 @@ export default class InventoryItemPage extends Component{
         return <span>Loading...</span>;
         }
     return (
-        <div>
+        <div className="main">
            <InventoryItemHero  title={this.state.item.itemName} inventoryId={this.props.match.params.itemId}/>
             <div>
                 <div className="inventory-item__columns">

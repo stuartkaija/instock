@@ -41,7 +41,7 @@ class SpecificWarehousePage extends Component {
           
 
       return (
-          <div>
+          <div className="main">
               <WarehouseDetails warehouse={this.state.warehouse}/>
               <InventoryList inventories={this.state.inventory} />
           </div>
