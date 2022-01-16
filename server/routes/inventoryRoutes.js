@@ -68,18 +68,15 @@ router.put("/:inventoryId", (req, res) => {
   const inventoryData = readInventories();
 
   const id = req.params.inventoryId;
-  // find the specific inventory by id from that data set
-  const foundInventory = inventoryData.find((inventory) => id === inventory.id);
-
-  // mutate the inventory
-  foundInventory["itemName"] = req.body.name;
-  foundInventory["description"] = req.body.description;
-  foundInventory["category"] = req.body.category;
-  foundInventory["status"] = req.body.radioButton;
-  foundInventory["quantity"] = req.body.quantity;
-  foundInventory["warehouseName"] = req.body.warehouse;
-
-  //rewrite the data into the json file, including the mutated inventory item
+  const foundInventory = inventoryData.find((inventory) => id === inventory.id)
+  console.log(foundInventory);
+  if (req.body.name) {foundInventory["itemName"] = req.body.name};
+  if (req.body.description) {foundInventory["description"] = req.body.description};
+  if (req.body.category) {foundInventory["category"] = req.body.category};
+  if (req.body.radioButton) {foundInventory["status"] = req.body.radioButton};
+  if (req.body.quantity) {foundInventory["quantity"] = req.body.quantity};
+  if (req.body.warehouse) {foundInventory["warehouseName"] = req.body.warehouse};
+  console.log(foundInventory);
   fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryData));
 
 
