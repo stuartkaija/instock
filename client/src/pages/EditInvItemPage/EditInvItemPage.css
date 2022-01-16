@@ -12,17 +12,25 @@
   font-style: normal;
   font-display: swap;
 }
-*,
-**::before,
-**::after {
-  box-sizing: border-box;
+.main {
+  position: relative;
+  bottom: 3rem;
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px;
+  border-color: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
-body {
-  font-family: "Titillium Web";
-  margin: 0rem;
+@media screen and (min-width: 48rem) {
+  .main {
+    margin: 0 2rem;
+    bottom: 5rem;
+  }
 }
-
-.main-container {
-  background-color: #F7F8F9;
-}/*# sourceMappingURL=App.css.map */
+@media screen and (min-width: 80rem) {
+  .main {
+    margin: 0 10rem;
+  }
+}/*# sourceMappingURL=EditInvItemPage.css.map */

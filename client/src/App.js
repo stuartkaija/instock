@@ -18,8 +18,9 @@ class App extends Component {
         <div className="main-container">
         <Header />
         <Switch>
+          <Route path="/" exact component={WarehousesPage} />
           <Route path="/warehouses" exact component={WarehousesPage} />
-          <Route path="/warehouses/add" exact component={AddWarehouseForm} />
+          <Route path="/warehouses/add" exact component={AddWarehouseForm}/>
           <Route
             path="/warehouses/:warehouseId"
             exact

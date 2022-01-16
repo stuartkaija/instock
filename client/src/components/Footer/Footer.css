@@ -1,6 +1,13 @@
 .footer {
+  padding-bottom: 2rem;
+  font-size: 1rem;
+  margin-top: 0;
+  color: #5C667E;
+}
+.footer__container {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-size: 0.75rem;
+  background-color: #F7F8F9;
 }/*# sourceMappingURL=Footer.css.map */
