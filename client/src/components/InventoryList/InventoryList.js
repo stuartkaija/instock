@@ -80,12 +80,12 @@ function InventoryList({ inventories }) {
                   src={deleteIcon}
                   alt="delete-icon"
                 />
-                <NavLink to={"/inventory/" + inventory.id + "/edit"} >
-                <img
-                  className="inventory-buttons__edit"
-                  src={editIcon}
-                  alt="edit-icon"
-                />
+                <NavLink to={"/inventory/" + inventory.id + "/edit"}>
+                  <img
+                    className="inventory-buttons__edit"
+                    src={editIcon}
+                    alt="edit-icon"
+                  />
                 </NavLink>
               </div>
             </div>
@@ -110,8 +110,14 @@ function InventoryList({ inventories }) {
               ${name} from the inventory list. You won't be able to undo this action`}
         </span>
         <div>
-          <button onClick={() => setModalIsOpen(false)}>Cancel</button>
           <button
+            className="inventory-modal__button--cancel"
+            onClick={() => setModalIsOpen(false)}
+          >
+            Cancel
+          </button>
+          <button
+            className="inventory-modal__button--delete"
             onClick={() => {
               axios.delete(`http://localhost:8080/inventory/${itemId}`);
               alert("Item Successfully Deleted");

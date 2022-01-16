@@ -4,14 +4,40 @@
 @use "../../styles/partials/variables" as *;
 
 .inventory-modal {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 10rem;
   left: 5rem;
   right: 5rem;
-  bottom: 45rem;
+  bottom: 55rem;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   background-color: #ffffff;
+  border: none;
+
+  @include desktop {
+    right: 30rem;
+    left: 30rem;
+  }
+
+  &__button {
+    &--delete {
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: $color-out-of-stock;
+      color: #ffffff;
+      border: 1px solid $color-out-of-stock;
+    }
+
+    &--cancel {
+      color: #5c667e;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #5c667e;
+      background-color: $color-global-white;
+    }
+  }
 }
 
 .inventory-modal-overlay {
@@ -23,16 +49,22 @@
   background-color: rgba(19, 24, 44, 0.5);
 }
 .inventory-list {
-  margin: 0rem 1rem;
+  // padding: 0rem 1rem;
 }
 
 .inventory-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   background-color: $color-global-white;
   border-bottom: 1px solid $color-outlines-dividers;
+
+  &:hover {
+    background-color: rgba(46, 102, 230, 0.07);
+  }
 }
 
 .inventory-buttons {
