@@ -21,6 +21,9 @@
 }
 
 .inventory-item {
+    @include tablet {
+        display: flex;
+    }
     &__text {
         font-size: .625rem;
         font-weight: 300;
@@ -33,6 +36,15 @@
     }
     &__columns {
         margin: 0 .5rem;
+        @include tablet {
+            width: 50%;
+            margin: 1rem;
+        }
+        &--left {
+            @include tablet {
+                border-right: 1px solid $color-outlines-dividers;
+            }
+        }
     }
     &__status-quantity {
         width: 50%;

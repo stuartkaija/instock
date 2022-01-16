@@ -8,11 +8,7 @@ export default class InventoryItemPage extends Component{
     state = {
         item: null,
     };
-    // if (inventory === undefined) {
-        // return <span>Loading...</span>;
-    //   }
-    // console.log(this.props.match.params.inventoryId);
-    // i want to take the associated id above and use that to get the specific item info 
+  
     
     
     componentDidMount() {
@@ -32,8 +28,8 @@ export default class InventoryItemPage extends Component{
     return (
         <div className="main">
            <InventoryItemHero  title={this.state.item.itemName} inventoryId={this.props.match.params.itemId}/>
-            <div>
-                <div className="inventory-item__columns">
+            <div className="inventory-item">
+                <div className="inventory-item__columns inventory-item__columns--left">
                     <div>
                         <p className="inventory-item__text--title">ITEM DESCRIPTION</p>
                         <p className="inventory-item__text">{this.state.item.description}</p>
