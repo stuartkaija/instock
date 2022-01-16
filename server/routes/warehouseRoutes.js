@@ -110,8 +110,24 @@ router.put("/:warehouseId/", (req, res) => {
 });
 
 // DELETE a warehouse (Ian)
-router.delete("/:warehouseId", (req, res) => {
-  console.log("this is a DELETE endpoint for deleting a specific warehouse");
+router.delete('/:warehouseId', (req, res) => {
+
+    // delete a warehouse 
+    const warehouseData = readWarehouseData();
+    const warehouseMatch = warehouseData.find((warehouse) => warehouse.id === req.params.warehouseId);
+    const warehouseMatchIndex = warehouseData.indexOf((warehouseMatch));
+    warehouseData.splice(warehouseMatchIndex, 1);
+    fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData))
+
+    // delete all dependant inventory items
+    const invData = fs.readFileSync("./data/inventories.json");
+    const inventoryData = JSON.parse(invData);
+    const inventoryMatch = inventoryData.filter((inventory) => !(inventory.warehouseID === req.params.warehouseId));
+
+    fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryMatch));
+
+
+    res.status(202).send("Warehouses deleted and all associated inventory items deleted");
 });
 
 module.exports = router;
