@@ -129,10 +129,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   width: 100%;
 
   @include tablet {
+    margin-left: 5rem;
     justify-content: space-around;
     flex-wrap: none;
     width: 10%;
@@ -154,6 +156,7 @@
 .inventory-column {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-right: 20%;
   width: 28%;
 
@@ -222,8 +225,9 @@
       margin-bottom: 1rem;
 
       @include tablet {
-        margin-right: 1rem;
-        width: 32%;
+        margin-right: 4rem;
+        padding: 0.2rem 0.3rem;
+        // width: 32%;
       }
     }
 
@@ -241,7 +245,8 @@
 
       @include tablet {
         margin-right: 1rem;
-        width: 32%;
+        padding: 0.5rem 0.6rem;
+        // width: 35%;
       }
     }
   }
