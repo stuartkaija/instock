@@ -6,41 +6,94 @@
 .inventory-modal {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 10rem;
-  left: 5rem;
-  right: 5rem;
-  bottom: 55rem;
-  padding: 1rem 2rem;
+  align-self: center;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  padding: 1rem;
   border-radius: 0.25rem;
   background-color: #ffffff;
   border: none;
 
-  @include desktop {
-    right: 30rem;
-    left: 30rem;
+  @include tablet {
+    width: 80%;
+    height: 15rem;
+    margin: 10% 10%;
+    border: none;
   }
 
-  &__button {
+  @include desktop {
+    margin: 10% 30%;
+    border: none;
+  }
+
+  &__close {
+    align-self: flex-end;
+    width: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    height: 100%;
+    margin-top: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+    @include tablet {
+      margin-top: 1rem;
+      padding: 0rem 2rem 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
     &--delete {
-      border-radius: 1rem;
-      padding: 0.5rem 1rem;
+      width: 55%;
+      margin-left: 3%;
+      border-radius: 2rem;
+      padding: 1rem 1rem;
       background-color: $color-out-of-stock;
       color: #ffffff;
       border: 1px solid $color-out-of-stock;
+
+      @include tablet {
+        padding: 0.6rem 1rem;
+        width: 20%;
+      }
+      &:hover {
+        background-color: rgba(201, 69, 21, 0.07);
+        color: $color-out-of-stock;
+        cursor: pointer;
+      }
     }
 
     &--cancel {
+      width: 55%;
       color: #5c667e;
-      border-radius: 1rem;
-      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      padding: 1rem 1rem;
       border: 1px solid #5c667e;
       background-color: $color-global-white;
+
+      @include tablet {
+        padding: 0.6rem 1rem;
+        width: 20%;
+      }
+
+      &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+        cursor: pointer;
+      }
     }
   }
 }
 
 .inventory-modal-overlay {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -82,9 +135,15 @@
   }
 
   &__delete {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__edit {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
