@@ -4,6 +4,7 @@ import "./InventoryHeroWithSearch.scss";
 import { NavLink } from "react-router-dom";
 
 function InventoryHeroWithSearch({ inventoryTitle }) {
+ 
   return (
     <div className="hero">
       <h1 className="hero__title">{inventoryTitle}</h1>
