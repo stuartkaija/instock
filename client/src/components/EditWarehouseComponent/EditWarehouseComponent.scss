@@ -1,17 +1,22 @@
-@use "../../styles/partials/variables" as*;
-
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+ 
 // .add-warehouse-form {
 
 // }
 .add-warehouse-form__back-icon {
     width: 1.125rem;
-    
-
 }
+
 .add-form__header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    @include tablet {
+        justify-content: flex-start;
+    }
 }
 
 .warehouse__form {
