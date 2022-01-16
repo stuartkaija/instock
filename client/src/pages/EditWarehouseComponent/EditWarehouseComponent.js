@@ -68,7 +68,7 @@ export default class EditWarehouseComponent extends Component {
         const { name, address, city, contact, country } = this.state.warehouse;
 
         return (
-            <div className="add-warehouse-form">
+            <div className="add-warehouse-form main">
                 <div className="add-form__header">
                     
                     <h2><NavLink to={'/warehouses/' + this.state.warehouse.id}><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
