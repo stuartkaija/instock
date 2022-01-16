@@ -1,4 +1,5 @@
 @use '../../styles/partials/variables' as*;
+@use '../../styles/partials/mixins' as *;
 
 .warehouse-details {
     &__hero {
@@ -17,9 +18,17 @@
         padding: .5rem;
         fill: white;
     }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
     &__column {
         padding: 1rem;
-        font-size: .75rem;
+        font-size: 1rem;
         // font-weight: 300;
     }
     &__details-line {

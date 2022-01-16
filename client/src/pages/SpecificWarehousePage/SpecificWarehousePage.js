@@ -12,13 +12,14 @@ class SpecificWarehousePage extends Component {
     }
 
       componentDidMount() {
-        axios.get("http://localhost:8080/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9").then((response) => {
+        // console.log(this.props.match.params.warehouseId);
+        axios.get("http://localhost:8080/warehouses/" + this.props.match.params.warehouseId).then((response) => {
         this.setState({ 
           warehouse: response.data 
         })
       })
         .then( result => {
-        axios.get('http://localhost:8080/inventory/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9') // this is hardcoded right now, will have to change, likely to "this.props.match.params.warehouseId"
+        axios.get('http://localhost:8080/inventory/' + this.props.match.params.warehouseId)
             .then((response) => {
                 this.setState({
                     inventory: response.data
