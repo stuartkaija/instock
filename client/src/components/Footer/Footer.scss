@@ -1,9 +1,15 @@
 @use "../../styles/partials/variables" as*;
 
 .footer {
+    padding-bottom: 2rem;
+    font-size: 1rem;
+    margin-top: 0;
+    color: $color-text-secondary;
+&__container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-size: .75rem;
     background-color: $color-background-primary;
+}
 }
