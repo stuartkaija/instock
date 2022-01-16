@@ -64,7 +64,7 @@ export default class AddWarehouseForm extends Component {
    
     
     return (
-        <>
+        <div className="main">
             <div className="add-warehouse__header">
                 
                 <h2><NavLink to='/warehouses'><img className="add-warehouse__back-icon" src={backImg} alt="" /></ NavLink> Add New Warehouse</h2>
@@ -105,6 +105,6 @@ export default class AddWarehouseForm extends Component {
                 <button className="add-warehouse__button">Cancel</button>
                 <button className="add-warehouse__button add-warehouse__button--blue" form="addWarehouse">+ Add Warehouse</button>
             </div>
-        </>
+        </div>
     )
 }}

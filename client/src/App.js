@@ -15,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <div className="main-container">
         <Header />
         <Switch>
           <Route path="/warehouses" exact component={WarehousesPage} />
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/inventory/:itemId" component={InventoryItemPage}/>
         </Switch>
         <Footer />
+        </div>
       </BrowserRouter>
     );
   }
