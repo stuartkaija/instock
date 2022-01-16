@@ -23,7 +23,7 @@ class App extends Component {
           <Route path="/warehouses/:warehouseId" exact component={SpecificWarehousePage} />
           <Route path="/warehouses/:warehouseId/edit" component={EditWarehouseComponent} />
           <Route path="/inventory/:inventoryId/edit" component={EditInvItemPage} />
-          <Route path="/inventory" component={Inventory} />
+          <Route path="/inventory" exact component={Inventory} />
           <Route path="/inventory/AddNew" exact component={AddInventoryItem} />
           <Route path="/inventory/:itemId" component={InventoryItemPage}/>
         </Switch>
