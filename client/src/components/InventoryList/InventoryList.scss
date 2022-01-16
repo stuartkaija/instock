@@ -23,14 +23,14 @@
   background-color: rgba(19, 24, 44, 0.5);
 }
 .inventory-list {
-  margin: 0rem 1rem;
+  // margin: 0rem 1rem;
 }
 
 .inventory-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 1rem;
   background-color: $color-global-white;
   border-top: 1px solid $color-outlines-dividers;
 }
