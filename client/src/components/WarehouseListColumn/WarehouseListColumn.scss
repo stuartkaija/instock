@@ -133,6 +133,18 @@
     flex-wrap: none;
     width: 10%;
   }
+
+  &__delete {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__edit {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .warehouse-column {

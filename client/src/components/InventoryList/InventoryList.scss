@@ -158,18 +158,37 @@
   flex-direction: column;
   align-items: center;
   margin-right: 20%;
-  width: 28%;
+  width: 30%;
+  min-width: 30%;
 
   @include tablet {
-    flex-direction: row;
     justify-content: flex-start;
     width: 37%;
     margin-right: 0rem;
   }
 
+  &__first {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-right: 0rem;
+      width: 35%;
+    }
+  }
+
+  &__second {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-right: 0rem;
+      width: 45%;
+    }
+  }
+
   &__item-container {
     display: flex;
-
     align-items: center;
     margin-bottom: 1.4rem;
 
