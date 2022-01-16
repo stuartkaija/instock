@@ -13,8 +13,7 @@ Modal.setAppElement("#root");
 
 function InventoryList({ inventories }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [name, setName] = useState({ inventories });
-  console.log(useState({ inventories }));
+  const [name, setName] = useState("Hello");
 
   if (inventories === undefined) {
     return <span>Loading...</span>;
@@ -71,7 +70,10 @@ function InventoryList({ inventories }) {
               <div className="inventory-buttons">
                 {/* // These will likely be switched to NavLinks  */}
                 <img
-                  onClick={() => setModalIsOpen(true)}
+                  onClick={() => {
+                    setModalIsOpen(true)
+                    setName(`${inventory.itemName}`)
+                  }}
                   className="inventory-buttons__delete"
                   src={deleteIcon}
                   alt="delete-icon"
@@ -94,7 +96,7 @@ function InventoryList({ inventories }) {
         className="inventory-modal"
         overlayClassName="inventory-modal-overlay"
       >
-        <h2> {`Delete Inventory  Item`}</h2>
+        <h2> {`Delete Inventory ${name} Item`}</h2>
         <span>
           {`Please confirm that you'd like to delete 
               from the inventory list. You won't be able to undo this action`}

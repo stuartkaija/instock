@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import modal from "react-modal";
 import "./WarehouseListColumn.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -6,6 +7,9 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import { Link } from "react-router-dom";
 
 function WarehouseListColumn({ id, name, address, city, country, contactName, contactPhone, contactEmail}) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [name, setName] = useState("Hello");
+
   return (
     <section className="warehouse-list">
 
@@ -47,6 +51,10 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
           <div className="warehouse-buttons">
             <Link to='' className="warehouse-column__link">
               <img
+                onClick={() => {
+                  setModalIsOpen(true)
+                  setName(`${inventory.itemName}`)
+                }}
                 className="warehouse-buttons__delete"
                 src={deleteIcon}
                 alt="delete-icon"
@@ -61,6 +69,23 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
             </Link>
           </div>
         </div>
+        <Modal
+        onAfterOpen={<div>Hi </div>}
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        className="inventory-modal"
+        overlayClassName="inventory-modal-overlay"
+      >
+        <h2> {`Delete Inventory ${name} Item`}</h2>
+        <span>
+          {`Please confirm that you'd like to delete 
+              from the inventory list. You won't be able to undo this action`}
+        </span>
+        <div>
+          <button onClick={() => setModalIsOpen(false)}>Cancel</button>
+          <button>Delete</button>
+        </div>
+      </Modal>
     </section>
   );
 }
