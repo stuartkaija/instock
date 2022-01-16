@@ -1,0 +1,29 @@
+.header {
+  background-color: #232940;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+.header__button {
+  border: none;
+  margin: 1rem;
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  background-color: #232940;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Titillium Web";
+  text-decoration: none;
+}
+.header__button--active {
+  background-color: #13182C;
+}
+.header__button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=Header.css.map */

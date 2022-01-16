@@ -13,6 +13,7 @@ export default class ItemForm extends Component {
     }
 
     componentDidMount() {
+        document.title = "Edit Inventory Item"
         axios.get(`http://localhost:8080/inventory/${this.props.inventoryId}/item`)
             .then((response) => {
                 this.setState({
@@ -26,7 +27,7 @@ export default class ItemForm extends Component {
             });
         axios.get("http://localhost:8080/inventory")
             .then((response) => {
-                this.setState({ warehouses: response.data });
+                this.setState({ warehouses: response.data, categories: response.data });
             })
     }
 
@@ -61,9 +62,13 @@ export default class ItemForm extends Component {
             return <div>Loading...</div>
         }
 
-        const mapped = this.state.warehouses.map((warehouse) => warehouse.warehouseName);
+        const mappedWarehouses = this.state.warehouses.map((warehouse) => warehouse.warehouseName);
 
-        const filtered = mapped.filter((warehouseName, index) => mapped.indexOf(warehouseName === index));
+        const filteredWarehouses = mappedWarehouses.filter((warehouseName, index) => mappedWarehouses.indexOf(warehouseName) === index);
+
+        const mappedWarehousesCategory = this.state.warehouses.map((warehouse) => warehouse.category);
+        
+        const filteredWarehousesCategory = mappedWarehousesCategory.filter((category, index) => mappedWarehousesCategory.indexOf(category) === index);
         
         return (
             <form className="item-form" onSubmit={this.handleSubmit}>
@@ -87,8 +92,9 @@ export default class ItemForm extends Component {
                     </textarea>
                     <label htmlFor="category" className="item-form__label">Category</label>
                     <select name="category" id="category" className="item-form__input" >
-                        <option value="Electronics">Electronics</option>
-                        <option value="Gear">Gear</option>
+                        {filteredWarehousesCategory.map((category) =>{
+                        return( <option key={uniqid()} value={category}>{category}</option>)
+                        })}
                     </select>
                 </section>
                 <section className="item-form__section item-form__section--secondary">
@@ -96,11 +102,11 @@ export default class ItemForm extends Component {
                 <div className="item-form__radio-section">
                                 <p className="item-form__label item-form__label--radio">Status</p>
                                 <div className="item-form__radio-wrapper">
-                                    <input onChange={this.handleRadio} defaultChecked={!this.isInStock} type="radio" id="InStock" name="radioButton" value={this.state.stockValue} className="item-form__radio-button"/>
+                                    <input onChange={this.handleRadio} defaultChecked={this.state.isInStock} type="radio" id="InStock" name="radioButton" value={this.state.stockValue} className="item-form__radio-button"/>
                                     <label htmlFor="InStock">In stock</label>
                                 </div>
                                 <div className="item-form__radio-wrapper">  
-                                    <input onChange={this.handleRadio} defaultChecked={this.isInStock} type="radio" id="OutOfStock" name="radioButton" value={this.state.stockValue}  className="item-form__radio-button" />
+                                    <input onChange={this.handleRadio} defaultChecked={!this.state.isInStock} type="radio" id="OutOfStock" name="radioButton" value={this.state.stockValue}  className="item-form__radio-button" />
                                     <label htmlFor="OutOfStock">Out of stock</label>
                                 </div>
                             </div>
@@ -119,7 +125,7 @@ export default class ItemForm extends Component {
                     }
                     <label htmlFor="warehouse" className="item-form__label">Warehouse</label>
                     <select name="warehouse" id="warehouse" className="item-form__input" >
-                        {filtered.map((warehouse) => {
+                        {filteredWarehouses.map((warehouse) => {
                             return(
                                 <option key={uniqid()} value={warehouse} >
                                     {warehouse}

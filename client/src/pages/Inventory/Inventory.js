@@ -16,7 +16,7 @@ class Inventory extends Component {
   }
   render() {
     return (
-      <>
+      <div className="main">
         <InventoryHeroWithSearch inventoryTitle={["Inventory"]} />
         <InventoryTableHeader
           inventoryHeaders={[
@@ -29,7 +29,7 @@ class Inventory extends Component {
           ]}
         />
         <InventoryList inventories={this.state.inventory} />
-      </>
+      </div>
     );
   }
 }
