@@ -33,26 +33,56 @@ router.get('/:warehouseId', (req, res) => {
 
 // POST/CREATE a new warehouse (Bryn)
 router.post('/', (req, res) => {
-    console.log("this is a POST endpoint for /warehouses, creating a new one");
+    if (!req.body.name || !req.body.address || !req.body.city || !req.body.country || !req.body.contact.name ||!req.body.contact.position || !req.body.contact.phone || !req.body.contact.email ) {
+        res.status(404).send("Fill the form out completely");
+        return;
+    }
+    
+    const newWarehouse = {
+        id: uniqid(), 
+        name: req.body.name,
+        address: req.body.address,
+        city: req.body.city,
+        country: req.body.country,
+        contact: {
+            name: req.body.contact.name,
+            position: req.body.contact.position,
+            phone: req.body.contact.phone,
+            email: req.body.contact.email
+        }
+    };
+    const warehouses = readWarehouseData();
+    warehouses.push(newWarehouse);
+    fs.writeFileSync('./data/warehouses.json', JSON.stringify(warehouses));
+
+    res.status(201).json(newWarehouse);
+
 });
 
 // PUT/PATCH/EDIT a warehouse (Stuart)
-router.put('/:warehouseId', (req, res) => {
+router.put('/:warehouseId/', (req, res) => {
+    const warehouseData = readWarehouseData();
     const id = req.params.warehouseId;
-    const foundWarehouse = findWarehouseById(id);
-    console.log(req.body);
-    const editedWarehouse = req.body
+    const foundWarehouse = warehouseData.find((warehouse) => id === warehouse.id);
 
     if (!foundWarehouse) {
         res.status(404).send("It doesn't look like that warehouse exists...");
         return
     }
 
-    // I think we need validation to ensure edited information is good
+    //  validation in case any fields are left blank
+    if(req.body.name) {foundWarehouse.name = req.body.name};
+    if(req.body.address) {foundWarehouse.address = req.body.address};
+    if(req.body.city) {foundWarehouse.city = req.body.city};
+    if(req.body.country) {foundWarehouse.country = req.body.country};
+    if(req.body.contact.name) {foundWarehouse.contact.name = req.body.contact.name};
+    if(req.body.contact.position) {foundWarehouse.contact.position = req.body.contact.position};
+    if(req.body.contact.phone) {foundWarehouse.contact.phone = req.body.contact.phone};
+    if(req.body.contact.email) {foundWarehouse.contact.email = req.body.contact.email};
 
-    res.send('This is a test for the PUT endpoint')
+    fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
 
-    console.log(foundWarehouse);
+    res.status(200).json(foundWarehouse);
 });
 
 // DELETE a warehouse (Ian)
