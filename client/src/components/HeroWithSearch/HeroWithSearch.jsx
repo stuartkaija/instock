@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import "./HeroWithSearch.scss";
 import { Link } from 'react-router-dom';
@@ -28,4 +28,4 @@ function HeroWithSearch() {
     )
 }
 
-export default HeroWithSearch
+export default HeroWithSearch;

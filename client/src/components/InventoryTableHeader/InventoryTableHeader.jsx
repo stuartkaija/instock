@@ -1,12 +1,13 @@
 import React from "react";
 import icon from "../../assets/icons/sort-24px.svg";
-import "./TableHeader.scss";
+import "./InventoryTableHeader.scss";
 import uniqid from "uniqid";
 
-function TableHeader({ titles }) {
+function InventoryTableHeader({ inventoryHeaders }) {
+  const tableTitles = inventoryHeaders;
   return (
     <div className="table-header">
-      {titles.map((title) => {
+      {tableTitles.map((title) => {
         return (
           <div className="table-header__container" key={uniqid()}>
             <h3 className="table-header__title">{title}</h3>
@@ -18,4 +19,4 @@ function TableHeader({ titles }) {
   );
 }
 
-export default TableHeader;
+export default InventoryTableHeader;

@@ -3,7 +3,6 @@ import WarehouseListColumn from "../WarehouseListColumn/WarehouseListColumn";
 import "./WarehouseListTable.scss";
 
 function WarehouseListTable({warehouses}) {
-    console.log(warehouses)
     return (
             <section className="warehouses-list">
                 {warehouses.map(warehouse => {

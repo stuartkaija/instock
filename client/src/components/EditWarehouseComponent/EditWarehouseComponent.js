@@ -5,13 +5,44 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 
-export default class EditWarehouseForm extends Component {
+export default class EditWarehouseComponent extends Component {
+
+    state = {
+        warehouse: null,
+    }
+
+    componentDidMount() {
+        // axios call to get warehouse details
+        axios.get("http://localhost:8080/warehouses/" + this.props.match.params.warehouseId)
+            .then((response) => {
+                this.setState({
+                    warehouse: response.data
+                });
+            });
+    };
 
     handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.put('http://localhost:8080/warehouses/:warehouseId', {
-            id: "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9", // hardcoded data, this should come from the page itself I think
+        const validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const validRegexPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g
+        
+        if(event.target.phone.value) {
+            if (!event.target.phone.value.match(validRegexPhone)) {
+                return alert("Please enter valid phone number!")
+            }
+        }
+
+        if(event.target.email.value) {
+            if (!event.target.email.value.match(validRegexEmail)) {
+                return alert("Please enter valid email: example@email.com");
+            }    
+        }
+
+        const warehouseId = this.state.warehouse.id
+
+        axios.put('http://localhost:8080/warehouses/' + warehouseId, {
+            id: warehouseId,
             name: event.target.name.value,
             address: event.target.address.value,
             city: event.target.city.value,
@@ -22,44 +53,54 @@ export default class EditWarehouseForm extends Component {
                 phone: event.target.phone.value,
                 email: event.target.email.value
             }
-        })
-
-        // console.log(event)
+        }).then((response) => {
+            console.log(response);
+        }).catch((err) => {
+            console.log(err);
+        });
     };
 
     render() {
+        if (this.state.warehouse === null) {
+            return <p>Loading edit warehouse page...</p>
+        }
+        
+        const { name, address, city, contact, country } = this.state.warehouse;
+
         return (
             <div className="add-warehouse-form">
                 <div className="add-form__header">
                     
-                    <h2><NavLink to='/warehouses'><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
+                    <h2><NavLink to={'/warehouses/' + this.state.warehouse.id}><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
                 </div>
                 <form onSubmit={this.handleSubmit} id='editWarehouse'>
                     <div className="warehouse__form">
                         <h3 className="add-warehouse-form__subtitle">Warehouse Details</h3>
                         <label className="add-warehouse-form__label">Warehouse Name</label>
-                        <input className="add-warehouse-form__input" name="name" id="name" placeholder="Warehouse Name"></input>
+                        <input className="add-warehouse-form__input" name="name" id="name" placeholder={name}></input>
                         <label className="add-warehouse-form__label">Street Address</label>
-                        <input className="add-warehouse-form__input" name="address" id="address" placeholder="Street Address"></input>
+                        <input className="add-warehouse-form__input" name="address" id="address" placeholder={address}></input>
                         <label className="add-warehouse-form__label">City</label>
-                        <input className="add-warehouse-form__input" name="city" id="city" placeholder="City"></input>
+                        <input className="add-warehouse-form__input" name="city" id="city" placeholder={city}></input>
                         <label className="add-warehouse-form__label">Country</label>
-                        <input className="add-warehouse-form__input" name="country" id="country" placeholder="Country"></input>
+                        <input className="add-warehouse-form__input" name="country" id="country" placeholder={country}></input>
                     </div>
                     <div className="warehouse__form">
                         <h3 className="add-warehouse-form__subtitle">Contact Details</h3>
                         <label className="add-warehouse-form__label">Contact Name</label>
-                        <input className="add-warehouse-form__input" name="contactName" id="contactName" placeholder="Contact Name"></input>
+                        <input className="add-warehouse-form__input" name="contactName" id="contactName" placeholder={contact.name}></input>
                         <label className="add-warehouse-form__label">Position</label>
-                        <input className="add-warehouse-form__input" name="position" id="position" placeholder="Position"></input>
+                        <input className="add-warehouse-form__input" name="position" id="position" placeholder={contact.position}></input>
                         <label className="add-warehouse-form__label">Phone Number</label>
-                        <input className="add-warehouse-form__input" name="phone" id="phone" placeholder="Phone Number"></input>
+                        <input className="add-warehouse-form__input" name="phone" id="phone" placeholder={contact.phone}></input>
                         <label className="add-warehouse-form__label">Email</label>
-                        <input className="add-warehouse-form__input" name="email" id="email" placeholder="Email"></input>
+                        <input className="add-warehouse-form__input" name="email" id="email" placeholder={contact.email}></input>
                     </div>
                 </form>
                 <div className='warehouse__buttons'>
-                    <button className='warehouse__buttons-cancel'>Cancel</button>
+                    <NavLink to={'/warehouses/' + this.state.warehouse.id}>
+                        <button className='warehouse__buttons-cancel'>Cancel</button>
+                    </NavLink>
                     <button className='warehouse__buttons-confirm' form='editWarehouse'>Save</button>
                 </div>
             </div>

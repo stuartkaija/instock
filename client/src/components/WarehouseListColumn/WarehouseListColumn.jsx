@@ -15,7 +15,7 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
                 Warehouse
             </h4>
             <div className="warehouse-column__item-container">
-              <Link className="warehouse-column__main-link" to={"/warehouses/" + id} >
+              <Link to={"/warehouses/" + id} className="warehouse-column__main-link" >
                 <h5 className="warehouse-column__text warehouse-column__text--link">{name}</h5>
               </Link>
               <img src={chevronRight} alt="chevron right" />
@@ -45,14 +45,14 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
 
 
           <div className="warehouse-buttons">
-            <Link className="warehouse-column__link">
+            <Link to='' className="warehouse-column__link">
               <img
                 className="warehouse-buttons__delete"
                 src={deleteIcon}
                 alt="delete-icon"
                 />
             </Link>
-            <Link className="warehouse-column__link">
+            <Link to={"/warehouses/" + id + "/edit"} className="warehouse-column__link">
               <img
                 className="warehouse-buttons__edit"
                 src={editIcon}

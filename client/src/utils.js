@@ -2,8 +2,8 @@ import axios from "axios";
 const URL = "";
 
 const handleEditInvSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    axios.put((`${url}/inventory/${inventoryID}/edit`));
-    alert("You successfully edited this inventory item!")
-}
+  axios.put(`${url}/inventory/${inventoryID}/edit`);
+  alert("You successfully edited this inventory item!");
+};
