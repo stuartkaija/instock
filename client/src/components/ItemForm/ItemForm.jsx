@@ -100,16 +100,16 @@ export default class ItemForm extends Component {
                 <section className="item-form__section item-form__section--secondary">
                 <h3 className="item-form__title">Item Availability</h3>
                 <div className="item-form__radio-section">
-                                <p className="item-form__label item-form__label--radio">Status</p>
-                                <div className="item-form__radio-wrapper">
-                                    <input onChange={this.handleRadio} defaultChecked={!this.isInStock} type="radio" id="InStock" name="radioButton" value={this.state.stockValue} className="item-form__radio-button"/>
-                                    <label htmlFor="InStock">In stock</label>
-                                </div>
-                                <div className="item-form__radio-wrapper">  
-                                    <input onChange={this.handleRadio} defaultChecked={this.isInStock} type="radio" id="OutOfStock" name="radioButton" value={this.state.stockValue}  className="item-form__radio-button" />
-                                    <label htmlFor="OutOfStock">Out of stock</label>
-                                </div>
-                            </div>
+                    <p className="item-form__label item-form__label--radio">Status</p>
+                    <div className="item-form__radio-wrapper">
+                        <input onChange={this.handleRadio} defaultChecked={this.state.isInStock} type="radio" id="InStock" name="radioButton" value={this.state.stockValue} className="item-form__radio-button"/>
+                        <label htmlFor="InStock">In stock</label>
+                    </div>
+                    <div className="item-form__radio-wrapper">  
+                        <input onChange={this.handleRadio} defaultChecked={!this.state.isInStock} type="radio" id="OutOfStock" name="radioButton" value={this.state.stockValue}  className="item-form__radio-button" />
+                        <label htmlFor="OutOfStock">Out of stock</label>
+                    </div>
+                </div>
                     {this.state.isInStock
                         ?   <div className="item-form__quantity-wrapper">
                                 <label htmlFor="quantity" className="item-form__label">Quantity</label>
