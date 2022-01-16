@@ -12,7 +12,7 @@ import axios from "axios";
 
 Modal.setAppElement("#root");
 
-function InventoryList({ inventories }) {
+function InventoryList({ inventories, specificWarehouse }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [name, setName] = useState();
   const [itemId, setId] = useState();
@@ -62,11 +62,13 @@ function InventoryList({ inventories }) {
                 <div className="inventory-column__item">
                   {inventory.quantity}
                 </div>
-
-                <div className="inventory-column__item--title">Warehouse</div>
-                <div className={"inventory-column__item"}>
-                  {inventory.warehouseName}
+                <div className={specificWarehouse ? "hidden" : ""}>
+                  <div className="inventory-column__item--title">Warehouse</div>
+                  <div className={"inventory-column__item"}>
+                    {inventory.warehouseName}
+                  </div>
                 </div>
+
               </div>
 
               <div className="inventory-buttons">

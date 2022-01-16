@@ -1,4 +1,5 @@
 @use '../../styles/partials/variables' as*;
+@use '../../styles/partials/mixins' as *;
 
 .warehouse-details {
     &__hero {
@@ -17,15 +18,32 @@
         padding: .5rem;
         fill: white;
     }
+    &__container {
+        padding: 1rem 0rem;
+        background-color: $color-global-white;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
     &__column {
         padding: 1rem;
-        font-size: .75rem;
+        font-size: 1rem;
         // font-weight: 300;
+        @include tablet {
+            padding: 0rem 1rem;
+        }
     }
     &__details-line {
         margin: .25rem 0;
     }
     &__contact-container {
         display: flex;
+
+        @include tablet {
+            border-left: 0.1rem solid $color-outlines-dividers;
+        }
     }
 }
