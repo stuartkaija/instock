@@ -80,11 +80,13 @@ function InventoryList({ inventories }) {
                   src={deleteIcon}
                   alt="delete-icon"
                 />
+                <NavLink to={"/inventory/" + inventory.id + "/edit"} >
                 <img
                   className="inventory-buttons__edit"
                   src={editIcon}
                   alt="edit-icon"
                 />
+                </NavLink>
               </div>
             </div>
           );

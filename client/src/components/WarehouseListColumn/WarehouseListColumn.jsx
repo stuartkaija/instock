@@ -88,7 +88,7 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
           <button
             onClick={() => {
               axios.delete(`http://localhost:8080/warehouses/${WarehouseId}`);
-              alert("Warehouse Successfully Deleted");
+              alert("Warehouse and Associated Inventory Items Successfully Deleted");
               window.location.href = "/warehouses";
             }}
           >
