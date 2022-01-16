@@ -5,6 +5,7 @@ import "./InventoryList.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import closeIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
 
 // import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
@@ -80,12 +81,12 @@ function InventoryList({ inventories }) {
                   src={deleteIcon}
                   alt="delete-icon"
                 />
-                <NavLink to={"/inventory/" + inventory.id + "/edit"} >
-                <img
-                  className="inventory-buttons__edit"
-                  src={editIcon}
-                  alt="edit-icon"
-                />
+                <NavLink to={"/inventory/" + inventory.id + "/edit"}>
+                  <img
+                    className="inventory-buttons__edit"
+                    src={editIcon}
+                    alt="edit-icon"
+                  />
                 </NavLink>
               </div>
             </div>
@@ -103,15 +104,26 @@ function InventoryList({ inventories }) {
         className="inventory-modal"
         overlayClassName="inventory-modal-overlay"
       >
-        <h2> {`Delete Inventory ${name}  Item`}</h2>
-
+        <img
+          onClick={() => setModalIsOpen(false)}
+          className="inventory-modal__close"
+          src={closeIcon}
+          alt=""
+        />
+        <h1> {`Delete Inventory ${name}  Item`}</h1>
         <span>
           {`Please confirm that you'd like to delete 
               ${name} from the inventory list. You won't be able to undo this action`}
         </span>
-        <div>
-          <button onClick={() => setModalIsOpen(false)}>Cancel</button>
+        <div className="inventory-modal__buttons">
           <button
+            className="inventory-modal__buttons--cancel"
+            onClick={() => setModalIsOpen(false)}
+          >
+            Cancel
+          </button>
+          <button
+            className="inventory-modal__buttons--delete"
             onClick={() => {
               axios.delete(`http://localhost:8080/inventory/${itemId}`);
               alert("Item Successfully Deleted");
