@@ -1,10 +1,21 @@
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Modal from "react-modal";
 import "./InventoryList.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
-import { NavLink } from 'react-router-dom';
+import axios from "axios";
+
+// import InventoryItemPage from "../../pages/InventoryItemPage/InventoryItemPage";
+
+Modal.setAppElement("#root");
 
 function InventoryList({ inventories }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [name, setName] = useState();
+  const [itemId, setId] = useState();
+
   if (inventories === undefined) {
     return <span>Loading...</span>;
   }
@@ -60,21 +71,59 @@ function InventoryList({ inventories }) {
               <div className="inventory-buttons">
                 {/* // These will likely be switched to NavLinks  */}
                 <img
+                  onClick={() => {
+                    setModalIsOpen(true);
+                    setName(`${inventory.itemName}`);
+                    setId(`${inventory.id}`);
+                  }}
                   className="inventory-buttons__delete"
                   src={deleteIcon}
                   alt="delete-icon"
                 />
+                <NavLink to={"/inventory/" + inventory.id + "/edit"} >
                 <img
                   className="inventory-buttons__edit"
                   src={editIcon}
                   alt="edit-icon"
                 />
+                </NavLink>
               </div>
             </div>
           );
         })}
       </section>
+
+      <Modal
+        object={inventories.map(
+          (inventory) => inventory === inventory.itemName
+        )}
+        onAfterOpen={<div>Hi </div>}
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        className="inventory-modal"
+        overlayClassName="inventory-modal-overlay"
+      >
+        <h2> {`Delete Inventory ${name}  Item`}</h2>
+
+        <span>
+          {`Please confirm that you'd like to delete 
+              ${name} from the inventory list. You won't be able to undo this action`}
+        </span>
+        <div>
+          <button onClick={() => setModalIsOpen(false)}>Cancel</button>
+          <button
+            onClick={() => {
+              axios.delete(`http://localhost:8080/inventory/${itemId}`);
+              alert("Item Successfully Deleted");
+              window.location.href = "/inventory";
+            }}
+          >
+            Delete
+          </button>
+        </div>
+      </Modal>
     </>
   );
 }
+
 export default InventoryList;
