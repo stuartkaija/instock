@@ -15,16 +15,18 @@
 .item-form {
   display: flex;
   flex-direction: column;
+  margin: 0rem 1rem;
 }
 @media screen and (min-width: 48rem) {
   .item-form {
-    padding: 2rem 0rem;
+    padding-bottom: 2rem;
   }
 }
 @media screen and (min-width: 48rem) {
   .item-form__wrapper {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
 }
 .item-form__section {
@@ -37,10 +39,15 @@
     padding-right: 2rem;
   }
 }
+.item-form__section--secondary {
+  margin-top: 1rem;
+  border-top: 0.0625rem solid #BDC5D5;
+}
 @media screen and (min-width: 48rem) {
   .item-form__section--secondary {
     padding-left: 2rem;
     border-left: 0.0625rem solid #BDC5D5;
+    border-top: none;
   }
 }
 @media screen and (min-width: 48rem) {
@@ -174,7 +181,8 @@
   display: flex;
   align-items: center;
   background-color: #F7F8F9;
-  padding: 1rem 0rem;
+  padding: 1rem;
+  margin: 0rem -1rem;
 }
 @media screen and (min-width: 48rem) {
   .item-form__CTA-container {
@@ -193,6 +201,9 @@
   font-weight: 600;
   padding: 0.5rem 1rem;
 }
+.item-form__button:hover {
+  background-color: #232940;
+}
 @media screen and (min-width: 48rem) {
   .item-form__button {
     flex-grow: 0;
@@ -209,6 +220,10 @@
   background-color: #F7F8F9;
   font-weight: 600;
   padding: 0.5rem 1rem;
+}
+.item-form__button-secondary:hover {
+  border: 0.0625rem solid #2E66E5;
+  color: #2E66E5;
 }
 @media screen and (min-width: 48rem) {
   .item-form__button-secondary {

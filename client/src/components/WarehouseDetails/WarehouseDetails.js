@@ -9,7 +9,11 @@ function WarehouseDetails({warehouse}) {
             <div>
                 <div>
                     <div className="warehouse-details__hero">
-                        <h1 className="hero__title"><img className="hero__icon" src={backIcon} alt="arrow back icon" /> {warehouse.name}</h1>
+                        <h1 className="hero__title">
+                            <NavLink to='/warehouses/'>
+                                <img className="hero__icon" src={backIcon} alt="arrow back icon" /> 
+                            </NavLink>
+                            {warehouse.name}</h1>
                         <NavLink to={`/warehouses/` + warehouse.id + `/edit`} warehouse={warehouse} >
                             <img src={editIcon} alt="" className="warehouse-details__edit-icon"/>
                         </NavLink>

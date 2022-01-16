@@ -1,61 +1,126 @@
-@use "../../styles/partials/variables" as*;
-@use "../../styles/partials/mixins" as*;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
 
-.main {
-    position: relative;
-    bottom: 3rem;
-    margin: 0 1rem;
-    border-radius: .25rem;
-    overflow: hidden;
-    background-color: $color-global-white;
-    box-shadow: 0 1px 2px;
-    border-color: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    @include tablet {
-        margin: 0 2rem;
-        bottom: 5rem;
+.edit-warehouse {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-bottom: 1px solid $color-outlines-dividers;
+        @include tablet {
+            justify-content: start;
+            padding: 0 1rem;
+        }
     }
-    @include desktop {
-        margin: 0 10rem;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        
+        padding-bottom: 1rem;
+        @include tablet {
+            width: 50%;
+            margin-top: 1rem;
+        }
+        &--left {
+            @include tablet {
+                border-right: 1px solid $color-outlines-dividers;
+            }
+        }
     }
-}
-
-// .add-warehouse-form {
-
-// }
-.add-warehouse-form__back-icon {
-    width: 1.125rem;
+    &__form-container {
+        @include tablet {
+            display: flex;
+            width: 100%;    
+        }
+    }
+    &__back-icon {
+        width: 1.125rem;
+    }
     
+    &__input {
+        border-radius: 1rem;
+        border: 1px solid $color-outlines-dividers;
+        margin: 0 1rem;
+        margin-bottom: .25rem;
+        padding: .5rem;
+        font-size: .625rem;
+        font-weight: 300;
+        font-family: 'Titillium Web';
+    }
+    &__label {
+        margin: 0 1rem;
+        font-size: .75rem;
+        font-weight: 500;
+    }
+    &__subtitle {
+        margin: 1rem;
+    }
+    &__button {
+        width: 48%;
+        border: none;
+        border-radius: 1rem;
+        padding: .375rem;
+        background-color: $color-global-white;
+        border: 1px solid $color-outlines-dividers;
+        font-family: "Titillium Web";
+        @include tablet {
+            width: fit-content;
+            padding: .375rem 1rem;
+            border-radius: 2rem;
+        }
+        
+        &--blue {
+            background-color: $color-interactive-elements;
+            color: $color-global-white;
 
-}
-.add-form__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+            &:hover {
+                background-color: $color-cta-and-background;
+                cursor: pointer;
+            }
+            
+            @include tablet {
+            margin-left: 1rem;
+            }
+        }
+
+        &--cancel {
+            width: 100%;
+            border: none;
+            border-radius: 1rem;
+            padding: .375rem;
+            background-color: $color-global-white;
+            border: 1px solid $color-outlines-dividers;
+            font-family: "Titillium Web";
+            @include tablet {
+                width: fit-content;
+                padding: .375rem 1rem;
+                border-radius: 2rem;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &--navlink {
+            width: 48%;
+
+            @include tablet {
+                width: auto;
+            }
+        }
+    }
+    &__button-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-background-primary;
+        padding: 1rem;
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
 }
 
-.warehouse__form {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid $color-outlines-dividers;
-    padding-bottom: 1rem;
-}
-
-.add-warehouse-form__input {
-    border-radius: 1rem;
-    border: 1px solid $color-outlines-dividers;
-    margin: 0 1rem;
-    margin-bottom: .25rem;
-    padding: .5rem;
-    font-size: .625rem;
-    font-weight: 300;
-    font-family: 'Titillium Web';
-}
-.add-warehouse-form__label {
-    margin: 0 1rem;
-    font-size: .75rem;
-    font-weight: 500;
-}
-.add-warehouse-form__subtitle {
-    margin: 1rem;
-}
+// .test {
+//     width: 48%;
+// }

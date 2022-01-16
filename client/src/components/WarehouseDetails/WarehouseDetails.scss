@@ -19,6 +19,7 @@
         fill: white;
     }
     &__container {
+        background-color: $color-global-white;
         display: flex;
         flex-direction: column;
         @include tablet {

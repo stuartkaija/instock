@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.inventory-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1rem;
+  margin: 0rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .inventory-hero {
+    margin: 0rem 4rem;
+  }
+}
+.inventory-hero__title {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-hero__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+.inventory-hero__search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #BDC5D5;
+  padding: 0rem 1rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-hero__search-box {
+    height: 2.375rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .inventory-hero__search-box {
+    width: 25%;
+  }
+}
+.inventory-hero__search-box:focus-within {
+  border-color: #2E66E5;
+}
+.inventory-hero__search-bar {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.inventory-hero__search-bar::-moz-placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+.inventory-hero__search-bar:-ms-input-placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+.inventory-hero__search-bar::placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-hero__search-bar::-moz-placeholder {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .inventory-hero__search-bar:-ms-input-placeholder {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .inventory-hero__search-bar::placeholder {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.inventory-hero__button {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  color: #FFFFFF;
+  background-color: #2E66E5;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-hero__button {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.inventory-hero__button:hover {
+  background-color: #232940;
+}/*# sourceMappingURL=InventoryHeroWithSearch.css.map */

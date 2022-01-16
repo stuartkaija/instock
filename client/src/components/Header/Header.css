@@ -1,23 +1,54 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .header {
   background-color: #232940;
   width: 100%;
-  height: 10rem;
+  height: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
 }
+@media screen and (min-width: 48rem) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    width: auto;
+    height: 7rem;
+  }
+}
 .header__button {
   border: none;
   margin: 1rem;
   border-radius: 1rem;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 1.25rem;
   background-color: #232940;
   color: white;
   cursor: pointer;
   font-size: 1rem;
   font-family: "Titillium Web";
   text-decoration: none;
+  width: 50%;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .header__button {
+    margin: 0;
+  }
 }
 .header__button--active {
   background-color: #13182C;
@@ -26,4 +57,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .header__button-container {
+    width: 30%;
+  }
 }/*# sourceMappingURL=Header.css.map */

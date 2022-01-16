@@ -23,6 +23,16 @@ body {
   margin: 0rem;
 }
 
-.main-container {
-  background-color: #F7F8F9;
-}/*# sourceMappingURL=App.css.map */
+.form-valid {
+  visibility: hidden;
+}
+
+.form-error {
+  font-size: 1rem;
+  padding: 0 1rem;
+  color: #C94515;
+}
+
+.exclamation {
+  height: 1rem;
+}/*# sourceMappingURL=AddInventoryItem.css.map */

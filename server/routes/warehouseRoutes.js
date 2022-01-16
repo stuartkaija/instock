@@ -27,7 +27,6 @@ router.get("/", (req, res) => {
 router.get("/:warehouseId", (req, res) => {
   const id = req.params.warehouseId;
   const foundWarehouse = findWarehouseById(id);
-  console.log(foundWarehouse);
   res.send(foundWarehouse);
 });
 
@@ -105,6 +104,17 @@ router.put("/:warehouseId/", (req, res) => {
   }
 
   fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
+
+  // now change corresponding inventory data
+//   const invData = fs.readFileSync("./data/inventories.json");
+//   const inventoryData = JSON.parse(invData);
+//   const inventoryDataFiltered = inventoryData.map((inventory) => {
+
+//       if (inventory.warehouseID === req.params.warehouseId) {
+//           console.log("match");
+//       }
+//   })
+//   console.log(inventoryDataFiltered);
 
   res.status(200).json(foundWarehouse);
 });
