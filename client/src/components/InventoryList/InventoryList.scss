@@ -30,9 +30,9 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  padding: 1rem 0;
   background-color: $color-global-white;
-  border-bottom: 1px solid $color-outlines-dividers;
+  border-top: 1px solid $color-outlines-dividers;
 }
 
 .inventory-buttons {

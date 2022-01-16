@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 function WarehouseDetails({warehouse}) {
         return (
             <div>
-                <div>
+                <div className="warehouse-details">
                     <div className="warehouse-details__hero">
                         <h1 className="hero__title"><img className="hero__icon" src={backIcon} alt="arrow back icon" /> {warehouse.name}</h1>
                         <NavLink to={`/warehouses/` + warehouse.id + `/edit`} warehouse={warehouse} >
