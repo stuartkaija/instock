@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import modal from "react-modal";
+import Modal from "react-modal";
+import axios from "axios";
 import "./WarehouseListColumn.scss";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -8,7 +9,8 @@ import { Link } from "react-router-dom";
 
 function WarehouseListColumn({ id, name, address, city, country, contactName, contactPhone, contactEmail}) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [name, setName] = useState("Hello");
+  const [WarehouseName, setName] = useState("Hello");
+  const [WarehouseId, setId] = useState();
 
   return (
     <section className="warehouse-list">
@@ -49,17 +51,16 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
 
 
           <div className="warehouse-buttons">
-            <Link to='' className="warehouse-column__link">
               <img
                 onClick={() => {
-                  setModalIsOpen(true)
-                  setName(`${inventory.itemName}`)
+                  setModalIsOpen(true);
+                  setName(`${name}`);
+                  setId(`${id}`);
                 }}
                 className="warehouse-buttons__delete"
                 src={deleteIcon}
                 alt="delete-icon"
                 />
-            </Link>
             <Link to={"/warehouses/" + id + "/edit"} className="warehouse-column__link">
               <img
                 className="warehouse-buttons__edit"
@@ -69,21 +70,30 @@ function WarehouseListColumn({ id, name, address, city, country, contactName, co
             </Link>
           </div>
         </div>
+
         <Modal
-        onAfterOpen={<div>Hi </div>}
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         className="inventory-modal"
         overlayClassName="inventory-modal-overlay"
       >
-        <h2> {`Delete Inventory ${name} Item`}</h2>
+        <h2> {`Delete ${WarehouseName} warehouse`}</h2>
+
         <span>
           {`Please confirm that you'd like to delete 
-              from the inventory list. You won't be able to undo this action`}
+              ${WarehouseName} from the warehouses list. You won't be able to undo this action`}
         </span>
         <div>
           <button onClick={() => setModalIsOpen(false)}>Cancel</button>
-          <button>Delete</button>
+          <button
+            onClick={() => {
+              axios.delete(`http://localhost:8080/warehouses/${WarehouseId}`);
+              alert("Warehouse and Associated Inventory Items Successfully Deleted");
+              window.location.href = "/warehouses";
+            }}
+          >
+            Delete
+          </button>
         </div>
       </Modal>
     </section>
