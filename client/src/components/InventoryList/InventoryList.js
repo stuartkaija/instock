@@ -32,7 +32,11 @@ function InventoryList({ inventories }) {
                   Inventory Item
                 </div>
                 <div className="inventory-column__item-container">
-                  <NavLink key={inventory.id} to={`/inventory/${inventory.id}`}>
+                  <NavLink
+                    className="inventory-column__item--main"
+                    key={inventory.id}
+                    to={`/inventory/${inventory.id}`}
+                  >
                     <div className="inventory-column__item--main">
                       {inventory.itemName}
                     </div>
