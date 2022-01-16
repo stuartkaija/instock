@@ -72,12 +72,17 @@ class AddInventoryItem extends Component {
               name="description"
               id="description"
               className="item-form__input item-form__input--textarea"
-              placeholder="PLACEHOLDER"
+              placeholder="Please enter a brief item description..."
             ></textarea>
             <label htmlFor="category" className="item-form__label">
               Category
             </label>
-            <select name="category" id="category" className="item-form__input">
+            <select
+              name="category"
+              id="category"
+              placeholder="0"
+              className="item-form__input"
+            >
               <option value="Electronics">Electronics</option>
               <option value="Gear">Gear</option>
               <option value="Health">Health</option>
@@ -119,20 +124,12 @@ class AddInventoryItem extends Component {
                 name="quantity"
                 id="quantity"
                 className="item-form__input"
-                placeholder="PLACEHOLDER"
+                placeholder="0"
               />
             </div>
             <label htmlFor="warehouse" className="item-form__label">
               Warehouse
             </label>
-            <input
-              type="text"
-              name="warehouse"
-              id="warehouse"
-              className="item-form__input"
-              placeholder="PLACEHOLDER"
-            />
-
             <select
               name="warehouse"
               id="warehouse"
@@ -150,7 +147,7 @@ class AddInventoryItem extends Component {
         </div>
         <div className="item-form__CTA-container">
           <button className="item-form__button-secondary">Cancel</button>
-          <button className="item-form__button">PLACEHOLDER</button>
+          <button className="item-form__button">+ Add Item</button>
         </div>
       </form>
     );

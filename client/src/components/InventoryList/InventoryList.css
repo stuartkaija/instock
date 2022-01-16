@@ -1,0 +1,130 @@
+*,
+**::before,
+**::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Titillium Web";
+  margin: 0rem;
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.inventory-list {
+  margin: 0rem 1rem;
+}
+
+.inventory-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  background-color: #FFFFFF;
+  border-top: 1px solid #BDC5D5;
+}
+
+.inventory-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-buttons {
+    justify-content: space-around;
+    flex-wrap: none;
+    width: 10%;
+  }
+}
+.inventory-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20%;
+  width: 28%;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-column {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+    margin-right: 0rem;
+  }
+}
+.inventory-column__item-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+.inventory-column__item {
+  font-family: "Titillium Web";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  color: #5C667E;
+  margin-bottom: 1rem;
+}
+.inventory-column__item--main {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  color: #2E66E5;
+  text-decoration: none;
+}
+.inventory-column__item--title {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  color: #13182C;
+  margin-bottom: 0.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .inventory-column__item--title {
+    display: none;
+  }
+}
+.inventory-column__item--in-stock {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  color: #158463;
+  border-radius: 20px;
+  background-color: rgba(21, 132, 99, 0.17);
+  width: 5rem;
+  padding: 0.25rem 0.15rem;
+  margin-bottom: 1rem;
+}
+.inventory-column__item--out-of-stock {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  color: #C94515;
+  border-radius: 20px;
+  background-color: rgba(201, 69, 21, 0.07);
+  width: 8rem;
+  padding: 0.25rem 0.15rem;
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=InventoryList.css.map */

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.hero-vanilla {
+  display: flex;
+  border-bottom: 0.0625rem solid #BDC5D5;
+}
+.hero-vanilla__icon {
+  margin-right: 0.25rem;
+}/*# sourceMappingURL=HeroVanilla.css.map */

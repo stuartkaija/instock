@@ -33,7 +33,30 @@ router.get('/:warehouseId', (req, res) => {
 
 // POST/CREATE a new warehouse (Bryn)
 router.post('/', (req, res) => {
-    console.log("this is a POST endpoint for /warehouses, creating a new one");
+    if (!req.body.name || !req.body.address || !req.body.city || !req.body.country || !req.body.contact.name ||!req.body.contact.position || !req.body.contact.phone || !req.body.contact.email ) {
+        res.status(404).send("Fill the form out completely");
+        return;
+    }
+    
+    const newWarehouse = {
+        id: uniqid(), 
+        name: req.body.name,
+        address: req.body.address,
+        city: req.body.city,
+        country: req.body.country,
+        contact: {
+            name: req.body.contact.name,
+            position: req.body.contact.position,
+            phone: req.body.contact.phone,
+            email: req.body.contact.email
+        }
+    };
+    const warehouses = readWarehouseData();
+    warehouses.push(newWarehouse);
+    fs.writeFileSync('./data/warehouses.json', JSON.stringify(warehouses));
+
+    res.status(201).json(newWarehouse);
+
 });
 
 // PUT/PATCH/EDIT a warehouse (Stuart)

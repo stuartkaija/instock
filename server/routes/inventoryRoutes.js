@@ -64,7 +64,9 @@ router.post("/", (req, res) => {
 
 // PUT/PATCH/EDIT an inventory item (Enrique)
 router.put("/:inventoryId", (req, res) => {
+  // get the inventory data
   const inventoryData = readInventories();
+
   const id = req.params.inventoryId;
   const foundInventory = inventoryData.find((inventory) => id === inventory.id)
   console.log(foundInventory);
@@ -76,10 +78,31 @@ router.put("/:inventoryId", (req, res) => {
   if (req.body.warehouse) {foundInventory["warehouseName"] = req.body.warehouse};
   console.log(foundInventory);
   fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryData));
+
+
+  //send success to client
   res.status(200).json(foundInventory);
 });
 
 // DELETE an inventory item (Enrique)
-router.delete("", (req, res) => {});
+router.delete("/:inventoryId", (req, res) => {
+  // get the inventory data
+  const inventoryData = readInventories();
+
+  // find the specific inventory by id fro that data set
+  const inventoryMatch = inventoryData.find((inventory) => inventory.id === req.params.inventoryId);
+
+  // find the index of the specific inventory in that data set
+  const inventoryMatchIndex = inventoryData.indexOf((inventoryMatch));
+
+  // remove the object via its index from that data set
+  inventoryData.splice(inventoryMatchIndex, 1);
+
+  //rewrite the data into the json file, including the deleted inventory item
+  fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryData));
+
+  // send success to client 
+  res.status(202).send("inventory item deleted")
+});
 
 module.exports = router;
