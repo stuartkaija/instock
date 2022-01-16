@@ -1,3 +1,23 @@
 @use './styles/partials/typography' as *;
 @use './styles/partials/variables' as *;
 @use './styles/partials/global' as *;
+@use "../../styles/partials/mixins" as*;
+
+.main {
+    position: relative;
+    bottom: 3rem;
+    margin: 0 1rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    background-color: $color-global-white;
+    box-shadow: 0 1px 2px;
+    border-color: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    @include tablet {
+        margin: 0 2rem;
+        bottom: 5rem;
+    }
+    @include desktop {
+        margin: 0 10rem;
+    }
+}

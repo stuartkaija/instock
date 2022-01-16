@@ -4,26 +4,27 @@ import "./InventoryHeroWithSearch.scss";
 import { NavLink } from "react-router-dom";
 
 function InventoryHeroWithSearch({ inventoryTitle }) {
- 
   return (
-    <div className="hero">
-      <h1 className="hero__title">{inventoryTitle}</h1>
-      <div className="hero__search-box">
+    <div className="inventory-hero">
+      <h1 className="inventory-hero__title">{inventoryTitle}</h1>
+      <div className="inventory-hero__search-box">
         <input
           type="search"
           name="searchBar"
           id="searchBar"
           placeholder="Search..."
-          className="hero__search-bar"
+          className="inventory-hero__search-bar"
         />
         <img
           src={searchIcon}
           alt="search icon"
-          className="hero__search-box-icon"
+          className="inventory-hero__search-box-icon"
         />
       </div>
       <NavLink to="/inventory/AddNew">
-        <button className="hero__button">+ Add New Inventory Item</button>
+        <button className="inventory-hero__button">
+          + Add New Inventory Item
+        </button>
       </NavLink>
     </div>
   );
