@@ -88,6 +88,17 @@
         }
     }
 }
+.form-valid {
+    visibility: hidden;
+}
+.form-error {
+    font-size: 1rem;
+    padding: 0 1rem;
+    color: $color-out-of-stock;
+}
+.exclamation {
+    height: 1rem;
+}
 
 
 
