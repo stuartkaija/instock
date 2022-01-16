@@ -8,7 +8,7 @@ import Inventory from "./pages/Inventory/Inventory";
 import AddInventoryItem from "./pages/AddInventoryItem/AddInventoryItem";
 import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehousePage";
-import EditWarehouseComponent from "./components/EditWarehouseComponent/EditWarehouseComponent";
+import EditWarehouseComponent from "./pages/EditWarehouseComponent/EditWarehouseComponent";
 import EditInvItemPage from "./pages/EditInvItemPage/EditInvItemPage";
 
 class App extends Component {
