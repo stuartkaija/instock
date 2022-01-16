@@ -13,6 +13,9 @@ Modal.setAppElement("#root");
 
 function InventoryList({ inventories }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [name, setName] = useState({ inventories });
+  console.log(useState({ inventories }));
+
   if (inventories === undefined) {
     return <span>Loading...</span>;
   }
