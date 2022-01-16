@@ -53,12 +53,15 @@ export default class EditWarehouseComponent extends Component {
                 phone: event.target.phone.value,
                 email: event.target.email.value
             }
-        }).then((response) => {
-            console.log(response);
-        }).catch((err) => {
-            console.log(err);
-        });
-    };
+        })
+
+        .then(alert('Warehouse Edited Successfully!'))
+        .then(this.props.history.push("/warehouses/" + this.props.match.params.warehouseId))
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
 
     render() {
         if (this.state.warehouse === null) {

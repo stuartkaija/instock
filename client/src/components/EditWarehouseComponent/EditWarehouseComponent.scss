@@ -73,6 +73,11 @@
         &--blue {
             background-color: $color-interactive-elements;
             color: $color-global-white;
+
+            &:hover {
+                background-color: $color-cta-and-background;
+                cursor: pointer;
+            }
             
             @include tablet {
             margin-left: 1rem;
@@ -91,6 +96,9 @@
                 width: fit-content;
                 padding: .375rem 1rem;
                 border-radius: 2rem;
+            }
+            &:hover {
+                cursor: pointer;
             }
         }
 
