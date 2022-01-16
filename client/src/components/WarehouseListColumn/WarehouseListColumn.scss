@@ -3,9 +3,109 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+.warehouse-modal {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  border: none;
+
+  @include tablet {
+    width: 80%;
+    height: 15rem;
+    margin: 10% 10%;
+    border: none;
+  }
+
+  @include desktop {
+    margin: 10% 30%;
+    border: none;
+  }
+
+  &__close {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+    width: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    height: 100%;
+    margin-top: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+    @include tablet {
+      margin-top: 1rem;
+      padding: 0rem 2rem 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--delete {
+      width: 55%;
+      margin-left: 3%;
+      border-radius: 2rem;
+      padding: 1rem 1rem;
+      background-color: $color-out-of-stock;
+      color: #ffffff;
+      border: 1px solid $color-out-of-stock;
+
+      @include tablet {
+        padding: 0.6rem 1rem;
+        width: 20%;
+      }
+      &:hover {
+        background-color: rgba(201, 69, 21, 0.07);
+        color: $color-out-of-stock;
+        cursor: pointer;
+      }
+    }
+
+    &--cancel {
+      width: 55%;
+      color: #5c667e;
+      border-radius: 2rem;
+      padding: 1rem 1rem;
+      border: 1px solid #5c667e;
+      background-color: $color-global-white;
+
+      @include tablet {
+        padding: 0.6rem 1rem;
+        width: 20%;
+      }
+
+      &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.warehouse-modal-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(19, 24, 44, 0.5);
+}
+
 .warehouse-list {
   margin: 0rem 1rem;
-  border-bottom: .0625rem solid $color-outlines-dividers;
+  border-bottom: 0.0625rem solid $color-outlines-dividers;
 
   @include tablet {
     margin: 0rem 2rem;
@@ -18,7 +118,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: $color-global-white;
-  margin: .5rem 0rem;
+  margin: 0.5rem 0rem;
 }
 
 .warehouse-buttons {
@@ -73,7 +173,7 @@
     align-items: center;
     margin-bottom: 1.4rem;
   }
-  
+
   &__contact-container {
     display: flex;
     flex-direction: column;
@@ -81,10 +181,10 @@
 
   &__title {
     @include font-bold;
-    font-size: .6875rem;
+    font-size: 0.6875rem;
     text-transform: uppercase;
     color: $color-text-secondary;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
     margin-top: 0rem;
 
     @include tablet {
@@ -95,7 +195,7 @@
   &__text {
     @include font-regular;
     color: $color-text-primary;
-    font-size: .8125rem;
+    font-size: 0.8125rem;
     margin-top: 0rem;
 
     @include tablet {
@@ -107,12 +207,9 @@
     }
 
     &--link {
-      margin:0;
+      margin: 0;
       font-weight: 600;
       color: $color-interactive-elements;
     }
   }
-  
-  
-
 }
