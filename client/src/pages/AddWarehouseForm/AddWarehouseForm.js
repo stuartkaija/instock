@@ -1,5 +1,5 @@
 import React from 'react'
-import backImg from '/Users/brynfrayne/Desktop/instock/client/src/assets/icons/arrow_back-24px.svg'
+import backImg from '../../assets/icons/arrow_back-24px.svg';
 import "./AddWarehouseForm.scss";
 import { NavLink } from 'react-router-dom';
 import { Component } from 'react';
