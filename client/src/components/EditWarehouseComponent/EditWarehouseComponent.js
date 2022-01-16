@@ -24,6 +24,21 @@ export default class EditWarehouseComponent extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
+        const validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const validRegexPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g
+        
+        if(event.target.phone.value) {
+            if (!event.target.phone.value.match(validRegexPhone)) {
+                return alert("Please enter valid phone number!")
+            }
+        }
+
+        if(event.target.email.value) {
+            if (!event.target.email.value.match(validRegexEmail)) {
+                return alert("Please enter valid email: example@email.com");
+            }    
+        }
+
         const warehouseId = this.state.warehouse.id
 
         axios.put('http://localhost:8080/warehouses/' + warehouseId, {
