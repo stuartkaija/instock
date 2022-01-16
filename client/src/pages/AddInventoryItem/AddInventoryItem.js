@@ -47,6 +47,7 @@ class AddInventoryItem extends Component {
       (warehouseName, index) => mapped.indexOf(warehouseName) === index
     );
     return (
+      <div className="main">
       <form onSubmit={this.addInventoryItem} className="item-form">
         <div className="item-form__wrapper">
           <section className="item-form__section">
@@ -150,6 +151,7 @@ class AddInventoryItem extends Component {
           <button className="item-form__button">+ Add Item</button>
         </div>
       </form>
+      </div>
     );
   }
 }
