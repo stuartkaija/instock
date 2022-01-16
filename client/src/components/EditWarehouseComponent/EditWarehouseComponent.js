@@ -68,40 +68,39 @@ export default class EditWarehouseComponent extends Component {
         const { name, address, city, contact, country } = this.state.warehouse;
 
         return (
-            <div className="add-warehouse-form">
-                <div className="add-form__header">
-                    
-                    <h2><NavLink to={'/warehouses/' + this.state.warehouse.id}><img className="add-warehouse-form__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
+            <div>
+                <div className="edit-warehouse__header">
+                    <h2><NavLink to={'/warehouses/' + this.state.warehouse.id}><img className="edit-warehouse__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
                 </div>
-                <form onSubmit={this.handleSubmit} id='editWarehouse'>
-                    <div className="warehouse__form">
-                        <h3 className="add-warehouse-form__subtitle">Warehouse Details</h3>
-                        <label className="add-warehouse-form__label">Warehouse Name</label>
-                        <input className="add-warehouse-form__input" name="name" id="name" placeholder={name}></input>
-                        <label className="add-warehouse-form__label">Street Address</label>
-                        <input className="add-warehouse-form__input" name="address" id="address" placeholder={address}></input>
-                        <label className="add-warehouse-form__label">City</label>
-                        <input className="add-warehouse-form__input" name="city" id="city" placeholder={city}></input>
-                        <label className="add-warehouse-form__label">Country</label>
-                        <input className="add-warehouse-form__input" name="country" id="country" placeholder={country}></input>
+                <form className="edit-warehouse__form-container" onSubmit={this.handleSubmit} id='editWarehouse'>
+                    <div className="edit-warehouse__form edit-warehouse__form--left">
+                        <h3 className="edit-warehouse__subtitle">Warehouse Details</h3>
+                        <label className="edit-warehouse__label">Warehouse Name</label>
+                        <input className="edit-warehouse__input" name="name" id="name" placeholder={name}></input>
+                        <label className="edit-warehouse__label">Street Address</label>
+                        <input className="edit-warehouse__input" name="address" id="address" placeholder={address}></input>
+                        <label className="edit-warehouse__label">City</label>
+                        <input className="edit-warehouse__input" name="city" id="city" placeholder={city}></input>
+                        <label className="edit-warehouse__label">Country</label>
+                        <input className="edit-warehouse__input" name="country" id="country" placeholder={country}></input>
                     </div>
-                    <div className="warehouse__form">
-                        <h3 className="add-warehouse-form__subtitle">Contact Details</h3>
-                        <label className="add-warehouse-form__label">Contact Name</label>
-                        <input className="add-warehouse-form__input" name="contactName" id="contactName" placeholder={contact.name}></input>
-                        <label className="add-warehouse-form__label">Position</label>
-                        <input className="add-warehouse-form__input" name="position" id="position" placeholder={contact.position}></input>
-                        <label className="add-warehouse-form__label">Phone Number</label>
-                        <input className="add-warehouse-form__input" name="phone" id="phone" placeholder={contact.phone}></input>
-                        <label className="add-warehouse-form__label">Email</label>
-                        <input className="add-warehouse-form__input" name="email" id="email" placeholder={contact.email}></input>
+                    <div className="edit-warehouse__form">
+                        <h3 className="edit-warehouse__subtitle">Contact Details</h3>
+                        <label className="edit-warehouse__label">Contact Name</label>
+                        <input className="edit-warehouse__input" name="contactName" id="contactName" placeholder={contact.name}></input>
+                        <label className="edit-warehouse__label">Position</label>
+                        <input className="edit-warehouse__input" name="position" id="position" placeholder={contact.position}></input>
+                        <label className="edit-warehouse__label">Phone Number</label>
+                        <input className="edit-warehouse__input" name="phone" id="phone" placeholder={contact.phone}></input>
+                        <label className="edit-warehouse__label">Email</label>
+                        <input className="edit-warehouse__input" name="email" id="email" placeholder={contact.email}></input>
                     </div>
                 </form>
-                <div className='warehouse__buttons'>
-                    <NavLink to={'/warehouses/' + this.state.warehouse.id}>
-                        <button className='warehouse__buttons-cancel'>Cancel</button>
+                <div className='edit-warehouse__button-container'>
+                    <NavLink className="edit-warehouse__button--navlink" to={'/warehouses/' + this.state.warehouse.id}>
+                        <button className='edit-warehouse__button--cancel'>Cancel</button>
                     </NavLink>
-                    <button className='warehouse__buttons-confirm' form='editWarehouse'>Save</button>
+                    <button className='edit-warehouse__button edit-warehouse__button--blue' form='editWarehouse'>Save</button>
                 </div>
             </div>
         )
