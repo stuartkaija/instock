@@ -213,5 +213,4 @@ class AddInventoryItem extends Component {
     );
   }
 }
-
 export default AddInventoryItem;
