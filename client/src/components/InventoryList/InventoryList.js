@@ -27,7 +27,7 @@ function InventoryList({ inventories }) {
         {inventories.map((inventory) => {
           return (
             <div key={inventory.id} className="inventory-container">
-              <div className="inventory-column">
+              <div className="inventory-column__first">
                 <div className="inventory-column__item--title">
                   Inventory Item
                 </div>
@@ -46,7 +46,7 @@ function InventoryList({ inventories }) {
                   {inventory.category}
                 </div>
               </div>
-              <div className="inventory-column">
+              <div className="inventory-column__second">
                 <div className="inventory-column__item--title">Status</div>
                 <div
                   className={
