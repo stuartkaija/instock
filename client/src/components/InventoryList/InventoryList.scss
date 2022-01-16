@@ -173,6 +173,10 @@
     @include font-regular;
     color: $color-text-secondary;
 
+    @include tablet {
+      padding-right: 5rem;
+    }
+
     margin-bottom: 1rem;
     &--main {
       @include font-bold;
@@ -186,6 +190,7 @@
       margin-bottom: 0.25rem;
 
       @include tablet {
+        padding-right: 5rem;
         display: none;
       }
     }
