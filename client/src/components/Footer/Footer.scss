@@ -1,6 +1,9 @@
+@use "../../styles/partials/variables" as*;
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-size: .75rem;
+    background-color: $color-background-primary;
 }
