@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeroVanilla from '../../components/HeroVanilla/HeroVanilla';
 import WarehouseDetails from '../../components/WarehouseDetails/WarehouseDetails';
+import TableHeader from '../../components/TableHeader/TableHeader';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import axios from 'axios';
 
@@ -43,6 +44,7 @@ class SpecificWarehousePage extends Component {
       return (
           <div className="main">
               <WarehouseDetails warehouse={this.state.warehouse}/>
+              <TableHeader titles={["warehouse", "address", "contact name", "contact information", "actions"]}/>
               <InventoryList inventories={this.state.inventory} />
           </div>
       )

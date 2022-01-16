@@ -1,0 +1,16 @@
+@use "../../styles/partials/variables" as*;
+@use "../../styles/partials/mixins" as*;
+@use "../../styles/partials/global" as*;
+
+
+.form-valid {
+    visibility: hidden;
+}
+.form-error {
+    font-size: 1rem;
+    padding: 0 1rem;
+    color: $color-out-of-stock;
+}
+.exclamation {
+    height: 1rem;
+}

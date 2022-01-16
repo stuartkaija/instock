@@ -1,3 +1,40 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-SemiBold.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../assets/font/TitilliumWeb-Regular.woff2") format("woff2"), url("../../assets/font/TitilliumWeb-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.main {
+  position: relative;
+  bottom: 3rem;
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px;
+  border-color: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media screen and (min-width: 48rem) {
+  .main {
+    margin: 0 2rem;
+    bottom: 5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .main {
+    margin: 0 10rem;
+  }
+}
+
 .add-warehouse-form__back-icon {
   width: 1.125rem;
 }
