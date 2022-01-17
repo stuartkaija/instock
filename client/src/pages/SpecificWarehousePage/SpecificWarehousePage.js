@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HeroVanilla from '../../components/HeroVanilla/HeroVanilla';
 import WarehouseDetails from '../../components/WarehouseDetails/WarehouseDetails';
-import TableHeader from '../../components/TableHeader/TableHeader';
+import InventoryTableHeader from '../../components/TableHeader/TableHeader';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import axios from 'axios';
 
@@ -35,9 +35,15 @@ class SpecificWarehousePage extends Component {
         return <p>Choo chooo, Here We Go!!</p>
       }
         return (
-            <div>
+            <div className='main'>
                 <WarehouseDetails warehouse={this.state.warehouse}/>
-                <TableHeader titles={["warehouse", "address", "contact name", "contact information", "actions"]}/>
+                <InventoryTableHeader titles={[
+            "Inventory Item",
+            "Category",
+            "Status",
+            "QTY",
+            "Actions",
+          ]}/>
                 <InventoryList inventories={this.state.inventory} specificWarehouse={this.props.match.params} />
             </div>
         )
