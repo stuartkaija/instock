@@ -35,7 +35,7 @@ class SpecificWarehousePage extends Component {
         return <p>Choo chooo, Here We Go!!</p>
       }
         return (
-            <div>
+            <div className="main">
                 <WarehouseDetails warehouse={this.state.warehouse}/>
                 <TableHeader titles={["warehouse", "address", "contact name", "contact information", "actions"]}/>
                 <InventoryList inventories={this.state.inventory} specificWarehouse={this.props.match.params} />
