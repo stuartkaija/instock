@@ -88,12 +88,9 @@
             line-height: 1.375rem;
         }
 
-        @include desktop {
-            width: 25%;
-        }
-
         &:hover {
             background-color: $color-cta-and-background;
+            cursor: pointer;
         }
     }
 }

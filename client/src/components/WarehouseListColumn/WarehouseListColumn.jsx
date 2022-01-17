@@ -39,27 +39,23 @@ function WarehouseListColumn({
             <img src={chevronRight} alt="chevron right" />
           </div>
 
-          <h4 className="warehouse-column__title">Address</h4>
-          <address className="warehouse-column__text">
-            {address}, {city}, {country}
-          </address>
+            <h4 className="warehouse-column__title">
+              Address
+            </h4>
+            <address className="warehouse-column__text warehouse-column__text--address">
+              {address}, {city}, {country}
+            </address>
         </div>
 
-        <div className="warehouse-column">
-          <h4 className="warehouse-column__title">contact name</h4>
-          <h5 className="warehouse-column__text">{contactName}</h5>
-          <h4 className="warehouse-column__title">contact information</h4>
-          <div className="warehouse-column__contact-container">
-            <a
-              href={`tel:${contactPhone}`}
-              className="warehouse-column__text warehouse-column__text-link"
-            >
-              {contactPhone}
-            </a>
-            <a
-              href={`mailto:${contactEmail}`}
-              className="warehouse-column__text warehouse-column__text-link"
-            >
+          <div className="warehouse-column">
+            <h4 className="warehouse-column__title">contact name</h4>
+            <h5 className="warehouse-column__text warehouse-column__text--name">{contactName}</h5>
+            <h4 className="warehouse-column__title">contact information</h4>
+            <div className="warehouse-column__contact-container">
+              <a href={`tel:${contactPhone}`} className="warehouse-column__text warehouse-column__text-link" >
+                {contactPhone}
+              </a>
+              <a href={`mailto:${contactEmail}`} className="warehouse-column__text warehouse-column__text-link" >
               {contactEmail}
             </a>
           </div>
