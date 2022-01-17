@@ -6,7 +6,8 @@
     &__header {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        padding-left: 1rem;
         border-bottom: 1px solid $color-outlines-dividers;
         @include tablet {
             justify-content: start;
