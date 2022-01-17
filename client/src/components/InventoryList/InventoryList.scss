@@ -119,20 +119,25 @@
   &:hover {
     background-color: rgba(46, 102, 230, 0.07);
   }
+
+  @include tablet {
+    padding: 1rem 2rem 0rem 2rem;
+  }
 }
 
 .inventory-buttons {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-
   width: 100%;
 
   @include tablet {
     justify-content: space-around;
     flex-wrap: none;
     width: 10%;
+    margin-left: 1rem;
   }
 
   &__delete {
@@ -156,17 +161,57 @@
 
   @include tablet {
     flex-direction: row;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     width: 40%;
-
     margin-right: 0rem;
+  }
+
+  &__first {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    width: 28%;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 28%;
+      margin-right: 4rem;
+    }
+  }
+
+  &__second {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    width: 28%;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 41%;
+      margin-right: 3rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 45%;
+      margin-right: 3rem;
+    }
   }
 
   &__item-container {
     display: flex;
-
     align-items: center;
     margin-bottom: 1.4rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include tablet {
+      justify-content: flex-start;
+      width: 14rem;
+    }
   }
 
   &__item {
@@ -174,10 +219,35 @@
     color: $color-text-secondary;
 
     margin-bottom: 1rem;
+
+    @include tablet {
+      text-align: left;
+    }
     &--main {
       @include font-bold;
       color: $color-interactive-elements;
       text-decoration: none;
+    }
+
+    &--QTY {
+      @include font-regular;
+      color: $color-text-secondary;
+
+      @include tablet {
+        width: 2rem;
+        margin-right: 1rem;
+      }
+    }
+
+    &--warehouse {
+      @include font-regular;
+      color: $color-text-secondary;
+
+      @include tablet {
+        width: 5rem;
+        margin-right: 1rem;
+        // margin-left: 3rem;
+      }
     }
 
     &--title {
@@ -201,6 +271,11 @@
       width: 5rem;
       padding: 0.25rem 0.15rem;
       margin-bottom: 1rem;
+
+      @include tablet {
+        width: 10rem;
+        margin-right: 1rem;
+      }
     }
 
     &--out-of-stock {
@@ -214,6 +289,11 @@
       width: 8rem;
       padding: 0.25rem 0.15rem;
       margin-bottom: 1rem;
+
+      @include tablet {
+        width: 10rem;
+        margin-right: 1rem;
+      }
     }
   }
 }
