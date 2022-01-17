@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
      
      return (
          <div className="header">
-             <img src={instockImg} alt=''/>
+             <NavLink to="/"><img src={instockImg} alt='Instock logo'/></NavLink>
              <div className='header__button-container'>
                  <NavLink to='/warehouses' activeClassName='header__button--active' className='header__button' >Warehouses</NavLink>
                  <NavLink to='/inventory' activeClassName='header__button--active' className='header__button'>Inventory</NavLink>

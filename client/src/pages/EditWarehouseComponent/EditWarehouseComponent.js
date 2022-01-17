@@ -71,7 +71,7 @@ export default class EditWarehouseComponent extends Component {
         const { name, address, city, contact, country } = this.state.warehouse;
 
         return (
-            <div>
+            <div className="main">
                 <div className="edit-warehouse__header">
                     <h2><NavLink to={'/warehouses/' + this.state.warehouse.id}><img className="edit-warehouse__back-icon" src={backImg} alt="" /></ NavLink> Edit Warehouse</h2>
                 </div>

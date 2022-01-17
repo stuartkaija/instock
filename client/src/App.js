@@ -11,6 +11,7 @@ import SpecificWarehousePage from "./pages/SpecificWarehousePage/SpecificWarehou
 import EditWarehouseComponent from "./pages/EditWarehouseComponent/EditWarehouseComponent";
 import EditInvItemPage from "./pages/EditInvItemPage/EditInvItemPage";
 
+
 class App extends Component {
   render() {
     return (

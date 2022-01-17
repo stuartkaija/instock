@@ -103,19 +103,19 @@ router.put("/:warehouseId/", (req, res) => {
     foundWarehouse.contact.email = req.body.contact.email;
   }
 
-  fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData));
-
-  // now change corresponding inventory data
-//   const invData = fs.readFileSync("./data/inventories.json");
-//   const inventoryData = JSON.parse(invData);
-//   const inventoryDataFiltered = inventoryData.map((inventory) => {
-
-//       if (inventory.warehouseID === req.params.warehouseId) {
-//           console.log("match");
-//       }
-//   })
-//   console.log(inventoryDataFiltered);
-
+  // edit inventory data related to this warehouse
+  const invData = fs.readFileSync("./data/inventories.json");
+  const inventoryData = JSON.parse(invData);
+  const editData = inventoryData.map((inventory) => {
+    if(inventory.warehouseID === id) {
+      if (req.body.name){inventory.warehouseName = req.body.name}
+    } 
+    return inventory
+  })
+  
+  fs.writeFileSync("./data/inventories.json", JSON.stringify(editData));
+  fs.writeFileSync("./data/warehouses.json", JSON.stringify(warehouseData))
+  console.log(editData);
   res.status(200).json(foundWarehouse);
 });
 

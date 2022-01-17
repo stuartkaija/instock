@@ -1,5 +1,5 @@
 @use '../../styles/partials/variables' as*;
-@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/mixins' as*;
 
 .warehouse-details {
     &__hero {
@@ -17,6 +17,26 @@
         margin: 1rem;
         padding: .5rem;
         fill: white;
+        @include tablet {
+            visibility: hidden;
+        }
+        &--tablet {
+            background-color: $color-interactive-elements;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 1rem;
+        padding: .5rem 1rem;
+        fill: white;
+        display: none;
+            @include tablet {
+                visibility: visible;
+                display: flex;
+                color: $color-global-white;
+                border-radius: 2rem;
+                width: fit-content;
+            }
+        }
     }
     &__container {
         padding: 1rem 0rem;
@@ -31,7 +51,6 @@
     &__column {
         padding: 1rem;
         font-size: 1rem;
-        // font-weight: 300;
         @include tablet {
             padding: 0rem 1rem;
         }
@@ -46,4 +65,7 @@
             border-left: 0.1rem solid $color-outlines-dividers;
         }
     }
+}
+.edit-link {
+    text-decoration: none;
 }
