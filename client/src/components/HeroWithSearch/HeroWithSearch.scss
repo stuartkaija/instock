@@ -1,0 +1,96 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1rem;
+  margin: 0rem 1rem;
+  padding-bottom: 2rem;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+  }
+
+  @include desktop {
+    margin: 0rem 4rem;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__search-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    border: 0.0625rem solid $color-outlines-dividers;
+    padding: 0rem 1rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      height: 2.375rem;
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+
+    &:focus-within {
+      border-color: $color-interactive-elements;
+    }
+  }
+
+  &__search-bar {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+      }
+    }
+  }
+
+  &__button {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    border-radius: 1.25rem;
+    width: 100%;
+    border: none;
+    flex-grow: 1;
+    color: $color-global-white;
+    background-color: $color-interactive-elements;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+
+    &:hover {
+      background-color: $color-cta-and-background;
+      cursor: pointer;
+    }
+  }
+}

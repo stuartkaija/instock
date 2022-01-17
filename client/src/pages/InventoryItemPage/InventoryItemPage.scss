@@ -1,0 +1,61 @@
+@use "../../styles/partials/variables" as*;
+@use "../../styles/partials/mixins" as*;
+
+.main {
+    position: relative;
+    bottom: 3rem;
+    margin: 0 1rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    background-color: $color-global-white;
+    box-shadow: 0 1px 2px;
+    border-color: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    @include tablet {
+        margin: 0 2rem;
+        bottom: 5rem;
+    }
+    @include desktop {
+        margin: 0 10rem;
+    }
+}
+
+.inventory-item {
+    @include tablet {
+        display: flex;
+    }
+    &__text {
+        font-size: .625rem;
+        font-weight: 300;
+        color: $color-text-secondary;
+    }
+    &__text--title {
+        font-weight: 500;
+        color: $color-text-secondary;
+        font-size: .625rem;
+    }
+    &__columns {
+        margin: 0 .5rem;
+        @include tablet {
+            width: 50%;
+            margin: 1rem;
+        }
+        &--left {
+            @include tablet {
+                border-right: 1px solid $color-outlines-dividers;
+            }
+        }
+    }
+    &__status-quantity {
+        width: 50%;
+    }
+    &__status-quantity-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.warehouse__hero-title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    flex-grow: 1;
+} 

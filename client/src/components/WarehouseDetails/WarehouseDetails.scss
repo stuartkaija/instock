@@ -1,0 +1,71 @@
+@use '../../styles/partials/variables' as*;
+@use '../../styles/partials/mixins' as*;
+
+.warehouse-details {
+    &__hero {
+        display: flex;
+        justify-content: space-between;    
+        align-items: center;
+        border-bottom: .0625rem solid $color-outlines-dividers;
+        padding: 0 1rem;
+    }
+    &__edit-icon {
+        background-color: $color-interactive-elements;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 1rem;
+        padding: .5rem;
+        fill: white;
+        @include tablet {
+            visibility: hidden;
+        }
+        &--tablet {
+            background-color: $color-interactive-elements;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 1rem;
+        padding: .5rem 1rem;
+        fill: white;
+        display: none;
+            @include tablet {
+                visibility: visible;
+                display: flex;
+                color: $color-global-white;
+                border-radius: 2rem;
+                width: fit-content;
+            }
+        }
+    }
+    &__container {
+        padding: 1rem 0rem;
+        background-color: $color-global-white;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__column {
+        padding: 1rem;
+        font-size: 1rem;
+        @include tablet {
+            padding: 0rem 1rem;
+        }
+    }
+    &__details-line {
+        margin: .25rem 0;
+    }
+    &__contact-container {
+        display: flex;
+
+        @include tablet {
+            border-left: 0.1rem solid $color-outlines-dividers;
+        }
+    }
+}
+.edit-link {
+    text-decoration: none;
+}
