@@ -27,12 +27,16 @@ function InventoryList({ inventories, specificWarehouse }) {
         {inventories.map((inventory) => {
           return (
             <div key={inventory.id} className="inventory-container">
-              <div className="inventory-column">
+              <div className="inventory-column__first">
                 <div className="inventory-column__item--title">
                   Inventory Item
                 </div>
                 <div className="inventory-column__item-container">
-                  <NavLink key={inventory.id} to={`/inventory/${inventory.id}`}>
+                  <NavLink
+                    className="inventory-column__item--main"
+                    key={inventory.id}
+                    to={`/inventory/${inventory.id}`}
+                  >
                     <div className="inventory-column__item--main">
                       {inventory.itemName}
                     </div>
@@ -46,7 +50,7 @@ function InventoryList({ inventories, specificWarehouse }) {
                   {inventory.category}
                 </div>
               </div>
-              <div className="inventory-column">
+              <div className="inventory-column__second">
                 <div className="inventory-column__item--title">Status</div>
                 <div
                   className={
@@ -59,16 +63,15 @@ function InventoryList({ inventories, specificWarehouse }) {
                 </div>
 
                 <div className="inventory-column__item--title">QTY</div>
-                <div className="inventory-column__item">
+                <div className="inventory-column__item--QTY">
                   {inventory.quantity}
                 </div>
                 <div className={specificWarehouse ? "hidden" : ""}>
                   <div className="inventory-column__item--title">Warehouse</div>
-                  <div className={"inventory-column__item"}>
+                  <div className={"inventory-column__item--warehouse"}>
                     {inventory.warehouseName}
                   </div>
                 </div>
-
               </div>
 
               <div className="inventory-buttons">
